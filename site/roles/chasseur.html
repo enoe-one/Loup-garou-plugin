@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chasseur — Loup-Garou UHC</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo"><span class="wolf-icon">🐺</span> Loup-Garou UHC</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="../rules.html">Règles</a></li>
+      <li><a href="../roles.html" class="active">Rôles</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div style="background:var(--bg2);border-bottom:1px solid var(--border);padding:3.5rem 2rem 2.5rem;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 10% 50%, var(--village2,.08), transparent 70%);"></div>
+  <div style="max-width:1200px;margin:0 auto;position:relative;z-index:1;">
+    <div class="role-breadcrumb">
+      <a href="../roles.html">Rôles</a>
+      <span>›</span>
+      <a href="../roles.html#village">🌿 Village</a>
+      <span>›</span>
+      <span style="color:var(--text2);">Chasseur</span>
+    </div>
+    <div style="font-size:3.5rem;margin-bottom:.75rem;">🏹</div>
+    <h1 style="font-size:clamp(2rem,5vw,3.5rem);color:var(--village2);margin-bottom:.5rem;">Chasseur</h1>
+    <span class="role-card-tag tag-village" style="margin-bottom:1rem;display:inline-block;">🌿 Village</span>
+    <p style="font-style:italic;font-size:1.2rem;color:var(--text2);max-width:600px;">&laquo; Même dans la mort, il ne lâche pas sa proie. &raquo;</p>
+  </div>
+</div>
+
+<div class="role-layout">
+
+  <!-- CONTENU -->
+  <div>
+
+    <!-- RP -->
+    <div class="role-block">
+      <div class="role-block-title" style="color:var(--village2);">📜 Histoire &amp; Contexte RP</div>
+      <p>Ce chasseur impitoyable a consacré sa vie à traquer les créatures de la nuit. La mort ne l'arrêtera pas — son dernier acte sera toujours une flèche.</p>
+    </div>
+
+    <!-- POUVOIR -->
+    <div class="role-block">
+      <div class="role-block-title" style="color:var(--village2);">⚡ Pouvoir</div>
+      <p style="font-size:1rem;line-height:1.8;">A Force 1 en combat contre les Loups-Garous. En mourant — quelle que soit la cause (Loup, vote, ennemi) — il peut choisir un joueur et lui infliger 5 cœurs de dégâts avec son dernier tir.</p>
+    </div>
+
+    <!-- COMMANDES -->
+    <div class="role-block">
+      <div class="role-block-title" style="color:var(--village2);">💬 Commandes</div>
+      <ul class='cmd-list'>
+        <li class='cmd-item'>
+          <div class='cmd-code'>/lg tirer <joueur></div>
+          <div class='cmd-desc'>Tir final en mourant — inflige 5 cœurs au joueur ciblé</div>
+        </li></ul>
+    </div>
+
+    <!-- CONSEILS -->
+    <div class="role-block">
+      <div class="role-block-title" style="color:var(--village2);">🎯 Stratégie &amp; Conseils</div>
+      <ul class='tip-list'><li class='tip-item'>Votre mort est une arme. Utilisez-la intelligemment.</li><li class='tip-item'>Visez un Loup certain si vous l'avez identifié, pas une suspicion.</li><li class='tip-item'>En UHC, 5 cœurs de dégâts peuvent être décisifs — surtout en fin de partie.</li><li class='tip-item'>Ne révélez pas votre rôle — vos ennemis éviteront de vous attaquer en premier.</li></ul>
+    </div>
+
+    <!-- ALLIÉS / ENNEMIS -->
+    <div class="role-block">
+      <div class="role-block-title" style="color:var(--village2);">🤝 Alliés &amp; Ennemis</div>
+      <p style="font-family:var(--font-head);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--village2);margin-bottom:.5rem;">Alliés naturels</p>
+      <div class='ally-grid'><span class='ally-tag positive'>Voyant</span><span class='ally-tag positive'>Salvateur</span></div>
+      <p style="font-family:var(--font-head);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--loup2);margin:.75rem 0 .5rem;">Ennemis</p>
+      <div class='ally-grid'><span class='ally-tag negative'>Assassin</span><span class='ally-tag negative'>Loups-Garous</span></div>
+    </div>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="role-sidebar">
+
+    <div class="role-block">
+      <div class="role-block-title" style="color:var(--village2);">📊 Statistiques</div>
+      <div class='stat-grid'><div class='stat-item'><div class='stat-label'>Difficulté</div><div class='stat-value'>Facile</div></div><div class='stat-item'><div class='stat-label'>Tir final</div><div class='stat-value'>5 cœurs</div></div><div class='stat-item'><div class='stat-label'>Force</div><div class='stat-value'>×1 vs Loups</div></div><div class='stat-item'><div class='stat-label'>Déclenchement</div><div class='stat-value'>À la mort</div></div></div>
+    </div>
+
+    <div class="role-block">
+      <div class="role-block-title" style="color:var(--village2);">🏆 Condition de victoire</div>
+      <p style="color:var(--text2);font-size:.95rem;">Éliminer tous les Loups et Solitaires hostiles.</p>
+    </div>
+
+    <div class="role-block">
+      <div class="role-block-title" style="color:var(--village2);">🏷️ Famille</div>
+      <p style="font-size:1.5rem;margin-bottom:.25rem;">🌿</p>
+      <span class="role-card-tag tag-village">Village</span>
+      <p style="color:var(--text3);font-size:.85rem;margin-top:.75rem;">
+        Gagne avec le Village.
+      </p>
+    </div>
+
+    <a href="../roles.html#village" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:.5rem;">
+      ← Tous les rôles Village
+    </a>
+
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">🐺 Loup-Garou UHC</div>
+  <ul class="footer-links">
+    <li><a href="../index.html">Accueil</a></li>
+    <li><a href="../rules.html">Règles</a></li>
+    <li><a href="../roles.html">Rôles</a></li>
+  </ul>
+  <p>Plugin Minecraft · Paper 1.21 · Développé par <strong style="color:var(--gold);">Enoe_one</strong></p>
+</footer>
+
+</body>
+</html>

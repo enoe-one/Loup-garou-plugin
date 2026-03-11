@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Rôles — Loup-Garou UHC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo"><span class="wolf-icon">🐺</span> Loup-Garou UHC</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="rules.html">Règles</a></li>
+      <li><a href="roles.html" class="active">Rôles</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div style="background:var(--bg2);border-bottom:1px solid var(--border);padding:4rem 2rem 3rem;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="hero-eyebrow" style="justify-content:flex-start;margin-bottom:.75rem;">37 rôles</div>
+    <h1 style="font-size:clamp(2rem,5vw,3.5rem);margin-bottom:.75rem;">Les Rôles</h1>
+    <p style="color:var(--text2);max-width:600px;font-size:1.05rem;">Village, Loups, Solitaires, Binaires. Chaque rôle a son histoire, ses pouvoirs et sa stratégie.</p>
+  </div>
+</div>
+
+<div style="max-width:1200px;margin:0 auto;padding:3rem 2rem;">
+
+  <!-- TABS FAMILLE -->
+  <div class="family-tabs">
+    <button class="family-tab active" onclick="filter('all',this)">Tous (37)</button>
+    <button class="family-tab village-tab" id="tab-village" onclick="filter('village',this)">🌿 Village (16)</button>
+    <button class="family-tab loup-tab"    id="tab-loup"    onclick="filter('loup',this)">🐺 Loups (8)</button>
+    <button class="family-tab soli-tab"    id="tab-soli"    onclick="filter('soli',this)">🌙 Solitaires (7)</button>
+    <button class="family-tab binaire-tab" id="tab-binaire" onclick="filter('binaire',this)">⚖️ Binaires (6)</button>
+  </div>
+
+  <!-- VILLAGE -->
+  <div id="section-village">
+    <div class="ornament" id="village">🌿 Village</div>
+    <p style="color:var(--text2);margin-bottom:1.5rem;font-size:.95rem;">Le Village doit identifier et éliminer tous les Loups-Garous et Solitaires hostiles. La déduction sociale est leur seule arme.</p>
+    <div class="roles-grid" id="grid-village">
+
+      <a href="roles/maire.html" class="role-card village fade-up">
+        <div class="role-card-icon">👑</div>
+        <div class="role-card-name">Maire</div>
+        <span class="role-card-tag tag-village">Village</span>
+        <p class="role-card-desc">Vote double. Décisif en cas d'égalité. Gagne de la vitesse chaque épisode.</p>
+      </a>
+
+      <a href="roles/citoyen.html" class="role-card village fade-up">
+        <div class="role-card-icon">🏘️</div>
+        <div class="role-card-name">Citoyen</div>
+        <span class="role-card-tag tag-village">Village</span>
+        <p class="role-card-desc">Vote double lors des éliminations, sauf en cas d'égalité.</p>
+      </a>
+
+      <a href="roles/voyant.html" class="role-card village fade-up">
+        <div class="role-card-icon">🔮</div>
+        <div class="role-card-name">Voyant</div>
+        <span class="role-card-tag tag-village">Village</span>
+        <p class="role-card-desc">Révèle le rôle d'un joueur une fois par épisode. L'un des plus puissants.</p>
+      </a>
+
+      <a href="roles/renard.html" class="role-card village fade-up">
+        <div class="role-card-icon">🦊</div>
+        <div class="role-card-name">Renard</div>
+        <span class="role-card-tag tag-village">Village</span>
+        <p class="role-card-desc">Sonde un joueur et ses 2 voisins pour détecter la présence d'un Loup.</p>
+      </a>
+
+      <a href="roles/conteuse.html" class="role-card village fade-up">
+        <div class="role-card-icon">📖</div>
+        <div class="role-card-name">Conteuse</div>
+        <span class="role-card-tag tag-village">Village</span>
+        <p class="role-card-desc">Reçoit chaque nuit les pseudos des joueurs ayant utilisé un pouvoir.</p>
+      </a>
+
+      <a href="roles/salvateur.html" class="role-card village fade-up">
+        <div class="role-card-icon">🛡️</div>
+        <div class="role-card-name">Salvateur</div>
+        <span class="role-card-tag tag-village">Village</span>
+        <p class="role-card-desc">Protège un joueur chaque nuit. Impossible de protéger deux fois de suite la même personne.</p>
+      </a>
+
+      <a href="roles/sorciere.html" class="role-card village fade-up">
+        <div class="role-card-icon">🧪</div>
+        <div class="role-card-name">Sorcière</div>
+        <span class="role-card-tag tag-village">Village</span>
+        <p class="role-card-desc">Potion de vie pour ressusciter, potion de mort pour tuer. Une seule utilisation chacune.</p>
+      </a>
+
+      <a href="roles/chasseur.html" class="role-card village fade-up">
+        <div class="role-card-icon">🏹</div>
+        <div class="role-card-name">Chasseur</div>
+        <span class="role-card-tag tag-village">Village</span>
+        <p class="role-card-desc">En mourant (quelle que soit la cause), peut tirer sur un joueur et lui infliger 5 cœurs.</p>
+      </a>
+
+      <a href="roles/astronome.html" class="role-card village fade-up">
+        <div class="role-card-icon">🌠</div>
+        <div class="role-card-name">Astronome</div>
+        <span class="role-card-tag tag-village">Village</span>
+        <p class="role-card-desc">Faisceau de particules coloré vers un joueur aléatoire toutes les 10 minutes.</p>
+      </a>
+
+      <a href="roles/chevalier.html" class="role-card village fade-up">
+        <div class="role-card-icon">⚔️</div>
+        <div class="role-card-name">Chevalier</div>
+        <span class="role-card-tag tag-village">Village</span>
+        <p class="role-card-desc">Active Force 2 contre les Loups-Garous. Disparaît après le premier Loup tué.</p>
+      </a>
+
+      <a href="roles/ancien.html" class="role-card village fade-up">
+        <div class="role-card-icon">🧙</div>
+        <div class="role-card-name">Ancien</div>
+        <span class="role-card-tag tag-village">Village</span>
+        <p class="role-card-desc">Ressuscite automatiquement si tué par les Loups. Si le village le tue, le tueur perd 2 cœurs.</p>
+      </a>
+
+      <a href="roles/simple_villagois.html" class="role-card village fade-up">
+        <div class="role-card-icon">👤</div>
+        <div class="role-card-name">Simple Villagois</div>
+        <span class="role-card-tag tag-village">Village</span>
+        <p class="role-card-desc">Aucun pouvoir. Mais personne ne le sait. L'incertitude est son atout.</p>
+      </a>
+
+      <a href="roles/idiot.html" class="role-card village fade-up">
+        <div class="role-card-icon">🎃</div>
+        <div class="role-card-name">Idiot du Village</div>
+        <span class="role-card-tag tag-village">Village</span>
+        <p class="role-card-desc">Ressuscite une fois si le village vote pour l'éliminer. Son rôle est alors révélé.</p>
+      </a>
+
+      <a href="roles/soeur.html" class="role-card village fade-up">
+        <div class="role-card-icon">👯</div>
+        <div class="role-card-name">Sœurs</div>
+        <span class="role-card-tag tag-village">Village</span>
+        <p class="role-card-desc">Se connaissent dès le début. Résistance 1 si à moins de 50 blocs l'une de l'autre.</p>
+      </a>
+
+      <a href="roles/monteur_ours.html" class="role-card village fade-up">
+        <div class="role-card-icon">🐻</div>
+        <div class="role-card-name">Monteur d'Ours</div>
+        <span class="role-card-tag tag-village">Village</span>
+        <p class="role-card-desc">L'ours grogne autant de fois qu'il y a de Loups à moins de 25 blocs.</p>
+      </a>
+
+      <a href="roles/petite_fille.html" class="role-card village fade-up">
+        <div class="role-card-icon">🌸</div>
+        <div class="role-card-name">Petite Fille</div>
+        <span class="role-card-tag tag-village">Village</span>
+        <p class="role-card-desc">Voit le chat des Loups-Garous. Invisible la nuit sans armure. Cible prioritaire si découverte.</p>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="separator"></div>
+
+  <!-- LOUPS -->
+  <div id="section-loup">
+    <div class="ornament" id="loup">🐺 Loups-Garous</div>
+    <p style="color:var(--text2);margin-bottom:1.5rem;font-size:.95rem;">Les Loups se connaissent entre eux (sauf exceptions). Ils ont Force 1 la nuit et +2 cœurs d'absorption à chaque kill. Ils gagnent quand ils égalent ou dépassent les Villageois en nombre.</p>
+    <div class="roles-grid" id="grid-loup">
+
+      <a href="roles/loup_simple.html" class="role-card loup fade-up">
+        <div class="role-card-icon">🐺</div>
+        <div class="role-card-name">Loup Simple</div>
+        <span class="role-card-tag tag-loup">Loup</span>
+        <p class="role-card-desc">Le loup de base. Connaît ses alliés, Force 1 la nuit.</p>
+      </a>
+
+      <a href="roles/loup_perfide.html" class="role-card loup fade-up">
+        <div class="role-card-icon">👻</div>
+        <div class="role-card-name">Loup Perfide</div>
+        <span class="role-card-tag tag-loup">Loup</span>
+        <p class="role-card-desc">Invisible la nuit s'il ne porte pas d'armure. Idéal pour chasser discrètement.</p>
+      </a>
+
+      <a href="roles/loup_endormi.html" class="role-card loup fade-up">
+        <div class="role-card-icon">😴</div>
+        <div class="role-card-name">Loup Endormi</div>
+        <span class="role-card-tag tag-loup">Loup</span>
+        <p class="role-card-desc">Ne reçoit la liste de ses alliés qu'après 1 heure. Avant, joue comme un Villageois.</p>
+      </a>
+
+      <a href="roles/loup_vengeur.html" class="role-card loup fade-up">
+        <div class="role-card-icon">😤</div>
+        <div class="role-card-name">Loup Vengeur</div>
+        <span class="role-card-tag tag-loup">Loup</span>
+        <p class="role-card-desc">Quand un Loup meurt : reçoit le nom et rôle d'un joueur + Speed 5 minutes.</p>
+      </a>
+
+      <a href="roles/grand_mechant_loup.html" class="role-card loup fade-up">
+        <div class="role-card-icon">💀</div>
+        <div class="role-card-name">Grand Méchant Loup</div>
+        <span class="role-card-tag tag-loup">Loup</span>
+        <p class="role-card-desc">Vote double. Peut activer RAGE : Speed + Résistance 10 minutes.</p>
+      </a>
+
+      <a href="roles/infecte.html" class="role-card loup fade-up">
+        <div class="role-card-icon">🦠</div>
+        <div class="role-card-name">Infecté Père des Loups</div>
+        <span class="role-card-tag tag-loup">Loup</span>
+        <p class="role-card-desc">Dans les 10 secondes après une mort : transforme ce joueur en Loup. Une seule fois.</p>
+      </a>
+
+      <a href="roles/loup_timide.html" class="role-card loup fade-up">
+        <div class="role-card-icon">🫣</div>
+        <div class="role-card-name">Loup Timide</div>
+        <span class="role-card-tag tag-loup">Loup</span>
+        <p class="role-card-desc">Seul : Résistance + Speed. À moins de 20 blocs d'un autre Loup : Faiblesse.</p>
+      </a>
+
+      <a href="roles/loup_empoisonneur.html" class="role-card loup fade-up">
+        <div class="role-card-icon">☠️</div>
+        <div class="role-card-name">Loup Empoisonneur</div>
+        <span class="role-card-tag tag-loup">Loup</span>
+        <p class="role-card-desc">2 fois dans la partie : empoisonne un joueur, ses informations reçues seront faussées.</p>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="separator"></div>
+
+  <!-- SOLITAIRES -->
+  <div id="section-soli">
+    <div class="ornament" id="soli">🌙 Solitaires</div>
+    <p style="color:var(--text2);margin-bottom:1.5rem;font-size:.95rem;">Les Solitaires jouent pour eux-mêmes avec leur propre condition de victoire. Imprévisibles et dangereux, ils reçoivent une épée Tranchant IV (sauf Loup Blanc).</p>
+    <div class="roles-grid" id="grid-soli">
+
+      <a href="roles/loup_blanc.html" class="role-card soli fade-up">
+        <div class="role-card-icon">🤍</div>
+        <div class="role-card-name">Loup Blanc</div>
+        <span class="role-card-tag tag-soli">Solitaire</span>
+        <p class="role-card-desc">Camouflé parmi les Loups mais doit gagner SEUL. Doit aussi éliminer les autres Loups.</p>
+      </a>
+
+      <a href="roles/flutiste.html" class="role-card soli fade-up">
+        <div class="role-card-icon">🎵</div>
+        <div class="role-card-name">Joueur de Flûte</div>
+        <span class="role-card-tag tag-soli">Solitaire</span>
+        <p class="role-card-desc">Charme les joueurs par proximité. Gagne si 100% des joueurs restants sont charmés.</p>
+      </a>
+
+      <a href="roles/ange.html" class="role-card soli fade-up">
+        <div class="role-card-icon">😇</div>
+        <div class="role-card-name">Ange</div>
+        <span class="role-card-tag tag-soli">Solitaire</span>
+        <p class="role-card-desc">Choisit : Gardien (protège un joueur) ou Déchu (doit tuer une cible assignée).</p>
+      </a>
+
+      <a href="roles/feu_follet.html" class="role-card soli fade-up">
+        <div class="role-card-icon">🔥</div>
+        <div class="role-card-name">Feu Follet</div>
+        <span class="role-card-tag tag-soli">Solitaire</span>
+        <p class="role-card-desc">Voit les rôles la nuit via particules. Invisible sans armure. Incendie + téléportation.</p>
+      </a>
+
+      <a href="roles/imitateur.html" class="role-card soli fade-up">
+        <div class="role-card-icon">🎭</div>
+        <div class="role-card-name">Imitateur</div>
+        <span class="role-card-tag tag-soli">Solitaire</span>
+        <p class="role-card-desc">Chaque nuit, copie le rôle d'un joueur et bénéficie de ses informations.</p>
+      </a>
+
+      <a href="roles/assassin.html" class="role-card soli fade-up">
+        <div class="role-card-icon">🗡️</div>
+        <div class="role-card-name">Assassin</div>
+        <span class="role-card-tag tag-soli">Solitaire</span>
+        <p class="role-card-desc">Force + Résistance permanents. Livre enchantement IV. Peut cacher des morts.</p>
+      </a>
+
+      <a href="roles/inconnu.html" class="role-card soli fade-up">
+        <div class="role-card-icon">❓</div>
+        <div class="role-card-name">Inconnu</div>
+        <span class="role-card-tag tag-soli">Solitaire</span>
+        <p class="role-card-desc">Vu comme Village par le Voyant, vu comme Loup par les Loups. Ne peut pas voter.</p>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="separator"></div>
+
+  <!-- BINAIRES -->
+  <div id="section-binaire">
+    <div class="ornament" id="binaire">⚖️ Binaires</div>
+    <p style="color:var(--text2);margin-bottom:1.5rem;font-size:.95rem;">Leur camp ou condition de victoire peut changer en cours de partie. Ils jouent souvent un rôle clé dans le basculement de la partie.</p>
+    <div class="roles-grid" id="grid-binaire">
+
+      <a href="roles/cupidon.html" class="role-card binaire fade-up">
+        <div class="role-card-icon">💘</div>
+        <div class="role-card-name">Cupidon</div>
+        <span class="role-card-tag tag-binaire">Binaire</span>
+        <p class="role-card-desc">Lie deux joueurs qui gagnent ensemble. Si les deux meurent, Cupidon rejoint le Village.</p>
+      </a>
+
+      <a href="roles/enfant_sauvage.html" class="role-card binaire fade-up">
+        <div class="role-card-icon">🌿</div>
+        <div class="role-card-name">Enfant Sauvage</div>
+        <span class="role-card-tag tag-binaire">Binaire</span>
+        <p class="role-card-desc">Choisit un mentor. Si le mentor meurt, l'Enfant devient Loup avec Force permanente.</p>
+      </a>
+
+      <a href="roles/trublion.html" class="role-card binaire fade-up">
+        <div class="role-card-icon">🔀</div>
+        <div class="role-card-name">Trublion</div>
+        <span class="role-card-tag tag-binaire">Binaire</span>
+        <p class="role-card-desc">Entre 20 et 25 minutes : échange les rôles de 2 joueurs. Ils reçoivent leurs nouveaux rôles en privé.</p>
+      </a>
+
+      <a href="roles/voleur.html" class="role-card binaire fade-up">
+        <div class="role-card-icon">🦹</div>
+        <div class="role-card-name">Voleur</div>
+        <span class="role-card-tag tag-binaire">Binaire</span>
+        <p class="role-card-desc">Sans rôle au départ. Prend automatiquement le rôle du premier joueur mort (sauf l'Ancien).</p>
+      </a>
+
+      <a href="roles/chien_loup.html" class="role-card binaire fade-up">
+        <div class="role-card-icon">🐕</div>
+        <div class="role-card-name">Chien-Loup</div>
+        <span class="role-card-tag tag-binaire">Binaire</span>
+        <p class="role-card-desc">Choisit son camp définitivement au premier épisode : Village ou Loup (Force permanente).</p>
+      </a>
+
+      <a href="roles/ivrogne.html" class="role-card binaire fade-up">
+        <div class="role-card-icon">🍯</div>
+        <div class="role-card-name">Ivrogne</div>
+        <span class="role-card-tag tag-binaire">Binaire</span>
+        <p class="role-card-desc">Reçoit un faux rôle au départ — croit être quelqu'un d'autre ! En réalité, aucun pouvoir.</p>
+      </a>
+
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">🐺 Loup-Garou UHC</div>
+  <ul class="footer-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="rules.html">Règles</a></li>
+    <li><a href="roles.html">Rôles</a></li>
+  </ul>
+  <p>Plugin Minecraft · Paper 1.21 · Développé par <strong style="color:var(--gold);">Enoe_one</strong></p>
+</footer>
+
+<script>
+function filter(family, btn) {
+  document.querySelectorAll('.family-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  const sections = ['village','loup','soli','binaire'];
+  sections.forEach(f => {
+    const sec = document.getElementById('section-'+f);
+    if (family === 'all' || family === f) {
+      sec.style.display = '';
+    } else {
+      sec.style.display = 'none';
+    }
+  });
+  // Anchors
+  document.querySelectorAll('.separator').forEach(s => {
+    s.style.display = family === 'all' ? '' : 'none';
+  });
+}
+</script>
+
+</body>
+</html>
