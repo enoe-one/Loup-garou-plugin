@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Ange — Loup-Garou UHC</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    .mc-stat{background:#000;border:1px solid #222;padding:5px 7px}
+    .stat-label{font-family:var(--px);font-size:.32rem;color:#555;margin-bottom:2px;letter-spacing:.04em}
+    .stat-value{font-family:var(--vt);font-size:1rem;color:var(--yellow)}
+    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+  </style>
 </head>
 <body>
-
 <nav>
   <div class="nav-inner">
-    <div class="nav-logo"><span class="wolf-icon">🐺</span> Loup-Garou UHC</div>
+    <div class="nav-logo">🐺 Loup-Garou UHC</div>
     <ul class="nav-links">
       <li><a href="../index.html">Accueil</a></li>
       <li><a href="../rules.html">Règles</a></li>
@@ -19,100 +23,63 @@
   </div>
 </nav>
 
-<!-- HERO -->
-<div style="background:var(--bg2);border-bottom:1px solid var(--border);padding:3.5rem 2rem 2.5rem;position:relative;overflow:hidden;">
-  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 10% 50%, var(--soli2,.08), transparent 70%);"></div>
-  <div style="max-width:1200px;margin:0 auto;position:relative;z-index:1;">
-    <div class="role-breadcrumb">
-      <a href="../roles.html">Rôles</a>
-      <span>›</span>
-      <a href="../roles.html#soli">🌙 Solitaire</a>
-      <span>›</span>
-      <span style="color:var(--text2);">Ange</span>
+<div style="background:linear-gradient(135deg,#1f1400 0%,#0d0d0d 60%);border-bottom:2px solid #1a0000;padding:14px 10px 12px">
+  <div style="max-width:1080px;margin:0 auto">
+    <div class="breadcrumb">
+      <a href="../roles.html">Rôles</a><span>›</span>
+      <a href="../roles.html#soli">🌙 Solitaire</a><span>›</span>
+      <span style="color:#888">Ange</span>
     </div>
-    <div style="font-size:3.5rem;margin-bottom:.75rem;">😇</div>
-    <h1 style="font-size:clamp(2rem,5vw,3.5rem);color:var(--soli2);margin-bottom:.5rem;">Ange</h1>
-    <span class="role-card-tag tag-soli" style="margin-bottom:1rem;display:inline-block;">🌙 Solitaire</span>
-    <p style="font-style:italic;font-size:1.2rem;color:var(--text2);max-width:600px;">&laquo; Gardien ou Déchu — il choisit son destin. &raquo;</p>
+    <div class="role-page-icon">😇</div>
+    <div class="role-page-title" style="color:var(--c-soli);text-shadow:3px 3px 0 #000">Ange</div>
+    <span class="rc-tag soli" style="margin-bottom:6px;display:inline-block">🌙 Solitaire</span>
+    <div class="role-tagline">« Gardien ou Déchu — il choisit son destin. »</div>
   </div>
 </div>
 
 <div class="role-layout">
-
-  <!-- CONTENU -->
   <div>
-
-    <!-- RP -->
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--soli2);">📜 Histoire &amp; Contexte RP</div>
-      <p>Être céleste tombé dans ce monde mortel, l'Ange doit prouver sa valeur. Sera-t-il le protecteur d'une âme ou l'instrument de la justice divine contre un coupable désigné ?</p>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-soli)">📜 Histoire &amp; Contexte</div>
+      <p style="font-family:var(--vt);font-size:1rem;color:var(--text-dim);line-height:1.45">Être céleste tombé dans ce monde mortel, l'Ange doit prouver sa valeur. Protecteur ou exécuteur — le choix lui appartient.</p>
     </div>
-
-    <!-- POUVOIR -->
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--soli2);">⚡ Pouvoir</div>
-      <p style="font-size:1rem;line-height:1.8;">Choisit son rôle au début. GARDIEN : protège un joueur assigné (+3 cœurs de vie). DÉCHU : doit tuer une cible assignée (+3 cœurs + Force si réussi). Reçoit Tranchant IV.</p>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-soli)">⚡ Pouvoir</div>
+      <p style="font-family:var(--vt);font-size:1rem;color:var(--text);line-height:1.5">Choisit son rôle au début. GARDIEN : protège un joueur assigné (+3 cœurs). DÉCHU : doit tuer une cible assignée (+3 cœurs + Force si réussi). Reçoit Tranchant IV.</p>
     </div>
-
-    <!-- COMMANDES -->
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--soli2);">💬 Commandes</div>
-      <ul class='cmd-list'>
-        <li class='cmd-item'>
-          <div class='cmd-code'>/lg gardien</div>
-          <div class='cmd-desc'>Active le mode Gardien — protège un joueur assigné</div>
-        </li>
-        <li class='cmd-item'>
-          <div class='cmd-code'>/lg dechu</div>
-          <div class='cmd-desc'>Active le mode Déchu — doit éliminer la cible assignée</div>
-        </li></ul>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-soli)">💬 Commandes</div>
+      <code class="cmd-line">/lg gardien</code><div class="cmd-desc">Active le mode Gardien</div><code class="cmd-line">/lg dechu</code><div class="cmd-desc">Active le mode Déchu</div>
     </div>
-
-    <!-- CONSEILS -->
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--soli2);">🎯 Stratégie &amp; Conseils</div>
-      <ul class='tip-list'><li class='tip-item'>Gardien : protégez votre assigné et survivez — votre mission est la survie mutuelle.</li><li class='tip-item'>Déchu : identifiez rapidement votre cible et éliminez-la avant qu'elle vous repère.</li><li class='tip-item'>Dans les deux cas, votre Tranchant IV vous donne un avantage au combat.</li><li class='tip-item'>Votre bonus de Force (Déchu) après un kill vous rend redoutable.</li></ul>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-soli)">🎯 Stratégie &amp; Conseils</div>
+      <div class="tip">Gardien : protégez votre assigné et survivez</div><div class="tip">Déchu : identifiez votre cible et éliminez-la vite</div><div class="tip">Tranchant IV donne un avantage en combat dans les deux cas</div><div class="tip">Votre Force (Déchu) après un kill vous rend redoutable</div>
     </div>
-
-    <!-- ALLIÉS / ENNEMIS -->
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--soli2);">🤝 Alliés &amp; Ennemis</div>
-      <p style="font-family:var(--font-head);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--village2);margin-bottom:.5rem;">Alliés naturels</p>
-      <div class='ally-grid'><span class='ally-tag positive'>Personne</span></div>
-      <p style="font-family:var(--font-head);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--loup2);margin:.75rem 0 .5rem;">Ennemis</p>
-      <div class='ally-grid'><span class='ally-tag negative'>Dépend du mode choisi</span></div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-soli)">🤝 Alliés &amp; Ennemis</div>
+      <div style="font-family:var(--px);font-size:.33rem;color:var(--c-village);margin-bottom:4px;letter-spacing:.04em">Alliés naturels</div>
+      <div style="margin-bottom:8px"><span class="ally ally-pos">Personne</span></div>
+      <div style="font-family:var(--px);font-size:.33rem;color:var(--c-loup);margin-bottom:4px;letter-spacing:.04em">Ennemis</div>
+      <div><span class="ally ally-neg">Dépend du mode</span></div>
     </div>
-
   </div>
-
-  <!-- SIDEBAR -->
-  <div class="role-sidebar">
-
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--soli2);">📊 Statistiques</div>
-      <div class='stat-grid'><div class='stat-item'><div class='stat-label'>Difficulté</div><div class='stat-value'>Difficile</div></div><div class='stat-item'><div class='stat-label'>Vie bonus</div><div class='stat-value'>+3 cœurs</div></div><div class='stat-item'><div class='stat-label'>Tranchant</div><div class='stat-value'>IV</div></div><div class='stat-item'><div class='stat-label'>Mode</div><div class='stat-value'>Gardien ou Déchu</div></div></div>
+  <div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-soli)">📊 Statistiques</div>
+      <div class="stats-grid"><div class="mc-stat"><div class="stat-label">Difficulté</div><div class="stat-value">Difficile</div></div><div class="mc-stat"><div class="stat-label">Vie bonus</div><div class="stat-value">+3 cœurs</div></div><div class="mc-stat"><div class="stat-label">Tranchant</div><div class="stat-value">IV</div></div><div class="mc-stat"><div class="stat-label">Mode</div><div class="stat-value">Gardien ou Déchu</div></div></div>
     </div>
-
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--soli2);">🏆 Condition de victoire</div>
-      <p style="color:var(--text2);font-size:.95rem;">Accomplir sa mission (protéger ou tuer la cible assignée).</p>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-soli)">🏆 Victoire</div>
+      <p style="font-family:var(--vt);font-size:.98rem;color:var(--text-dim)">Accomplir sa mission (protéger ou tuer la cible).</p>
     </div>
-
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--soli2);">🏷️ Famille</div>
-      <p style="font-size:1.5rem;margin-bottom:.25rem;">🌙</p>
-      <span class="role-card-tag tag-soli">Solitaire</span>
-      <p style="color:var(--text3);font-size:.85rem;margin-top:.75rem;">
-        Condition de victoire propre.
-      </p>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-soli)">🏷️ Famille</div>
+      <div style="font-size:1.6rem;margin-bottom:4px">🌙</div>
+      <span class="rc-tag soli">Solitaire</span>
+      <p style="font-family:var(--vt);font-size:.9rem;color:#555;margin-top:6px">Condition de victoire propre.</p>
     </div>
-
-    <a href="../roles.html#soli" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:.5rem;">
-      ← Tous les rôles Solitaire
-    </a>
-
+    <a href="../roles.html#soli" class="btn btn-stone" style="width:100%;display:block;text-align:center;margin-top:2px;box-sizing:border-box">← Tous les Solitaires</a>
   </div>
-
 </div>
 
 <footer>
@@ -122,8 +89,7 @@
     <li><a href="../rules.html">Règles</a></li>
     <li><a href="../roles.html">Rôles</a></li>
   </ul>
-  <p>Plugin Minecraft · Paper 1.21 · Développé par <strong style="color:var(--gold);">Enoe_one</strong></p>
+  <div class="footer-copy">Paper 1.21 · Développé par Enoe_one</div>
 </footer>
-
 </body>
 </html>

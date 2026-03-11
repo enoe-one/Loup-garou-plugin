@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Trublion — Loup-Garou UHC</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    .mc-stat{background:#000;border:1px solid #222;padding:5px 7px}
+    .stat-label{font-family:var(--px);font-size:.32rem;color:#555;margin-bottom:2px;letter-spacing:.04em}
+    .stat-value{font-family:var(--vt);font-size:1rem;color:var(--yellow)}
+    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+  </style>
 </head>
 <body>
-
 <nav>
   <div class="nav-inner">
-    <div class="nav-logo"><span class="wolf-icon">🐺</span> Loup-Garou UHC</div>
+    <div class="nav-logo">🐺 Loup-Garou UHC</div>
     <ul class="nav-links">
       <li><a href="../index.html">Accueil</a></li>
       <li><a href="../rules.html">Règles</a></li>
@@ -19,96 +23,63 @@
   </div>
 </nav>
 
-<!-- HERO -->
-<div style="background:var(--bg2);border-bottom:1px solid var(--border);padding:3.5rem 2rem 2.5rem;position:relative;overflow:hidden;">
-  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 10% 50%, var(--binaire2,.08), transparent 70%);"></div>
-  <div style="max-width:1200px;margin:0 auto;position:relative;z-index:1;">
-    <div class="role-breadcrumb">
-      <a href="../roles.html">Rôles</a>
-      <span>›</span>
-      <a href="../roles.html#binaire">⚖️ Binaire</a>
-      <span>›</span>
-      <span style="color:var(--text2);">Trublion</span>
+<div style="background:linear-gradient(135deg,#1f001f 0%,#0d0d0d 60%);border-bottom:2px solid #1a0000;padding:14px 10px 12px">
+  <div style="max-width:1080px;margin:0 auto">
+    <div class="breadcrumb">
+      <a href="../roles.html">Rôles</a><span>›</span>
+      <a href="../roles.html#binaire">⚖️ Binaire</a><span>›</span>
+      <span style="color:#888">Trublion</span>
     </div>
-    <div style="font-size:3.5rem;margin-bottom:.75rem;">🔀</div>
-    <h1 style="font-size:clamp(2rem,5vw,3.5rem);color:var(--binaire2);margin-bottom:.5rem;">Trublion</h1>
-    <span class="role-card-tag tag-binaire" style="margin-bottom:1rem;display:inline-block;">⚖️ Binaire</span>
-    <p style="font-style:italic;font-size:1.2rem;color:var(--text2);max-width:600px;">&laquo; Le chaos est sa seule stratégie. &raquo;</p>
+    <div class="role-page-icon">🔀</div>
+    <div class="role-page-title" style="color:var(--c-binaire);text-shadow:3px 3px 0 #000">Trublion</div>
+    <span class="rc-tag binaire" style="margin-bottom:6px;display:inline-block">⚖️ Binaire</span>
+    <div class="role-tagline">« Le chaos est sa seule stratégie. »</div>
   </div>
 </div>
 
 <div class="role-layout">
-
-  <!-- CONTENU -->
   <div>
-
-    <!-- RP -->
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--binaire2);">📜 Histoire &amp; Contexte RP</div>
-      <p>Farceur cosmique, le Trublion ne cherche pas à gagner dans le sens traditionnel — il cherche à tout bouleverser. Deux joueurs aux rôles échangés, et soudain la partie ne ressemble plus à rien.</p>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-binaire)">📜 Histoire &amp; Contexte</div>
+      <p style="font-family:var(--vt);font-size:1rem;color:var(--text-dim);line-height:1.45">Farceur cosmique, le Trublion ne cherche pas à gagner dans le sens traditionnel — il cherche à tout bouleverser.</p>
     </div>
-
-    <!-- POUVOIR -->
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--binaire2);">⚡ Pouvoir</div>
-      <p style="font-size:1rem;line-height:1.8;">Entre 20 et 25 minutes exactement, peut échanger les rôles de deux joueurs. Les joueurs concernés reçoivent leur nouveau rôle en message privé. Le Trublion gagne avec le Village (sauf config).</p>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-binaire)">⚡ Pouvoir</div>
+      <p style="font-family:var(--vt);font-size:1rem;color:var(--text);line-height:1.5">Entre 20 et 25 minutes exactement : peut échanger les rôles de deux joueurs. Les concernés reçoivent leur nouveau rôle en message privé. Le Trublion gagne avec le Village (sauf config).</p>
     </div>
-
-    <!-- COMMANDES -->
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--binaire2);">💬 Commandes</div>
-      <ul class='cmd-list'>
-        <li class='cmd-item'>
-          <div class='cmd-code'>/lg echanger <joueur1> <joueur2></div>
-          <div class='cmd-desc'>Échange les rôles des deux joueurs (20-25 min uniquement)</div>
-        </li></ul>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-binaire)">💬 Commandes</div>
+      <code class="cmd-line">/lg echanger <joueur1> <joueur2></code><div class="cmd-desc">Échange les rôles (fenêtre 20-25 min uniquement)</div>
     </div>
-
-    <!-- CONSEILS -->
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--binaire2);">🎯 Stratégie &amp; Conseils</div>
-      <ul class='tip-list'><li class='tip-item'>Échangez un Loup avec un rôle Village puissant — un Loup Voyant est dévastateur.</li><li class='tip-item'>Ciblez des joueurs dont vous connaissez le rôle pour un échange optimisé.</li><li class='tip-item'>Agissez le plus vite possible dans la fenêtre de 5 minutes.</li><li class='tip-item'>L'échange crée une confusion immense — exploitez la méfiance qui s'ensuit.</li></ul>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-binaire)">🎯 Stratégie &amp; Conseils</div>
+      <div class="tip">Échangez un Loup avec un rôle Village puissant</div><div class="tip">Ciblez des joueurs dont vous connaissez le rôle</div><div class="tip">Agissez vite dans la fenêtre de 5 minutes</div><div class="tip">L'échange crée confusion — exploitez la méfiance qui suit</div>
     </div>
-
-    <!-- ALLIÉS / ENNEMIS -->
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--binaire2);">🤝 Alliés &amp; Ennemis</div>
-      <p style="font-family:var(--font-head);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--village2);margin-bottom:.5rem;">Alliés naturels</p>
-      <div class='ally-grid'><span class='ally-tag positive'>Village (généralement)</span></div>
-      <p style="font-family:var(--font-head);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--loup2);margin:.75rem 0 .5rem;">Ennemis</p>
-      <div class='ally-grid'><span class='ally-tag negative'>Stabilité de la partie</span></div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-binaire)">🤝 Alliés &amp; Ennemis</div>
+      <div style="font-family:var(--px);font-size:.33rem;color:var(--c-village);margin-bottom:4px;letter-spacing:.04em">Alliés naturels</div>
+      <div style="margin-bottom:8px"><span class="ally ally-pos">Village (généralement)</span></div>
+      <div style="font-family:var(--px);font-size:.33rem;color:var(--c-loup);margin-bottom:4px;letter-spacing:.04em">Ennemis</div>
+      <div><span class="ally ally-neg">Stabilité de la partie</span></div>
     </div>
-
   </div>
-
-  <!-- SIDEBAR -->
-  <div class="role-sidebar">
-
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--binaire2);">📊 Statistiques</div>
-      <div class='stat-grid'><div class='stat-item'><div class='stat-label'>Difficulté</div><div class='stat-value'>Très difficile</div></div><div class='stat-item'><div class='stat-label'>Fenêtre</div><div class='stat-value'>20-25 min</div></div><div class='stat-item'><div class='stat-label'>Utilisations</div><div class='stat-value'>1× par partie</div></div><div class='stat-item'><div class='stat-label'>Impact</div><div class='stat-value'>Peut retourner la partie</div></div></div>
+  <div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-binaire)">📊 Statistiques</div>
+      <div class="stats-grid"><div class="mc-stat"><div class="stat-label">Difficulté</div><div class="stat-value">Très difficile</div></div><div class="mc-stat"><div class="stat-label">Fenêtre</div><div class="stat-value">20-25 min</div></div><div class="mc-stat"><div class="stat-label">Utilisations</div><div class="stat-value">1× par partie</div></div><div class="mc-stat"><div class="stat-label">Impact</div><div class="stat-value">Peut retourner la partie</div></div></div>
     </div>
-
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--binaire2);">🏆 Condition de victoire</div>
-      <p style="color:var(--text2);font-size:.95rem;">Avec le Village (configurable).</p>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-binaire)">🏆 Victoire</div>
+      <p style="font-family:var(--vt);font-size:.98rem;color:var(--text-dim)">Avec le Village (configurable).</p>
     </div>
-
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--binaire2);">🏷️ Famille</div>
-      <p style="font-size:1.5rem;margin-bottom:.25rem;">⚖️</p>
-      <span class="role-card-tag tag-binaire">Binaire</span>
-      <p style="color:var(--text3);font-size:.85rem;margin-top:.75rem;">
-        Gagne avec son camp actuel.
-      </p>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-binaire)">🏷️ Famille</div>
+      <div style="font-size:1.6rem;margin-bottom:4px">⚖️</div>
+      <span class="rc-tag binaire">Binaire</span>
+      <p style="font-family:var(--vt);font-size:.9rem;color:#555;margin-top:6px">Gagne avec son camp actuel.</p>
     </div>
-
-    <a href="../roles.html#binaire" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:.5rem;">
-      ← Tous les rôles Binaire
-    </a>
-
+    <a href="../roles.html#binaire" class="btn btn-stone" style="width:100%;display:block;text-align:center;margin-top:2px;box-sizing:border-box">← Tous les Binaires</a>
   </div>
-
 </div>
 
 <footer>
@@ -118,8 +89,7 @@
     <li><a href="../rules.html">Règles</a></li>
     <li><a href="../roles.html">Rôles</a></li>
   </ul>
-  <p>Plugin Minecraft · Paper 1.21 · Développé par <strong style="color:var(--gold);">Enoe_one</strong></p>
+  <div class="footer-copy">Paper 1.21 · Développé par Enoe_one</div>
 </footer>
-
 </body>
 </html>

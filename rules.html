@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Règles — Loup-Garou UHC</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <nav>
   <div class="nav-inner">
-    <div class="nav-logo"><span class="wolf-icon">🐺</span> Loup-Garou UHC</div>
+    <div class="nav-logo">🐺 Loup-Garou UHC</div>
     <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
       <li><a href="rules.html" class="active">Règles</a></li>
@@ -19,226 +17,164 @@
   </div>
 </nav>
 
-<!-- HERO -->
-<div style="background:var(--bg2);border-bottom:1px solid var(--border);padding:4rem 2rem 3rem;">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div class="hero-eyebrow" style="justify-content:flex-start;margin-bottom:.75rem;">Règles du jeu</div>
-    <h1 style="font-size:clamp(2rem,5vw,3.5rem);margin-bottom:.75rem;">Le Code de la Nuit</h1>
-    <p style="color:var(--text2);max-width:600px;font-size:1.05rem;">Toutes les règles, le déroulement et les mécaniques du plugin Loup-Garou UHC.</p>
+<div style="background:linear-gradient(180deg,#1a0000 0%,#0d0d0d 100%);border-bottom:2px solid #1a0000;padding:16px 10px 14px">
+  <div style="max-width:1080px;margin:0 auto">
+    <div style="font-family:var(--px);font-size:.35rem;color:var(--blood2);letter-spacing:.25em;margin-bottom:7px">📜 Règles du jeu</div>
+    <div style="font-family:var(--px);font-size:clamp(.65rem,2vw,1.1rem);color:var(--moon);text-shadow:3px 3px 0 var(--blood),4px 4px 0 #000;margin-bottom:5px">Le Code de la Nuit</div>
+    <div style="font-family:var(--vt);font-size:1.1rem;color:#777">Toutes les règles, mécaniques et le déroulement du plugin Loup-Garou UHC.</div>
   </div>
 </div>
 
-<div style="max-width:1200px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1fr 300px;gap:3rem;">
+<div style="max-width:1080px;margin:0 auto;padding:12px 10px;display:grid;grid-template-columns:1fr 250px;gap:6px">
 
-  <!-- CONTENU PRINCIPAL -->
-  <div>
+<!-- COLONNE PRINCIPALE -->
+<div>
 
-    <!-- UHC -->
-    <div class="role-block" style="margin-bottom:2rem;">
-      <div class="role-block-title">🩸 Mode Ultra Hardcore</div>
-      <p>En mode UHC, la <strong>régénération naturelle de vie est désactivée</strong>. Vous ne récupérez de la vie que via :</p>
-      <ul style="margin:1rem 0 0 1.25rem;color:var(--text2);line-height:2;">
-        <li>Les <strong style="color:var(--white);">pommes dorées</strong></li>
-        <li>Les <strong style="color:var(--white);">potions de soin</strong></li>
-        <li>La <strong style="color:var(--white);">Sorcière</strong> (potion de vie)</li>
-        <li>Certains <strong style="color:var(--white);">pouvoirs de rôles</strong></li>
-      </ul>
-      <p style="margin-top:1rem;color:var(--text2);">Chaque demi-cœur compte. Les confrontations sont risquées. Gérez vos ressources.</p>
+<div class="block" style="margin-bottom:4px">
+  <div class="block-title" style="color:var(--c-loup)">🩸 Mode Ultra Hardcore</div>
+  <div style="font-family:var(--vt);font-size:1rem;color:var(--text-dim);line-height:1.4">
+    La régénération naturelle de vie est <span style="color:var(--c-loup)">totalement désactivée</span>. Vous ne récupérez de la vie qu'avec des pommes dorées, potions de soin, ou certains pouvoirs de rôles. En UHC, chaque demi-cœur perdu est <span style="color:var(--moon)">définitif</span>. Gérez vos ressources, évitez les combats inutiles.
+  </div>
+</div>
+
+<div class="block" style="margin-bottom:4px">
+  <div class="block-title" style="color:var(--moon)">⏱️ Déroulement d'une Partie</div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-time">Avant le début</div>
+      <div class="tl-title">La Cage</div>
+      <div class="tl-desc">Tous les joueurs apparaissent dans une cage en bedrock (0, 220, 0). L'Owner configure les rôles via <code>/lgsetting</code> puis lance la partie.</div>
     </div>
-
-    <!-- TIMELINE -->
-    <h2 style="font-family:var(--font-head);font-size:1.4rem;color:var(--white);margin-bottom:1.5rem;">⏱️ Déroulement d'une Partie</h2>
-
-    <div class="timeline">
-
-      <div class="timeline-item">
-        <div class="timeline-time">Avant le début</div>
-        <div class="timeline-title">La Cage</div>
-        <div class="timeline-desc">Tous les joueurs apparaissent dans une cage en bedrock au centre de la carte (0, 220, 0). Personne ne peut se blesser. L'Owner configure les rôles via <code style="color:#74b9ff;background:var(--bg);padding:.1rem .4rem;border-radius:3px;">/lgsetting</code> et lance la partie.</div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-time">Lancement</div>
-        <div class="timeline-title">Compte à rebours</div>
-        <div class="timeline-desc">Tous les joueurs reçoivent leur <strong>rôle secret en message privé</strong>. Une <strong>cécité</strong> s'applique pendant 6 secondes avec un compte à rebours 5-4-3-2-1 affiché à l'écran. À GO, tout le monde est téléporté sur la carte.</div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-time">0 → 20 min</div>
-        <div class="timeline-title">Exploration — PVP désactivé</div>
-        <div class="timeline-desc">Liberté totale pour miner, construire et explorer. Le PVP est <strong>interdit</strong>. Le <strong>Nether et l'End sont bloqués</strong>. Chaque joueur peut miner <strong>maximum 25 diamants</strong> — au-delà, les diamants se convertissent automatiquement en lingots d'or. Les grottes droppent <strong>×1.8 de minerais</strong>.</div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-time">20 min</div>
-        <div class="timeline-title">Révélation des rôles — PVP activé</div>
-        <div class="timeline-desc">Les rôles sont révélés en message privé. Le <strong>PVP s'active</strong>. Un titre s'affiche à l'écran pour tous les joueurs. Le chat général est désactivé pendant la partie — seuls les Owners et Admins peuvent écrire.</div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-time">25 min</div>
-        <div class="timeline-title">Annonce du Couple</div>
-        <div class="timeline-desc">Si <strong>Cupidon</strong> a lié deux joueurs (ou si le couple aléatoire est activé), le couple est annoncé publiquement. Les amoureux gagnent ensemble — si l'un meurt, l'autre meurt immédiatement de chagrin.</div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-time">Avant 30 min</div>
-        <div class="timeline-title">Zone de Résurrection</div>
-        <div class="timeline-desc">Les résurrections sont <strong>autorisées</strong>. À la mort, le joueur est téléporté <strong>à la surface</strong> au-dessus de l'endroit où il est mort. Son <strong>inventaire est conservé</strong> — rien ne tombe. Il passe en mode spectateur.</div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-time">Après 30 min</div>
-        <div class="timeline-title">Morts Définitives</div>
-        <div class="timeline-desc">Plus aucune résurrection. À la mort, le joueur est téléporté dans la <strong>cage en bedrock</strong> et reste en spectateur. Son inventaire est toujours conservé.</div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-time">Chaque épisode (~20 min)</div>
-        <div class="timeline-title">Vote du Village</div>
-        <div class="timeline-desc">Le village peut voter pour éliminer un suspect via <code style="color:#74b9ff;background:var(--bg);padding:.1rem .4rem;border-radius:3px;">/lg voter &lt;joueur&gt;</code>. Le joueur le plus voté perd <strong>3 cœurs</strong>, son rôle est révélé et il reçoit <strong>Faiblesse 5 minutes</strong>. En cas d'égalité, le Maire décide.</div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-time">1 heure</div>
-        <div class="timeline-title">Le Loup Endormi s'éveille</div>
-        <div class="timeline-desc">Le <strong>Loup Endormi</strong> reçoit enfin la liste de ses alliés Loups. Avant cela, il joue comme un Villageois pour infiltrer la confiance du village.</div>
-      </div>
-
+    <div class="tl-item">
+      <div class="tl-time">Lancement</div>
+      <div class="tl-title">Rôle secret + Cécité</div>
+      <div class="tl-desc">Chaque joueur reçoit son rôle en message privé. Cécité appliquée, compte à rebours 5-4-3-2-1 à l'écran. À GO, téléportation sur la carte.</div>
     </div>
-
-    <div class="separator"></div>
-
-    <!-- MORT -->
-    <h2 style="font-family:var(--font-head);font-size:1.4rem;color:var(--white);margin-bottom:1.25rem;">☠️ Mécanique de Mort</h2>
-    <div class="role-block" style="margin-bottom:1.25rem;">
-      <div class="role-block-title">Avant 30 minutes</div>
-      <ul style="list-style:none;color:var(--text2);">
-        <li style="padding:.5rem 0;border-bottom:1px solid var(--border);">➜ Téléporté à la <strong>surface</strong> au-dessus de la position de mort</li>
-        <li style="padding:.5rem 0;border-bottom:1px solid var(--border);">➜ <strong>Inventaire conservé</strong> — aucun drop</li>
-        <li style="padding:.5rem 0;border-bottom:1px solid var(--border);">➜ Mode <strong>spectateur</strong></li>
-        <li style="padding:.5rem 0;">➜ Résurrection possible par la Sorcière, l'Infecté, l'Ancien, ou un Admin</li>
-      </ul>
+    <div class="tl-item">
+      <div class="tl-time">0 → 20 min</div>
+      <div class="tl-title">Exploration — PVP désactivé</div>
+      <div class="tl-desc">Liberté totale. PVP interdit. Nether et End bloqués. Max <span style="color:var(--yellow)">25 diamants</span> minés (surplus → lingots d'or). Grottes : drop <span style="color:var(--yellow)">×1.8</span>.</div>
     </div>
-    <div class="role-block" style="margin-bottom:2rem;">
-      <div class="role-block-title">Après 30 minutes</div>
-      <ul style="list-style:none;color:var(--text2);">
-        <li style="padding:.5rem 0;border-bottom:1px solid var(--border);">➜ Téléporté dans la <strong>cage en bedrock</strong></li>
-        <li style="padding:.5rem 0;border-bottom:1px solid var(--border);">➜ <strong>Inventaire conservé</strong> — aucun drop</li>
-        <li style="padding:.5rem 0;">➜ Mode <strong>spectateur</strong> définitif — plus de résurrection</li>
-      </ul>
+    <div class="tl-item">
+      <div class="tl-time">20 min</div>
+      <div class="tl-title">Révélation + PVP activé</div>
+      <div class="tl-desc">Les rôles sont révélés en privé. Le <span style="color:var(--c-loup)">PVP s'active</span>. Titre à l'écran pour tous. Le chat général reste désactivé.</div>
     </div>
-
-    <div class="separator"></div>
-
-    <!-- VOTE -->
-    <h2 style="font-family:var(--font-head);font-size:1.4rem;color:var(--white);margin-bottom:1.25rem;">⚖️ Le Vote</h2>
-    <p style="color:var(--text2);margin-bottom:1.25rem;">À la fin de chaque épisode, le village peut voter pour éliminer un suspect. Le vote pèse selon les rôles :</p>
-
-    <div class="table-wrap" style="margin-bottom:1.5rem;">
-      <table>
-        <thead>
-          <tr>
-            <th>Rôle</th>
-            <th>Poids du vote</th>
-            <th>Particularité</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Joueur normal</td><td>×1</td><td>—</td></tr>
-          <tr><td>Maire</td><td>×2</td><td>Décisif en cas d'égalité</td></tr>
-          <tr><td>Citoyen</td><td>×2</td><td>Sauf en cas d'égalité</td></tr>
-          <tr><td>Grand Méchant Loup</td><td>×2</td><td>—</td></tr>
-          <tr><td>Inconnu</td><td>×0</td><td>Ne peut pas voter</td></tr>
-        </tbody>
-      </table>
+    <div class="tl-item">
+      <div class="tl-time">25 min</div>
+      <div class="tl-title">Annonce du Couple</div>
+      <div class="tl-desc">Si Cupidon a lié deux joueurs, le couple est annoncé publiquement. Les amoureux gagnent ensemble — et meurent ensemble.</div>
     </div>
-
-    <div class="role-block">
-      <div class="role-block-title">Conséquences du vote</div>
-      <p style="color:var(--text2);">Le joueur le plus voté reçoit :</p>
-      <ul style="margin:.75rem 0 0 1.25rem;color:var(--text2);line-height:2.2;">
-        <li><strong style="color:var(--loup2);">−3 cœurs</strong> de vie</li>
-        <li><strong style="color:var(--white);">Rôle révélé</strong> publiquement</li>
-        <li><strong style="color:var(--soli2);">Faiblesse 5 minutes</strong></li>
-        <li>Si vie tombe à 0 : mort effective (sauf Idiot du Village)</li>
-      </ul>
+    <div class="tl-item">
+      <div class="tl-time">Avant 30 min</div>
+      <div class="tl-title">Résurrections autorisées</div>
+      <div class="tl-desc">À la mort : TP à la surface, <span style="color:var(--c-village)">inventaire conservé</span>, mode spectateur. Résurrection possible via Sorcière, Admin…</div>
     </div>
-
-    <div class="separator"></div>
-
-    <!-- ENCHANTEMENTS -->
-    <h2 style="font-family:var(--font-head);font-size:1.4rem;color:var(--white);margin-bottom:1.25rem;">⚗️ Limites d'Enchantements</h2>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Enchantement</th><th>Limite</th><th>Exception</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Tranchant</td><td>III max</td><td>Solitaires et Assassin : IV</td></tr>
-          <tr><td>Protection</td><td>III max</td><td>Solitaires et Assassin : IV</td></tr>
-          <tr><td>Puissance</td><td>III max</td><td>Solitaires et Assassin : IV</td></tr>
-          <tr><td>Recul</td><td style="color:var(--loup2);">Interdit</td><td>—</td></tr>
-          <tr><td>Frappe</td><td style="color:var(--loup2);">Interdit</td><td>—</td></tr>
-          <tr><td>Raccommodage</td><td style="color:var(--loup2);">Interdit</td><td>—</td></tr>
-        </tbody>
-      </table>
+    <div class="tl-item">
+      <div class="tl-time">Après 30 min</div>
+      <div class="tl-title">Morts définitives</div>
+      <div class="tl-desc">À la mort : TP dans la cage en bedrock, spectateur définitif. Inventaire toujours conservé. Aucune résurrection possible.</div>
     </div>
+    <div class="tl-item">
+      <div class="tl-time">Chaque épisode (~20 min)</div>
+      <div class="tl-title">Vote du Village</div>
+      <div class="tl-desc">Vote via <code>/lg voter &lt;joueur&gt;</code>. Le plus voté perd <span style="color:var(--c-loup)">3 cœurs</span>, rôle révélé, Faiblesse 5 min. Égalité : le Maire décide.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">1 heure</div>
+      <div class="tl-title">Le Loup Endormi s'éveille</div>
+      <div class="tl-desc">Le Loup Endormi reçoit enfin la liste de ses alliés. Avant, il jouait sincèrement comme Villageois.</div>
+    </div>
+  </div>
+</div>
 
+<div class="block" style="margin-bottom:4px">
+  <div class="block-title" style="color:var(--moon)">⚖️ Le Vote</div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rôle</th><th>Poids du vote</th><th>Particularité</th></tr></thead>
+      <tbody>
+        <tr><td>Joueur normal</td><td>×1</td><td>—</td></tr>
+        <tr><td>Maire</td><td style="color:var(--yellow)">×2</td><td>Décide en cas d'égalité</td></tr>
+        <tr><td>Citoyen</td><td style="color:var(--yellow)">×2</td><td>Sauf en cas d'égalité</td></tr>
+        <tr><td>Grand Méchant Loup</td><td style="color:var(--yellow)">×2</td><td>—</td></tr>
+        <tr><td>Inconnu</td><td style="color:var(--c-loup)">×0</td><td>Ne peut pas voter</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="sep"></div>
+  <div style="font-family:var(--px);font-size:.38rem;color:var(--text-dim);margin-bottom:5px;letter-spacing:.03em">Conséquences pour le plus voté :</div>
+  <div class="tip">−3 cœurs de vie <span style="color:var(--c-loup)">(peut être fatal)</span></div>
+  <div class="tip">Rôle révélé <span style="color:var(--moon)">publiquement</span></div>
+  <div class="tip">Faiblesse pendant <span style="color:var(--yellow)">5 minutes</span></div>
+  <div class="tip">Exception : l'Idiot du Village ressuscite si c'est son vote</div>
+</div>
+
+<div class="block">
+  <div class="block-title" style="color:var(--moon)">⚗️ Enchantements Limités</div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Enchantement</th><th>Limite</th><th>Exception</th></tr></thead>
+      <tbody>
+        <tr><td>Tranchant</td><td>III max</td><td>Solitaires → IV</td></tr>
+        <tr><td>Protection</td><td>III max</td><td>Solitaires → IV</td></tr>
+        <tr><td>Puissance</td><td>III max</td><td>Solitaires → IV</td></tr>
+        <tr><td>Recul</td><td style="color:var(--c-loup)">Interdit</td><td>—</td></tr>
+        <tr><td>Frappe</td><td style="color:var(--c-loup)">Interdit</td><td>—</td></tr>
+        <tr><td>Raccommodage</td><td style="color:var(--c-loup)">Interdit</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</div><!-- fin colonne principale -->
+
+<!-- SIDEBAR -->
+<div style="position:sticky;top:50px;align-self:start">
+
+  <div class="block" style="margin-bottom:4px">
+    <div class="block-title" style="color:var(--blood2)">📋 Résumé</div>
+    <div class="tip">Vie : <span style="color:var(--c-loup)">pas de régénération</span></div>
+    <div class="tip">PVP après <span style="color:var(--yellow)">20 min</span></div>
+    <div class="tip">Max <span style="color:var(--yellow)">25 diamants</span> minés</div>
+    <div class="tip">Nether &amp; End <span style="color:var(--c-loup)">bloqués</span></div>
+    <div class="tip">Résurrections avant <span style="color:var(--yellow)">30 min</span></div>
+    <div class="tip">Grottes drop <span style="color:var(--yellow)">×1.8</span></div>
+    <div class="tip">Stuff <span style="color:var(--c-village)">conservé</span> à la mort</div>
+    <div class="tip">Chat désactivé en partie</div>
   </div>
 
-  <!-- SIDEBAR -->
-  <div>
-    <div style="position:sticky;top:80px;">
-
-      <div class="role-block" style="margin-bottom:1rem;">
-        <div class="role-block-title">📋 Résumé Rapide</div>
-        <ul class="tip-list">
-          <li class="tip-item">Vie ne se régénère <strong>pas</strong></li>
-          <li class="tip-item">PVP actif après <strong>20 min</strong></li>
-          <li class="tip-item">Max <strong>25 diamants</strong> minés</li>
-          <li class="tip-item">Nether et End <strong>bloqués</strong></li>
-          <li class="tip-item">Résurrections avant <strong>30 min</strong></li>
-          <li class="tip-item">Grottes <strong>×1.8</strong> minerais</li>
-          <li class="tip-item">Stuff <strong>conservé</strong> à la mort</li>
-          <li class="tip-item">Chat désactivé en jeu</li>
-        </ul>
-      </div>
-
-      <div class="role-block" style="margin-bottom:1rem;">
-        <div class="role-block-title">🏆 Victoires</div>
-        <div style="margin-bottom:.75rem;">
-          <span class="role-card-tag tag-village">Village</span>
-          <p style="font-size:.85rem;color:var(--text2);margin-top:.3rem;">Éliminer tous les Loups et Solitaires hostiles.</p>
-        </div>
-        <div style="margin-bottom:.75rem;">
-          <span class="role-card-tag tag-loup">Loups</span>
-          <p style="font-size:.85rem;color:var(--text2);margin-top:.3rem;">Être en nombre ≥ aux Villageois restants.</p>
-        </div>
-        <div style="margin-bottom:.75rem;">
-          <span class="role-card-tag tag-soli">Solitaires</span>
-          <p style="font-size:.85rem;color:var(--text2);margin-top:.3rem;">Chacun sa condition propre.</p>
-        </div>
-        <div>
-          <span class="role-card-tag tag-binaire">Binaires</span>
-          <p style="font-size:.85rem;color:var(--text2);margin-top:.3rem;">Gagnent avec leur camp actuel.</p>
-        </div>
-      </div>
-
-      <div class="role-block">
-        <div class="role-block-title">⚡ Événements</div>
-        <ul class="tip-list">
-          <li class="tip-item"><strong>Nuit Sanglante</strong> — Morts révélées en fin de nuit</li>
-          <li class="tip-item"><strong>Trublionage</strong> — Échange de 2 rôles au 2e tour</li>
-          <li class="tip-item"><strong>Élection</strong> — Le Maire est révélé</li>
-          <li class="tip-item"><strong>Exposé</strong> — Un rôle caché parmi 3-4 joueurs</li>
-        </ul>
-      </div>
-
+  <div class="block" style="margin-bottom:4px">
+    <div class="block-title" style="color:var(--blood2)">🏆 Victoires</div>
+    <div style="padding:4px 0;border-bottom:1px solid #1a1a1a">
+      <span class="rc-tag village">Village</span>
+      <div style="font-family:var(--vt);font-size:.93rem;color:var(--text-dim);margin-top:3px">Éliminer tous les Loups et Solitaires hostiles.</div>
     </div>
+    <div style="padding:4px 0;border-bottom:1px solid #1a1a1a">
+      <span class="rc-tag loup">Loups</span>
+      <div style="font-family:var(--vt);font-size:.93rem;color:var(--text-dim);margin-top:3px">Égaler ou dépasser les Villageois.</div>
+    </div>
+    <div style="padding:4px 0;border-bottom:1px solid #1a1a1a">
+      <span class="rc-tag soli">Solitaires</span>
+      <div style="font-family:var(--vt);font-size:.93rem;color:var(--text-dim);margin-top:3px">Chacun sa condition propre.</div>
+    </div>
+    <div style="padding:4px 0">
+      <span class="rc-tag binaire">Binaires</span>
+      <div style="font-family:var(--vt);font-size:.93rem;color:var(--text-dim);margin-top:3px">Gagnent avec leur camp actuel.</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-title" style="color:var(--blood2)">⚡ Événements</div>
+    <div class="tip">Nuit Sanglante — morts révélées</div>
+    <div class="tip">Trublionage — 2 rôles échangés</div>
+    <div class="tip">Élection — Maire révélé</div>
+    <div class="tip">Exposé — rôle caché parmi 3-4</div>
   </div>
 
 </div>
+
+</div><!-- fin grid -->
 
 <footer>
   <div class="footer-logo">🐺 Loup-Garou UHC</div>
@@ -247,8 +183,7 @@
     <li><a href="rules.html">Règles</a></li>
     <li><a href="roles.html">Rôles</a></li>
   </ul>
-  <p>Plugin Minecraft · Paper 1.21 · Développé par <strong style="color:var(--gold);">Enoe_one</strong></p>
+  <div class="footer-copy">Paper 1.21 · Développé par Enoe_one</div>
 </footer>
-
 </body>
 </html>

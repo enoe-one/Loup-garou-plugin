@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Inconnu — Loup-Garou UHC</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    .mc-stat{background:#000;border:1px solid #222;padding:5px 7px}
+    .stat-label{font-family:var(--px);font-size:.32rem;color:#555;margin-bottom:2px;letter-spacing:.04em}
+    .stat-value{font-family:var(--vt);font-size:1rem;color:var(--yellow)}
+    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+  </style>
 </head>
 <body>
-
 <nav>
   <div class="nav-inner">
-    <div class="nav-logo"><span class="wolf-icon">🐺</span> Loup-Garou UHC</div>
+    <div class="nav-logo">🐺 Loup-Garou UHC</div>
     <ul class="nav-links">
       <li><a href="../index.html">Accueil</a></li>
       <li><a href="../rules.html">Règles</a></li>
@@ -19,92 +23,63 @@
   </div>
 </nav>
 
-<!-- HERO -->
-<div style="background:var(--bg2);border-bottom:1px solid var(--border);padding:3.5rem 2rem 2.5rem;position:relative;overflow:hidden;">
-  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 10% 50%, var(--soli2,.08), transparent 70%);"></div>
-  <div style="max-width:1200px;margin:0 auto;position:relative;z-index:1;">
-    <div class="role-breadcrumb">
-      <a href="../roles.html">Rôles</a>
-      <span>›</span>
-      <a href="../roles.html#soli">🌙 Solitaire</a>
-      <span>›</span>
-      <span style="color:var(--text2);">Inconnu</span>
+<div style="background:linear-gradient(135deg,#1f1400 0%,#0d0d0d 60%);border-bottom:2px solid #1a0000;padding:14px 10px 12px">
+  <div style="max-width:1080px;margin:0 auto">
+    <div class="breadcrumb">
+      <a href="../roles.html">Rôles</a><span>›</span>
+      <a href="../roles.html#soli">🌙 Solitaire</a><span>›</span>
+      <span style="color:#888">Inconnu</span>
     </div>
-    <div style="font-size:3.5rem;margin-bottom:.75rem;">❓</div>
-    <h1 style="font-size:clamp(2rem,5vw,3.5rem);color:var(--soli2);margin-bottom:.5rem;">Inconnu</h1>
-    <span class="role-card-tag tag-soli" style="margin-bottom:1rem;display:inline-block;">🌙 Solitaire</span>
-    <p style="font-style:italic;font-size:1.2rem;color:var(--text2);max-width:600px;">&laquo; Il est partout et nulle part à la fois. &raquo;</p>
+    <div class="role-page-icon">❓</div>
+    <div class="role-page-title" style="color:var(--c-soli);text-shadow:3px 3px 0 #000">Inconnu</div>
+    <span class="rc-tag soli" style="margin-bottom:6px;display:inline-block">🌙 Solitaire</span>
+    <div class="role-tagline">« Village pour les uns. Loup pour les autres. »</div>
   </div>
 </div>
 
 <div class="role-layout">
-
-  <!-- CONTENU -->
   <div>
-
-    <!-- RP -->
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--soli2);">📜 Histoire &amp; Contexte RP</div>
-      <p>Être d'une nature ambiguë, l'Inconnu déroute les outils de détection les plus sophistiqués. Village pour les Voyants, Loup pour les Loups — il sème la confusion dans les deux camps à la fois.</p>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-soli)">📜 Histoire &amp; Contexte</div>
+      <p style="font-family:var(--vt);font-size:1rem;color:var(--text-dim);line-height:1.45">Être d'une nature ambiguë, l'Inconnu déroute les outils de détection. Village pour les Voyants, Loup pour les Loups — il sème la confusion dans les deux camps.</p>
     </div>
-
-    <!-- POUVOIR -->
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--soli2);">⚡ Pouvoir</div>
-      <p style="font-size:1rem;line-height:1.8;">Vu comme Village par le Voyant. Vu comme Loup par les Loups. Ne peut pas voter. Voit les particules colorées révélatrices de chaque famille la nuit. Reçoit Tranchant IV.</p>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-soli)">⚡ Pouvoir</div>
+      <p style="font-family:var(--vt);font-size:1rem;color:var(--text);line-height:1.5">Vu comme Village par le Voyant. Vu comme Loup par les Loups. Ne peut pas voter. Voit les particules colorées révélatrices la nuit. Reçoit Tranchant IV.</p>
     </div>
-
-    <!-- COMMANDES -->
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--soli2);">💬 Commandes</div>
-      <p style='color:var(--text3);font-style:italic;font-size:.9rem;'>Aucune commande — pouvoir automatique.</p>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-soli)">💬 Commandes</div>
+      <div class="no-cmd">Aucune commande — pouvoir automatique.</div>
     </div>
-
-    <!-- CONSEILS -->
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--soli2);">🎯 Stratégie &amp; Conseils</div>
-      <ul class='tip-list'><li class='tip-item'>Les Loups vous considèrent comme un ennemi — méfiez-vous de leurs attaques.</li><li class='tip-item'>Le Voyant vous protège en pensant que vous êtes Village.</li><li class='tip-item'>Observez les particules la nuit pour cartographier les rôles.</li><li class='tip-item'>Votre incapacité à voter n'est pas un désavantage si vous influencez les autres.</li></ul>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-soli)">🎯 Stratégie &amp; Conseils</div>
+      <div class="tip">Les Loups vous voient comme ennemi — méfiez-vous</div><div class="tip">Le Voyant vous protège en pensant que vous êtes Village</div><div class="tip">Observez les particules pour cartographier les rôles</div><div class="tip">Votre incapacité à voter peut être compensée par l'influence</div>
     </div>
-
-    <!-- ALLIÉS / ENNEMIS -->
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--soli2);">🤝 Alliés &amp; Ennemis</div>
-      <p style="font-family:var(--font-head);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--village2);margin-bottom:.5rem;">Alliés naturels</p>
-      <div class='ally-grid'><span class='ally-tag positive'>Personne</span></div>
-      <p style="font-family:var(--font-head);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--loup2);margin:.75rem 0 .5rem;">Ennemis</p>
-      <div class='ally-grid'><span class='ally-tag negative'>Tous les Loups (qui vous voient comme ennemi)</span></div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-soli)">🤝 Alliés &amp; Ennemis</div>
+      <div style="font-family:var(--px);font-size:.33rem;color:var(--c-village);margin-bottom:4px;letter-spacing:.04em">Alliés naturels</div>
+      <div style="margin-bottom:8px"><span class="ally ally-pos">Personne</span></div>
+      <div style="font-family:var(--px);font-size:.33rem;color:var(--c-loup);margin-bottom:4px;letter-spacing:.04em">Ennemis</div>
+      <div><span class="ally ally-neg">Tous les Loups</span></div>
     </div>
-
   </div>
-
-  <!-- SIDEBAR -->
-  <div class="role-sidebar">
-
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--soli2);">📊 Statistiques</div>
-      <div class='stat-grid'><div class='stat-item'><div class='stat-label'>Difficulté</div><div class='stat-value'>Très difficile</div></div><div class='stat-item'><div class='stat-label'>Vue Voyant</div><div class='stat-value'>Village</div></div><div class='stat-item'><div class='stat-label'>Vue Loups</div><div class='stat-value'>Loup</div></div><div class='stat-item'><div class='stat-label'>Vote</div><div class='stat-value'>Impossible</div></div><div class='stat-item'><div class='stat-label'>Tranchant</div><div class='stat-value'>IV</div></div></div>
+  <div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-soli)">📊 Statistiques</div>
+      <div class="stats-grid"><div class="mc-stat"><div class="stat-label">Difficulté</div><div class="stat-value">Très difficile</div></div><div class="mc-stat"><div class="stat-label">Vue Voyant</div><div class="stat-value">Village</div></div><div class="mc-stat"><div class="stat-label">Vue Loups</div><div class="stat-value">Loup</div></div><div class="mc-stat"><div class="stat-label">Vote</div><div class="stat-value">Impossible</div></div></div>
     </div>
-
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--soli2);">🏆 Condition de victoire</div>
-      <p style="color:var(--text2);font-size:.95rem;">Condition de victoire propre à l'Inconnu.</p>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-soli)">🏆 Victoire</div>
+      <p style="font-family:var(--vt);font-size:.98rem;color:var(--text-dim)">Condition propre à l'Inconnu.</p>
     </div>
-
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--soli2);">🏷️ Famille</div>
-      <p style="font-size:1.5rem;margin-bottom:.25rem;">🌙</p>
-      <span class="role-card-tag tag-soli">Solitaire</span>
-      <p style="color:var(--text3);font-size:.85rem;margin-top:.75rem;">
-        Condition de victoire propre.
-      </p>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-soli)">🏷️ Famille</div>
+      <div style="font-size:1.6rem;margin-bottom:4px">🌙</div>
+      <span class="rc-tag soli">Solitaire</span>
+      <p style="font-family:var(--vt);font-size:.9rem;color:#555;margin-top:6px">Condition de victoire propre.</p>
     </div>
-
-    <a href="../roles.html#soli" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:.5rem;">
-      ← Tous les rôles Solitaire
-    </a>
-
+    <a href="../roles.html#soli" class="btn btn-stone" style="width:100%;display:block;text-align:center;margin-top:2px;box-sizing:border-box">← Tous les Solitaires</a>
   </div>
-
 </div>
 
 <footer>
@@ -114,8 +89,7 @@
     <li><a href="../rules.html">Règles</a></li>
     <li><a href="../roles.html">Rôles</a></li>
   </ul>
-  <p>Plugin Minecraft · Paper 1.21 · Développé par <strong style="color:var(--gold);">Enoe_one</strong></p>
+  <div class="footer-copy">Paper 1.21 · Développé par Enoe_one</div>
 </footer>
-
 </body>
 </html>

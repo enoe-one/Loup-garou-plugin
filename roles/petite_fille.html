@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Petite Fille — Loup-Garou UHC</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    .mc-stat{background:#000;border:1px solid #222;padding:5px 7px}
+    .stat-label{font-family:var(--px);font-size:.32rem;color:#555;margin-bottom:2px;letter-spacing:.04em}
+    .stat-value{font-family:var(--vt);font-size:1rem;color:var(--yellow)}
+    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+  </style>
 </head>
 <body>
-
 <nav>
   <div class="nav-inner">
-    <div class="nav-logo"><span class="wolf-icon">🐺</span> Loup-Garou UHC</div>
+    <div class="nav-logo">🐺 Loup-Garou UHC</div>
     <ul class="nav-links">
       <li><a href="../index.html">Accueil</a></li>
       <li><a href="../rules.html">Règles</a></li>
@@ -19,92 +23,63 @@
   </div>
 </nav>
 
-<!-- HERO -->
-<div style="background:var(--bg2);border-bottom:1px solid var(--border);padding:3.5rem 2rem 2.5rem;position:relative;overflow:hidden;">
-  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 10% 50%, var(--village2,.08), transparent 70%);"></div>
-  <div style="max-width:1200px;margin:0 auto;position:relative;z-index:1;">
-    <div class="role-breadcrumb">
-      <a href="../roles.html">Rôles</a>
-      <span>›</span>
-      <a href="../roles.html#village">🌿 Village</a>
-      <span>›</span>
-      <span style="color:var(--text2);">Petite Fille</span>
+<div style="background:linear-gradient(135deg,#0a1f0a 0%,#0d0d0d 60%);border-bottom:2px solid #1a0000;padding:14px 10px 12px">
+  <div style="max-width:1080px;margin:0 auto">
+    <div class="breadcrumb">
+      <a href="../roles.html">Rôles</a><span>›</span>
+      <a href="../roles.html#village">🌿 Village</a><span>›</span>
+      <span style="color:#888">Petite Fille</span>
     </div>
-    <div style="font-size:3.5rem;margin-bottom:.75rem;">🌸</div>
-    <h1 style="font-size:clamp(2rem,5vw,3.5rem);color:var(--village2);margin-bottom:.5rem;">Petite Fille</h1>
-    <span class="role-card-tag tag-village" style="margin-bottom:1rem;display:inline-block;">🌿 Village</span>
-    <p style="font-style:italic;font-size:1.2rem;color:var(--text2);max-width:600px;">&laquo; Elle observe dans l'ombre. Ils ne la voient pas. &raquo;</p>
+    <div class="role-page-icon">🌸</div>
+    <div class="role-page-title" style="color:var(--c-village);text-shadow:3px 3px 0 #000">Petite Fille</div>
+    <span class="rc-tag village" style="margin-bottom:6px;display:inline-block">🌿 Village</span>
+    <div class="role-tagline">« Elle voit tout. Ils ne la voient pas. »</div>
   </div>
 </div>
 
 <div class="role-layout">
-
-  <!-- CONTENU -->
   <div>
-
-    <!-- RP -->
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--village2);">📜 Histoire &amp; Contexte RP</div>
-      <p>Innocente en apparence, cette petite fille a développé un instinct surnaturel pour détecter les créatures de la nuit. Elle se faufile partout sans être vue — tant qu'elle n'a pas d'armure.</p>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">📜 Histoire &amp; Contexte</div>
+      <p style="font-family:var(--vt);font-size:1rem;color:var(--text-dim);line-height:1.45">Innocente en apparence, cette petite fille a développé un instinct surnaturel. Elle se faufile partout sans être vue — tant qu'elle ne porte pas d'armure.</p>
     </div>
-
-    <!-- POUVOIR -->
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--village2);">⚡ Pouvoir</div>
-      <p style="font-size:1rem;line-height:1.8;">Voit le chat privé des Loups-Garous. La nuit, sans armure équipée, elle devient invisible. Voit les particules colorées révélatrices des rôles cachés. Si découverte, elle devient cible prioritaire.</p>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">⚡ Pouvoir</div>
+      <p style="font-family:var(--vt);font-size:1rem;color:var(--text);line-height:1.5">Voit le chat privé des Loups-Garous. La nuit sans armure : invisible. Voit les particules colorées révélatrices des rôles. Si découverte : cible prioritaire.</p>
     </div>
-
-    <!-- COMMANDES -->
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--village2);">💬 Commandes</div>
-      <p style='color:var(--text3);font-style:italic;font-size:.9rem;'>Aucune commande — pouvoir automatique.</p>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">💬 Commandes</div>
+      <div class="no-cmd">Aucune commande — pouvoir automatique.</div>
     </div>
-
-    <!-- CONSEILS -->
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--village2);">🎯 Stratégie &amp; Conseils</div>
-      <ul class='tip-list'><li class='tip-item'>Retirez votre armure la nuit pour être invisible — mais restez vulnérable.</li><li class='tip-item'>Le chat des Loups est une mine d'or. Écoutez avant d'agir.</li><li class='tip-item'>Ne révélez vos informations que lorsque c'est absolument nécessaire.</li><li class='tip-item'>Les Loups chercheront à vous éliminer s'ils suspectent votre présence.</li></ul>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">🎯 Stratégie &amp; Conseils</div>
+      <div class="tip">Retirez votre armure la nuit pour être invisible — mais restez vulnérable</div><div class="tip">Le chat des Loups est une mine d'or — écoutez avant d'agir</div><div class="tip">Ne révélez vos infos que lorsque c'est absolument nécessaire</div><div class="tip">Les Loups chercheront à vous éliminer si suspectés</div>
     </div>
-
-    <!-- ALLIÉS / ENNEMIS -->
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--village2);">🤝 Alliés &amp; Ennemis</div>
-      <p style="font-family:var(--font-head);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--village2);margin-bottom:.5rem;">Alliés naturels</p>
-      <div class='ally-grid'><span class='ally-tag positive'>Voyant</span><span class='ally-tag positive'>Salvateur</span></div>
-      <p style="font-family:var(--font-head);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--loup2);margin:.75rem 0 .5rem;">Ennemis</p>
-      <div class='ally-grid'><span class='ally-tag negative'>Tous les Loups</span><span class='ally-tag negative'>Assassin</span></div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">🤝 Alliés &amp; Ennemis</div>
+      <div style="font-family:var(--px);font-size:.33rem;color:var(--c-village);margin-bottom:4px;letter-spacing:.04em">Alliés naturels</div>
+      <div style="margin-bottom:8px"><span class="ally ally-pos">Voyant</span><span class="ally ally-pos">Salvateur</span></div>
+      <div style="font-family:var(--px);font-size:.33rem;color:var(--c-loup);margin-bottom:4px;letter-spacing:.04em">Ennemis</div>
+      <div><span class="ally ally-neg">Tous les Loups</span><span class="ally ally-neg">Assassin</span></div>
     </div>
-
   </div>
-
-  <!-- SIDEBAR -->
-  <div class="role-sidebar">
-
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--village2);">📊 Statistiques</div>
-      <div class='stat-grid'><div class='stat-item'><div class='stat-label'>Difficulté</div><div class='stat-value'>Très difficile</div></div><div class='stat-item'><div class='stat-label'>Info</div><div class='stat-value'>Chat des Loups</div></div><div class='stat-item'><div class='stat-label'>Invisibilité</div><div class='stat-value'>La nuit sans armure</div></div><div class='stat-item'><div class='stat-label'>Danger</div><div class='stat-value'>Extrême si découverte</div></div></div>
+  <div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-village)">📊 Statistiques</div>
+      <div class="stats-grid"><div class="mc-stat"><div class="stat-label">Difficulté</div><div class="stat-value">Très difficile</div></div><div class="mc-stat"><div class="stat-label">Info</div><div class="stat-value">Chat des Loups</div></div><div class="mc-stat"><div class="stat-label">Invisibilité</div><div class="stat-value">Nuit sans armure</div></div><div class="mc-stat"><div class="stat-label">Danger</div><div class="stat-value">Extrême</div></div></div>
     </div>
-
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--village2);">🏆 Condition de victoire</div>
-      <p style="color:var(--text2);font-size:.95rem;">Éliminer tous les Loups et Solitaires hostiles.</p>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-village)">🏆 Victoire</div>
+      <p style="font-family:var(--vt);font-size:.98rem;color:var(--text-dim)">Éliminer tous les Loups et Solitaires hostiles.</p>
     </div>
-
-    <div class="role-block">
-      <div class="role-block-title" style="color:var(--village2);">🏷️ Famille</div>
-      <p style="font-size:1.5rem;margin-bottom:.25rem;">🌿</p>
-      <span class="role-card-tag tag-village">Village</span>
-      <p style="color:var(--text3);font-size:.85rem;margin-top:.75rem;">
-        Gagne avec le Village.
-      </p>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-village)">🏷️ Famille</div>
+      <div style="font-size:1.6rem;margin-bottom:4px">🌿</div>
+      <span class="rc-tag village">Village</span>
+      <p style="font-family:var(--vt);font-size:.9rem;color:#555;margin-top:6px">Gagne avec le Village.</p>
     </div>
-
-    <a href="../roles.html#village" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:.5rem;">
-      ← Tous les rôles Village
-    </a>
-
+    <a href="../roles.html#village" class="btn btn-stone" style="width:100%;display:block;text-align:center;margin-top:2px;box-sizing:border-box">← Tous les Villages</a>
   </div>
-
 </div>
 
 <footer>
@@ -114,8 +89,7 @@
     <li><a href="../rules.html">Règles</a></li>
     <li><a href="../roles.html">Rôles</a></li>
   </ul>
-  <p>Plugin Minecraft · Paper 1.21 · Développé par <strong style="color:var(--gold);">Enoe_one</strong></p>
+  <div class="footer-copy">Paper 1.21 · Développé par Enoe_one</div>
 </footer>
-
 </body>
 </html>

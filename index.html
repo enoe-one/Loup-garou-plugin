@@ -1,20 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loup-Garou UHC — Minecraft Paper 1.21</title>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Loup-Garou UHC — Paper 1.21</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <div class="nav-logo">
-      <span class="wolf-icon">🐺</span>
-      Loup-Garou UHC
-    </div>
+    <div class="nav-logo">🐺 Loup-Garou UHC</div>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Accueil</a></li>
       <li><a href="rules.html">Règles</a></li>
@@ -23,157 +17,110 @@
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
+<div class="hero">
   <div class="hero-moon"></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow">Plugin Minecraft · Paper 1.21</div>
-    <h1 class="hero-title"><span>Loup-Garou</span><br>UHC</h1>
-    <p class="hero-subtitle">La nuit, les masques tombent</p>
-    <p class="hero-desc">
-      Un plugin de déduction sociale complet sur Minecraft. 37 rôles,
-      mode Ultra Hardcore, interface graphique en jeu.
-      Qui se cache parmi vous ?
-    </p>
-    <div class="hero-cta">
-      <a href="roles.html" class="btn btn-primary">Découvrir les rôles</a>
-      <a href="rules.html" class="btn btn-outline">Règles du jeu</a>
+  <div class="hero-eyebrow">Plugin Minecraft · Paper 1.21</div>
+  <span class="hero-title">🐺 Loup-Garou UHC 🐺</span>
+  <div class="hero-sub">La nuit, les masques tombent.</div>
+  <div class="hero-desc">37 rôles. Ultra Hardcore. Déduction sociale sur Minecraft. Qui est le Loup parmi vous ?</div>
+  <div class="hero-cta">
+    <a href="roles.html" class="btn btn-blood">▶ Les Rôles</a>
+    <a href="rules.html" class="btn btn-stone">📜 Règles</a>
+  </div>
+</div>
+
+<div style="background:#0d0d0d;border-bottom:1px solid #1a0000">
+  <div class="wrap">
+    <div class="section-title">⚡ Fonctionnalités</div>
+    <div class="feat-grid">
+      <div class="feat-card" style="border-left-color:var(--blood2)">
+        <div class="feat-icon">⚔️</div>
+        <div class="feat-title">PVP Style 1.8</div>
+        <div class="feat-desc">Aucun cooldown. Les duels sont immédiats et brutaux.</div>
+      </div>
+      <div class="feat-card" style="border-left-color:#55ffff">
+        <div class="feat-icon">💎</div>
+        <div class="feat-title">Grottes ×1.8</div>
+        <div class="feat-desc">80% de drop bonus sur chaque minerai. Progression rapide.</div>
+      </div>
+      <div class="feat-card" style="border-left-color:var(--blood)">
+        <div class="feat-icon">❤️</div>
+        <div class="feat-title">Ultra Hardcore</div>
+        <div class="feat-desc">Régénération désactivée. Chaque demi-cœur est précieux.</div>
+      </div>
+      <div class="feat-card" style="border-left-color:var(--c-soli)">
+        <div class="feat-icon">🎭</div>
+        <div class="feat-title">37 Rôles Uniques</div>
+        <div class="feat-desc">Village, Loups, Solitaires, Binaires. Chacun son pouvoir.</div>
+      </div>
+      <div class="feat-card" style="border-left-color:var(--c-binaire)">
+        <div class="feat-icon">⚙️</div>
+        <div class="feat-title">/lgsetting GUI</div>
+        <div class="feat-desc">Interface inventaire Minecraft pour configurer en jeu.</div>
+      </div>
+      <div class="feat-card" style="border-left-color:var(--c-village)">
+        <div class="feat-icon">📢</div>
+        <div class="feat-title">Messages Immersifs</div>
+        <div class="feat-desc">Countdown avec cécité, annonces de morts, titres à l'écran.</div>
+      </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- FEATURES -->
-<section style="background: var(--bg2);">
-  <div class="section-inner">
-    <div class="section-header">
-      <span class="section-eyebrow">Caractéristiques</span>
-      <h2 class="section-title">Un jeu dans un jeu</h2>
-      <div class="section-divider"></div>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;">
+<div class="wrap">
+  <div class="section-title">🏰 Les Familles</div>
+  <div class="fam-grid">
+    <a href="roles.html#village" class="fam-card" style="background:var(--bg-village);border-top-color:var(--c-village);border-left-color:var(--c-village)">
+      <div class="feat-icon">🌿</div>
+      <div class="feat-title" style="color:var(--c-village)">Village</div>
+      <div class="feat-desc">Identifiez et éliminez tous les Loups. Votre seule arme : la déduction.</div>
+      <div class="fam-count" style="color:var(--c-village)">16 rôles →</div>
+    </a>
+    <a href="roles.html#loup" class="fam-card" style="background:var(--bg-loup);border-top-color:var(--c-loup);border-left-color:var(--c-loup)">
+      <div class="feat-icon">🐺</div>
+      <div class="feat-title" style="color:var(--c-loup)">Loups-Garous</div>
+      <div class="feat-desc">Égalez ou dépassez les Villageois. Mentez, chassez, survivez.</div>
+      <div class="fam-count" style="color:var(--c-loup)">8 rôles →</div>
+    </a>
+    <a href="roles.html#soli" class="fam-card" style="background:var(--bg-soli);border-top-color:var(--c-soli);border-left-color:var(--c-soli)">
+      <div class="feat-icon">🌙</div>
+      <div class="feat-title" style="color:var(--c-soli)">Solitaires</div>
+      <div class="feat-desc">Chacun sa condition de victoire. Imprévisibles. Dangereux.</div>
+      <div class="fam-count" style="color:var(--c-soli)">7 rôles →</div>
+    </a>
+    <a href="roles.html#binaire" class="fam-card" style="background:var(--bg-binaire);border-top-color:var(--c-binaire);border-left-color:var(--c-binaire)">
+      <div class="feat-icon">⚖️</div>
+      <div class="feat-title" style="color:var(--c-binaire)">Binaires</div>
+      <div class="feat-desc">Camp changeant. Ils bouleversent les alliances et le destin.</div>
+      <div class="fam-count" style="color:var(--c-binaire)">6 rôles →</div>
+    </a>
+  </div>
+</div>
 
-      <div class="card card-gold" style="padding:2rem;">
-        <div style="font-size:2rem;margin-bottom:1rem;">⚔️</div>
-        <h3 style="font-family:var(--font-head);font-size:1.1rem;margin-bottom:.75rem;color:var(--white);">PVP Style 1.8</h3>
-        <p style="color:var(--text2);font-size:.95rem;">Pas de cooldown d'attaque. Les combats sont fluides et immédiats, comme en 1.8.</p>
+<div style="background:#0d0d0d;border-top:1px solid #1a0000;border-bottom:1px solid #1a0000">
+  <div class="wrap">
+    <div class="section-title">🚀 Démarrage Rapide</div>
+    <div class="feat-grid" style="grid-template-columns:repeat(auto-fill,minmax(230px,1fr))">
+      <div class="feat-card" style="border-left-color:var(--yellow)">
+        <div class="feat-title" style="color:var(--yellow)">① Installer</div>
+        <div class="feat-desc">Déposez <code>LoupGarou.jar</code> dans <code>plugins/</code>. Serveur Paper 1.21 requis.</div>
       </div>
-
-      <div class="card card-gold" style="padding:2rem;">
-        <div style="font-size:2rem;margin-bottom:1rem;">💎</div>
-        <h3 style="font-family:var(--font-head);font-size:1.1rem;margin-bottom:.75rem;color:var(--white);">Grottes Boostées ×1.8</h3>
-        <p style="color:var(--text2);font-size:.95rem;">80% de chance de drop supplémentaire sur chaque minerai. Les ressources sont plus accessibles.</p>
+      <div class="feat-card" style="border-left-color:var(--yellow)">
+        <div class="feat-title" style="color:var(--yellow)">② Créer la room</div>
+        <div class="feat-desc"><code>/lg create "Nom"</code> — vous devenez Owner. Les joueurs rejoignent la cage.</div>
       </div>
-
-      <div class="card card-gold" style="padding:2rem;">
-        <div style="font-size:2rem;margin-bottom:1rem;">❤️</div>
-        <h3 style="font-family:var(--font-head);font-size:1.1rem;margin-bottom:.75rem;color:var(--white);">Ultra Hardcore</h3>
-        <p style="color:var(--text2);font-size:.95rem;">La vie ne se régénère pas naturellement. Chaque cœur est précieux. Survivez à tout prix.</p>
+      <div class="feat-card" style="border-left-color:var(--yellow)">
+        <div class="feat-title" style="color:var(--yellow)">③ Configurer</div>
+        <div class="feat-desc"><code>/lgsetting</code> ouvre l'interface graphique. Activez les rôles d'un clic.</div>
       </div>
-
-      <div class="card card-gold" style="padding:2rem;">
-        <div style="font-size:2rem;margin-bottom:1rem;">🎭</div>
-        <h3 style="font-family:var(--font-head);font-size:1.1rem;margin-bottom:.75rem;color:var(--white);">37 Rôles Uniques</h3>
-        <p style="color:var(--text2);font-size:.95rem;">Village, Loups, Solitaires, Binaires. Chaque rôle avec ses pouvoirs, ses alliances et sa stratégie.</p>
+      <div class="feat-card" style="border-left-color:var(--yellow)">
+        <div class="feat-title" style="color:var(--yellow)">④ Lancer</div>
+        <div class="feat-desc"><code>/lg start</code> — cécité, compte à rebours 5-4-3-2-1, la partie commence.</div>
       </div>
-
-      <div class="card card-gold" style="padding:2rem;">
-        <div style="font-size:2rem;margin-bottom:1rem;">⚙️</div>
-        <h3 style="font-family:var(--font-head);font-size:1.1rem;margin-bottom:.75rem;color:var(--white);">Interface /lgsetting</h3>
-        <p style="color:var(--text2);font-size:.95rem;">Configurez la partie via une interface graphique en jeu. Activez les rôles d'un clic.</p>
-      </div>
-
-      <div class="card card-gold" style="padding:2rem;">
-        <div style="font-size:2rem;margin-bottom:1rem;">📜</div>
-        <h3 style="font-family:var(--font-head);font-size:1.1rem;margin-bottom:.75rem;color:var(--white);">Messagerie Immersive</h3>
-        <p style="color:var(--text2);font-size:.95rem;">Countdown avec cécité, annonces de mort, votes animés et titres à l'écran.</p>
-      </div>
-
     </div>
   </div>
-</section>
+</div>
 
-<!-- FAMILLES -->
-<section>
-  <div class="section-inner">
-    <div class="section-header">
-      <span class="section-eyebrow">Les Familles</span>
-      <h2 class="section-title">Quatre camps. Une seule vérité.</h2>
-      <div class="section-divider"></div>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;">
-
-      <a href="roles.html#village" class="card" style="padding:2rem;border-left:3px solid var(--village2);text-decoration:none;">
-        <div style="font-size:2.5rem;margin-bottom:1rem;">🌿</div>
-        <h3 style="font-family:var(--font-head);font-size:1.2rem;color:var(--village2);margin-bottom:.5rem;">Village</h3>
-        <p style="color:var(--text2);font-size:.9rem;margin-bottom:.75rem;">Éliminez tous les Loups et les Solitaires hostiles. La déduction est votre arme.</p>
-        <span style="font-family:var(--font-head);font-size:.7rem;letter-spacing:.15em;color:var(--village);text-transform:uppercase;">16 rôles →</span>
-      </a>
-
-      <a href="roles.html#loup" class="card" style="padding:2rem;border-left:3px solid var(--loup2);text-decoration:none;">
-        <div style="font-size:2.5rem;margin-bottom:1rem;">🐺</div>
-        <h3 style="font-family:var(--font-head);font-size:1.2rem;color:var(--loup2);margin-bottom:.5rem;">Loups-Garous</h3>
-        <p style="color:var(--text2);font-size:.9rem;margin-bottom:.75rem;">Égalez ou dépassez les Villageois. Chassez dans l'ombre, mentez au grand jour.</p>
-        <span style="font-family:var(--font-head);font-size:.7rem;letter-spacing:.15em;color:var(--loup);text-transform:uppercase;">8 rôles →</span>
-      </a>
-
-      <a href="roles.html#soli" class="card" style="padding:2rem;border-left:3px solid var(--soli2);text-decoration:none;">
-        <div style="font-size:2.5rem;margin-bottom:1rem;">🌙</div>
-        <h3 style="font-family:var(--font-head);font-size:1.2rem;color:var(--soli2);margin-bottom:.5rem;">Solitaires</h3>
-        <p style="color:var(--text2);font-size:.9rem;margin-bottom:.75rem;">Chacun sa condition de victoire. Imprévisibles, dangereux, ils jouent pour eux seuls.</p>
-        <span style="font-family:var(--font-head);font-size:.7rem;letter-spacing:.15em;color:var(--soli);text-transform:uppercase;">7 rôles →</span>
-      </a>
-
-      <a href="roles.html#binaire" class="card" style="padding:2rem;border-left:3px solid var(--binaire2);text-decoration:none;">
-        <div style="font-size:2.5rem;margin-bottom:1rem;">⚖️</div>
-        <h3 style="font-family:var(--font-head);font-size:1.2rem;color:var(--binaire2);margin-bottom:.5rem;">Binaires</h3>
-        <p style="color:var(--text2);font-size:.9rem;margin-bottom:.75rem;">Leur camp peut changer. Ils bouleversent les alliances et créent l'imprévisible.</p>
-        <span style="font-family:var(--font-head);font-size:.7rem;letter-spacing:.15em;color:var(--binaire);text-transform:uppercase;">6 rôles →</span>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- DÉMARRAGE RAPIDE -->
-<section style="background:var(--bg2);">
-  <div class="section-inner">
-    <div class="section-header">
-      <span class="section-eyebrow">Installation</span>
-      <h2 class="section-title">Prêt en 3 étapes</h2>
-      <div class="section-divider"></div>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:900px;margin:0 auto;">
-
-      <div style="display:flex;gap:1rem;align-items:flex-start;">
-        <div style="font-family:var(--font-title);font-size:2.5rem;color:var(--gold);line-height:1;flex-shrink:0;">1</div>
-        <div>
-          <h3 style="font-family:var(--font-head);font-size:1rem;color:var(--white);margin-bottom:.4rem;">Déposer le .jar</h3>
-          <p style="color:var(--text2);font-size:.9rem;">Placez <code style="color:#74b9ff;background:var(--bg);padding:.1rem .4rem;border-radius:3px;">LoupGarou.jar</code> dans le dossier <code style="color:#74b9ff;background:var(--bg);padding:.1rem .4rem;border-radius:3px;">plugins/</code> de votre serveur Paper 1.21.</p>
-        </div>
-      </div>
-
-      <div style="display:flex;gap:1rem;align-items:flex-start;">
-        <div style="font-family:var(--font-title);font-size:2.5rem;color:var(--gold);line-height:1;flex-shrink:0;">2</div>
-        <div>
-          <h3 style="font-family:var(--font-head);font-size:1rem;color:var(--white);margin-bottom:.4rem;">Créer la room</h3>
-          <p style="color:var(--text2);font-size:.9rem;">Tapez <code style="color:#74b9ff;background:var(--bg);padding:.1rem .4rem;border-radius:3px;">/lg create "Nom"</code> pour créer la salle. Vous devenez automatiquement Owner.</p>
-        </div>
-      </div>
-
-      <div style="display:flex;gap:1rem;align-items:flex-start;">
-        <div style="font-family:var(--font-title);font-size:2.5rem;color:var(--gold);line-height:1;flex-shrink:0;">3</div>
-        <div>
-          <h3 style="font-family:var(--font-head);font-size:1rem;color:var(--white);margin-bottom:.4rem;">Configurer et lancer</h3>
-          <p style="color:var(--text2);font-size:.9rem;">Utilisez <code style="color:#74b9ff;background:var(--bg);padding:.1rem .4rem;border-radius:3px;">/lgsetting</code> pour l'interface graphique, puis <code style="color:#74b9ff;background:var(--bg);padding:.1rem .4rem;border-radius:3px;">/lg start</code>.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
   <div class="footer-logo">🐺 Loup-Garou UHC</div>
   <ul class="footer-links">
@@ -181,8 +128,7 @@
     <li><a href="rules.html">Règles</a></li>
     <li><a href="roles.html">Rôles</a></li>
   </ul>
-  <p>Plugin Minecraft · Paper 1.21 · Développé par <strong style="color:var(--gold);">Enoe_one</strong></p>
+  <div class="footer-copy">Paper 1.21 · Java 21 · Développé par Enoe_one</div>
 </footer>
-
 </body>
 </html>
