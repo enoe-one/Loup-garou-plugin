@@ -12,7 +12,9 @@ public class PlayerDeathListener implements Listener {
 
     private final LoupGarouPlugin plugin;
 
-    public PlayerDeathListener(LoupGarouPlugin plugin) { this.plugin = plugin; }
+    public PlayerDeathListener(LoupGarouPlugin plugin) {
+        this.plugin = plugin;
+    }
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onDeath(PlayerDeathEvent event) {
@@ -20,11 +22,13 @@ public class PlayerDeathListener implements Listener {
         if (plugin.getGameManager().getState() != GameState.RUNNING) return;
         if (!plugin.getGameManager().isAlive(player.getUniqueId())) return;
 
-        // Conserver l'inventaire et supprimer le message de mort vanilla
+        // Supprimer le message et les drops vanilla —
+        // c'est GameManager.handlePlayerDeath() qui gère le stuff (cage 10s)
         event.setKeepInventory(true);
         event.getDrops().clear();
         event.setDeathMessage(null);
 
+        // Déléguer entièrement à GameManager
         plugin.getGameManager().handlePlayerDeath(player);
     }
 }
