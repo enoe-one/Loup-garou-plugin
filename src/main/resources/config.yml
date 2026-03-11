@@ -1,0 +1,43 @@
+# Configuration par défaut LoupGarou
+game:
+  episode-duration: 1200        # 20 minutes en secondes
+  pvp-unlock-time: 1200         # 20 min avant PVP
+  role-announce-time: 1200      # 20 min annonce roles
+  couple-announce-time: 1500    # 25 min annonce couple
+  last-heal-time: 600           # 10 min dernier heal
+  village-vote-time: 300        # 5 min vote villageois
+  day-night-cycle: true
+  composition-visible: false
+  random-couple: true
+  trouple: false
+  mystery-event: false
+  trublionage: false
+
+  # Nombre de loups (max 30% des joueurs)
+  max-wolves-percent: 30
+
+  # Diamants
+  max-diamonds: 25
+
+  # Vote penalty
+  vote-penalty-hearts: 3
+  vote-weakness-duration: 300   # 5 min
+
+  # Renard enrhumé
+  fox-cold-permanent: true       # true=permanent, false=1 tour
+
+  # Ancien résurrections
+  elder-resurrections: 2
+
+  # Enchantements max autorisés
+  enchants:
+    sharpness: 3
+    protection: 3
+    power: 3
+    knockback: 0
+    punch: 0
+    mending: false
+
+roles:
+  enabled: []   # Liste des roles activés, géré par /admin setting
+  wolves: 1

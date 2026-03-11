@@ -1,0 +1,148 @@
+package fr.enoe.loupgarou.managers;
+
+import fr.enoe.loupgarou.LoupGarouPlugin;
+import fr.enoe.loupgarou.roles.Role;
+import fr.enoe.loupgarou.utils.MessageUtils;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class VoteManager {
+
+    private final LoupGarouPlugin plugin;
+
+    /** UUID votant → UUID cible */
+    private final Map<UUID, UUID> votes = new HashMap<>();
+    private boolean voteOpen = false;
+
+    public VoteManager(LoupGarouPlugin plugin) {
+        this.plugin = plugin;
+    }
+
+    public void openVote() {
+        votes.clear();
+        voteOpen = true;
+        MessageUtils.broadcast("§e§lLe vote du village est ouvert ! Utilisez §b/lg voter <joueur>");
+        int duration = plugin.getConfig().getInt("game.village-vote-time", 300);
+        new org.bukkit.scheduler.BukkitRunnable() {
+            @Override public void run() { closeVote(); }
+        }.runTaskLater(plugin, duration * 20L);
+    }
+
+    public boolean castVote(Player voter, Player target) {
+        if (!voteOpen) {
+            voter.sendMessage(MessageUtils.error("Le vote n'est pas ouvert."));
+            return false;
+        }
+        if (!plugin.getGameManager().isAlive(voter.getUniqueId())) {
+            voter.sendMessage(MessageUtils.error("Les morts ne votent pas."));
+            return false;
+        }
+        // Inconnu ne peut pas voter
+        Role r = plugin.getRoleManager().getRole(voter.getUniqueId());
+        if (r != null && r.getId().equals("inconnu")) {
+            voter.sendMessage(MessageUtils.error("Tu ne peux pas voter."));
+            return false;
+        }
+        votes.put(voter.getUniqueId(), target.getUniqueId());
+        MessageUtils.broadcast("§e" + voter.getName() + " §7a voté.");
+        return true;
+    }
+
+    public void closeVote() {
+        if (!voteOpen) return;
+        voteOpen = false;
+
+        // Comptage avec poids
+        Map<UUID, Integer> scores = new HashMap<>();
+        for (Map.Entry<UUID, UUID> e : votes.entrySet()) {
+            UUID voter = e.getKey();
+            UUID target = e.getValue();
+            int weight = getVoteWeight(voter, false);
+            scores.merge(target, weight, Integer::sum);
+        }
+
+        if (scores.isEmpty()) {
+            MessageUtils.broadcast("§7Aucun vote. Personne n'est éliminé.");
+            return;
+        }
+
+        // Trouver le max
+        int max = Collections.max(scores.values());
+        List<UUID> top = scores.entrySet().stream()
+                .filter(e -> e.getValue() == max)
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toList());
+
+        UUID eliminated;
+        if (top.size() == 1) {
+            eliminated = top.get(0);
+        } else {
+            // Égalité → le Maire décide
+            UUID maireUUID = getMaireUUID();
+            if (maireUUID != null && top.contains(votes.get(maireUUID))) {
+                eliminated = votes.get(maireUUID);
+            } else {
+                // Pas de maire ou pas de vote → personne n'est éliminé
+                MessageUtils.broadcast("§7Égalité ! Personne n'est éliminé.");
+                return;
+            }
+        }
+
+        Player victim = Bukkit.getPlayer(eliminated);
+        if (victim == null) return;
+
+        // Pénalités vote
+        applyVotePenalties(eliminated);
+
+        MessageUtils.broadcast("§c§lLe village a voté : §e" + victim.getName() + " §cest éliminé !");
+        plugin.getGameManager().handlePlayerDeath(victim);
+        votes.clear();
+    }
+
+    private void applyVotePenalties(UUID uuid) {
+        Player p = Bukkit.getPlayer(uuid);
+        if (p == null) return;
+
+        int penaltyHearts = plugin.getConfig().getInt("game.vote-penalty-hearts", 3);
+        int weakDuration  = plugin.getConfig().getInt("game.vote-weakness-duration", 300);
+
+        // Perd 3 cœurs
+        p.setHealth(Math.max(1.0, p.getHealth() - (penaltyHearts * 2.0)));
+        // Faiblesse 0.5 pendant 5 min
+        p.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, weakDuration * 20, 0, false, false, true));
+        // Révéler le rôle
+        Role role = plugin.getRoleManager().getRole(uuid);
+        if (role != null) MessageUtils.broadcast("§7Son rôle : §b" + role.getDisplayName());
+    }
+
+    private int getVoteWeight(UUID voter, boolean tieBreaker) {
+        Role r = plugin.getRoleManager().getRole(voter);
+        if (r == null) return 1;
+        return switch (r.getId()) {
+            case "maire"   -> tieBreaker ? 2 : 2;
+            case "citoyen" -> tieBreaker ? 1 : 2;
+            default        -> 1;
+        };
+    }
+
+    private UUID getMaireUUID() {
+        return plugin.getRoleManager().getWolfList().stream()
+                .filter(u -> {
+                    Role r = plugin.getRoleManager().getRole(u);
+                    return r != null && r.getId().equals("maire");
+                }).findFirst().orElse(null);
+        // Note : on cherche dans tous les joueurs, pas que les loups
+    }
+
+    public void reset() {
+        votes.clear();
+        voteOpen = false;
+    }
+
+    public boolean isVoteOpen() { return voteOpen; }
+}
