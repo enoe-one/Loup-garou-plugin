@@ -293,15 +293,10 @@ public class RoleManager {
                 });
     }
 
+    // Le Joueur de Flûte gagne en étant le dernier survivant (comme tous les solitaires)
+    // Plus de victoire par charme — checkFlutistWin est conservé vide pour compatibilité
     public void checkFlutistWin(List<UUID> alive) {
-        roles.entrySet().stream()
-                .filter(e -> e.getValue().getId().equals("flutiste"))
-                .filter(e -> alive.contains(e.getKey()))
-                .forEach(e -> {
-                    if (((JoueurDeFlute) e.getValue()).hasWon()) {
-                        plugin.getGameManager().endGame("§d§lLe Joueur de Flûte a charmé tout le monde !");
-                    }
-                });
+        // Intentionnellement vide — victoire gérée par checkWinCondition dans GameManager
     }
 
     // ─── ÉCHANGE DE RÔLES (Trublion) ────────────────────────────────────────────

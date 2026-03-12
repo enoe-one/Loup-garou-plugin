@@ -26,7 +26,7 @@ public class VoteManager {
     public void openVote() {
         votes.clear();
         voteOpen = true;
-        MessageUtils.broadcast("§e§lLe vote du village est ouvert ! Utilisez §b/lg voter <joueur>");
+        plugin.getMessageManager().broadcastVoteStart();
         int duration = plugin.getConfig().getInt("game.village-vote-time", 300);
         new org.bukkit.scheduler.BukkitRunnable() {
             @Override public void run() { closeVote(); }
@@ -34,22 +34,12 @@ public class VoteManager {
     }
 
     public boolean castVote(Player voter, Player target) {
-        if (!voteOpen) {
-            voter.sendMessage(MessageUtils.error("Le vote n'est pas ouvert."));
-            return false;
-        }
-        if (!plugin.getGameManager().isAlive(voter.getUniqueId())) {
-            voter.sendMessage(MessageUtils.error("Les morts ne votent pas."));
-            return false;
-        }
-        // Inconnu ne peut pas voter
+        if (!voteOpen) { voter.sendMessage(MessageUtils.error("Le vote n'est pas ouvert.")); return false; }
+        if (!plugin.getGameManager().isAlive(voter.getUniqueId())) { voter.sendMessage(MessageUtils.error("Les morts ne votent pas.")); return false; }
         Role r = plugin.getRoleManager().getRole(voter.getUniqueId());
-        if (r != null && r.getId().equals("inconnu")) {
-            voter.sendMessage(MessageUtils.error("Tu ne peux pas voter."));
-            return false;
-        }
+        if (r != null && r.getId().equals("inconnu")) { voter.sendMessage(MessageUtils.error("Tu ne peux pas voter.")); return false; }
         votes.put(voter.getUniqueId(), target.getUniqueId());
-        MessageUtils.broadcast("§e" + voter.getName() + " §7a voté.");
+        plugin.getMessageManager().broadcastVoteCast(voter.getName(), target.getName());
         return true;
     }
 
@@ -70,7 +60,6 @@ public class VoteManager {
             MessageUtils.broadcast("§7Aucun vote. Personne n'est éliminé.");
             return;
         }
-
         // Trouver le max
         int max = Collections.max(scores.values());
         List<UUID> top = scores.entrySet().stream()
@@ -99,7 +88,14 @@ public class VoteManager {
         // Pénalités vote
         applyVotePenalties(eliminated);
 
-        MessageUtils.broadcast("§c§lLe village a voté : §e" + victim.getName() + " §cest éliminé !");
+        Role victimRole = plugin.getRoleManager().getRole(eliminated);
+        String roleName = victimRole != null ? victimRole.getDisplayName() : "?";
+        plugin.getMessageManager().broadcastVoteResult(victim.getName(), max, true, roleName);
+
+        // Message de mort avec tag "vote"
+        String deathMsg = plugin.getMessageManager().buildDeathMessage(eliminated, null, true);
+        MessageUtils.broadcast(deathMsg);
+
         plugin.getGameManager().handlePlayerDeath(victim);
         votes.clear();
     }

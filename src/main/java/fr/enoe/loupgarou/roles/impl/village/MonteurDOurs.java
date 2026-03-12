@@ -36,7 +36,7 @@ public class MonteurDOurs extends Role {
         long now = plugin.getGameManager().getElapsedSeconds();
         if (now - lastWolfPower < 2400) { player.sendMessage(MessageUtils.error("Pouvoir en recharge !")); return true; }
         lastWolfPower = now;
-        player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 6000, 0, false, false, true));
+        player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 6000, 0, false, false, false));
         player.sendMessage(MessageUtils.success("Speed activé pendant 5 minutes !"));
         return true;
     }

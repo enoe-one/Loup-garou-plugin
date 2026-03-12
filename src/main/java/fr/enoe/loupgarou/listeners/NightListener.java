@@ -17,6 +17,14 @@ public class NightListener implements Listener {
     private final LoupGarouPlugin plugin;
     private BukkitTask nightTask;
 
+    // Rôles villageois avec déjà un effet propre → pas de résistance de base
+    private static final java.util.Set<String> ROLES_WITH_OWN_EFFECT = java.util.Set.of(
+        "salvateur",     // résistance propre
+        "chevalier",     // force propre
+        "chasseur",      // force propre
+        "grand_mechant_loup" // rage propre
+    );
+
     public NightListener(LoupGarouPlugin plugin) {
         this.plugin = plugin;
         startNightTick();
@@ -24,14 +32,21 @@ public class NightListener implements Listener {
 
     private void startNightTick() {
         nightTask = new org.bukkit.scheduler.BukkitRunnable() {
+            private boolean lastNight = false;
+
             @Override
             public void run() {
                 if (plugin.getGameManager().getState() != GameState.RUNNING) return;
 
                 World world = Bukkit.getWorlds().get(0);
-                long time = world.getTime();
-                boolean isNight = time >= 13000 && time <= 23000;
-                if (!isNight) return;
+                long time   = world.getTime();
+                boolean isNight = (time >= 13000 && time <= 23000);
+
+                // Début de nuit : ouvrir le canal loup (1 fois par nuit)
+                if (isNight && !lastNight) {
+                    plugin.getChatManager().tryOpenWolfChat();
+                }
+                lastNight = isNight;
 
                 for (var uuid : plugin.getGameManager().getAlivePlayers()) {
                     Player p = Bukkit.getPlayer(uuid);
@@ -39,17 +54,40 @@ public class NightListener implements Listener {
                     var role = plugin.getRoleManager().getRole(uuid);
                     if (role == null) continue;
 
-                    // Tick de nuit du rôle
+                    // ── Résistance 20% de base pour les villageois ────────
+                    // (Résistance I = amp 0 ≈ 20%)
+                    // Sauf : loups, solitaires, et rôles ayant déjà leur propre effet
+                    if (plugin.getRoleManager().isVillager(uuid)
+                            && !ROLES_WITH_OWN_EFFECT.contains(role.getId())) {
+                        p.addPotionEffect(new PotionEffect(PotionEffectType.RESISTANCE, 60, 0, false, false, false));
+                    }
+
+                    // ── Force 30% pour TOUS les loups la nuit (amp 0, non visible) ──
+                    if (plugin.getRoleManager().isWolf(uuid)) {
+                        p.addPotionEffect(new PotionEffect(PotionEffectType.STRENGTH, 60, 0, false, false, false));
+                    }
+
+                    // ── Tick de nuit du rôle ──────────────────────────────
                     role.onNightTick(p);
 
-                    // Loup perfide : invisible sans armure la nuit
+                    // ── Loup Perfide : invisible sans armure ───────────────
                     if (role.getId().equals("loup_perfide") && hasNoArmor(p)) {
                         p.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 60, 0, false, false, false));
                     }
 
-                    // Feu follet : invisible sans armure
+                    // ── Feu Follet : invisible sans armure ─────────────────
                     if (role.getId().equals("feu_follet") && hasNoArmor(p)) {
                         p.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 60, 0, false, false, false));
+                    }
+
+                    // ── Jour : retirer la résistance de base villageois ────
+                    if (!isNight && plugin.getRoleManager().isVillager(uuid)
+                            && !ROLES_WITH_OWN_EFFECT.contains(role.getId())) {
+                        // Ne retirer que si c'est l'effet de base (amp 0, ambiant false)
+                        var existing = p.getPotionEffect(PotionEffectType.RESISTANCE);
+                        if (existing != null && existing.getAmplifier() == 0 && !existing.isAmbient()) {
+                            p.removePotionEffect(PotionEffectType.RESISTANCE);
+                        }
                     }
                 }
             }

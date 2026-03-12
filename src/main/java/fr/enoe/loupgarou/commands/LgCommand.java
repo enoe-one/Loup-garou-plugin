@@ -57,6 +57,13 @@ public class LgCommand implements CommandExecutor {
                 plugin.getVoteManager().castVote(player, target);
             }
 
+            case "chat" -> {
+                if (plugin.getGameManager().getState() != GameState.RUNNING) { player.sendMessage(MessageUtils.error("La partie n'est pas en cours.")); return true; }
+                if (!plugin.getRoleManager().isWolf(player.getUniqueId())) { player.sendMessage(MessageUtils.error("Réservé aux loups.")); return true; }
+                boolean opened = plugin.getChatManager().tryOpenWolfChat();
+                if (!opened) player.sendMessage(MessageUtils.error("Le canal loup a déjà été utilisé cette nuit."));
+            }
+
             case "roles" -> {
                 boolean visible = plugin.getConfig().getBoolean("game.composition-visible", false);
                 boolean isAdmin = plugin.getGameManager().isAdmin(player.getUniqueId());

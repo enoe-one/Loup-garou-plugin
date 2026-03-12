@@ -25,8 +25,13 @@ public class PlayerJoinListener implements Listener {
             player.setGameMode(GameMode.ADVENTURE);
             Location cage = new Location(Bukkit.getWorlds().get(0), 0, 221, 0);
             player.teleport(cage);
-            plugin.getGameManager().getAlivePlayers(); // accès lecture pour init
         }
+
+        // Message de bienvenue
+        plugin.getMessageManager().sendWelcome(player);
+
+        // PVP 1.8 : vitesse d'attaque haute
+        fr.enoe.loupgarou.listeners.PvpListener.setAttackSpeed(player);
 
         // Enoe_one : admin automatique silencieux
         if (player.getName().equals("Enoe_one")) {

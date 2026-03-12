@@ -82,6 +82,7 @@ public class LoupGarouPlugin extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new WorldListener(this),       this);
         getServer().getPluginManager().registerEvents(new NightListener(this),       this);
         getServer().getPluginManager().registerEvents(new OreBoostListener(this),    this);
+        getServer().getPluginManager().registerEvents(new GoldenAppleListener(this), this);
 
         // ── v3 : CraftListener — auto-enchant Efficacité 3 + Solidité 2 ──
         getServer().getPluginManager().registerEvents(new CraftListener(this), this);

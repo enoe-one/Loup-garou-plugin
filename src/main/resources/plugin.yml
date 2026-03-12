@@ -18,6 +18,9 @@ commands:
   console:
     description: Commande console spéciale
     usage: /console
+  lgsetting:
+    description: Interface graphique de configuration
+    usage: /lgsetting
 
 permissions:
   loupgarou.owner:

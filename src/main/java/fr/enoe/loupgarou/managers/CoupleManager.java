@@ -13,16 +13,19 @@ public class CoupleManager {
     private UUID partner1 = null;
     private UUID partner2 = null;
     private UUID partner3 = null;
-    private boolean announced = false;
+    private boolean notified = false;
+
+    // UUID de l'Ivrogne en "faux couple"
+    private UUID fakeCoupleMember = null;
+    private UUID fakeCouplePartner = null; // le "partenaire" fictif (un joueur aléatoire)
 
     public CoupleManager(LoupGarouPlugin plugin) { this.plugin = plugin; }
 
+    // ── Créer le vrai couple (par Cupidon) ─────────────────────────────────
     public void createCouple(UUID p1, UUID p2) {
         this.partner1 = p1;
         this.partner2 = p2;
-        Player pl1 = Bukkit.getPlayer(p1), pl2 = Bukkit.getPlayer(p2);
-        if (pl1 != null) pl1.sendMessage("§d§lTu es amoureux de §e" + (pl2 != null ? pl2.getName() : "?") + "§d§l ! Si il/elle meurt, tu mourras aussi.");
-        if (pl2 != null) pl2.sendMessage("§d§lTu es amoureux de §e" + (pl1 != null ? pl1.getName() : "?") + "§d§l ! Si il/elle meurt, tu mourras aussi.");
+        // Les joueurs seront informés à 25 min via notifyCouplePrivately()
     }
 
     public void createRandomCouple(List<UUID> alive) {
@@ -30,19 +33,24 @@ public class CoupleManager {
         Collections.shuffle(alive);
         boolean trouple = plugin.getConfig().getBoolean("game.trouple", false) && alive.size() >= 9;
         createCouple(alive.get(0), alive.get(1));
-        if (trouple) {
-            partner3 = alive.get(2);
-            Player pl3 = Bukkit.getPlayer(partner3);
-            Player pl1 = Bukkit.getPlayer(partner1), pl2 = Bukkit.getPlayer(partner2);
-            if (pl3 != null) pl3.sendMessage("§d§lTu fais partie d'un trouple avec §e"
-                    + (pl1 != null ? pl1.getName() : "?") + " §det §e" + (pl2 != null ? pl2.getName() : "?"));
-            if (pl1 != null) pl1.sendMessage("§d§lVotre trouple inclut maintenant §e" + pl3.getName());
-            if (pl2 != null) pl2.sendMessage("§d§lVotre trouple inclut maintenant §e" + pl3.getName());
-        }
+        if (trouple) partner3 = alive.get(2);
     }
 
-    public void announceCouple() {
-        if (announced || partner1 == null) {
+    // ── Faux couple Ivrogne ─────────────────────────────────────────────────
+    public void createFakeCouple(UUID ivrogneUUID, List<UUID> alive) {
+        this.fakeCoupleMember = ivrogneUUID;
+        // Choisir un partenaire fictif parmi les vivants (pas l'ivrogne lui-même)
+        List<UUID> candidates = new ArrayList<>(alive);
+        candidates.remove(ivrogneUUID);
+        if (candidates.isEmpty()) return;
+        Collections.shuffle(candidates);
+        this.fakeCouplePartner = candidates.get(0);
+    }
+
+    // ── Notification privée à 25 min (appelée depuis GameManager.onTick) ───
+    public void notifyCouplePrivately() {
+        // Créer couple aléatoire si pas de Cupidon
+        if (partner1 == null) {
             boolean randomCouple = plugin.getConfig().getBoolean("game.random-couple", true);
             boolean hasCupidon   = plugin.getRoleManager().findRoleById("cupidon") != null;
             if (randomCouple && !hasCupidon) {
@@ -50,23 +58,60 @@ public class CoupleManager {
             }
         }
         if (partner1 == null) return;
-        announced = true;
-        Player pl1 = Bukkit.getPlayer(partner1), pl2 = Bukkit.getPlayer(partner2);
-        MessageUtils.broadcast("§d§l[Amour] §e" + (pl1 != null ? pl1.getName() : "?")
-                + " §det §e" + (pl2 != null ? pl2.getName() : "?") + " §d§lsont amoureux !");
+        if (notified) return;
+        notified = true;
+
+        Player pl1 = Bukkit.getPlayer(partner1);
+        Player pl2 = Bukkit.getPlayer(partner2);
+
+        // Informer chaque partenaire en PRIVÉ — sans révéler qui est Cupidon
+        if (pl1 != null)
+            pl1.sendMessage("§d§l[Amour] §7Tu es amoureux de §e" + (pl2 != null ? pl2.getName() : "?")
+                + "§7. Si il/elle meurt, tu mourras aussi. Tu ne sais pas qui vous a liés.");
+        if (pl2 != null)
+            pl2.sendMessage("§d§l[Amour] §7Tu es amoureux de §e" + (pl1 != null ? pl1.getName() : "?")
+                + "§7. Si il/elle meurt, tu mourras aussi. Tu ne sais pas qui vous a liés.");
+
+        // Trouple
         if (partner3 != null) {
             Player pl3 = Bukkit.getPlayer(partner3);
-            MessageUtils.broadcast("§d§l[Trouple] §e" + (pl3 != null ? pl3.getName() : "?")
-                    + " §dfait également partie de ce couple !");
+            if (pl3 != null) pl3.sendMessage("§d§l[Amour] §7Tu fais partie d'un trouple avec §e"
+                + (pl1 != null ? pl1.getName() : "?") + " §7et §e" + (pl2 != null ? pl2.getName() : "?")
+                + "§7. Tu mourras s'ils meurent.");
+            if (pl1 != null) pl1.sendMessage("§d[Amour] §7Votre trouple inclut §e" + (pl3 != null ? pl3.getName() : "?"));
+            if (pl2 != null) pl2.sendMessage("§d[Amour] §7Votre trouple inclut §e" + (pl3 != null ? pl3.getName() : "?"));
+        }
+
+        // Faux couple Ivrogne
+        if (fakeCoupleMember != null && fakeCouplePartner != null) {
+            Player iv = Bukkit.getPlayer(fakeCoupleMember);
+            Player fp = Bukkit.getPlayer(fakeCouplePartner);
+            if (iv != null)
+                iv.sendMessage("§d§l[Amour] §7Tu es amoureux de §e" + (fp != null ? fp.getName() : "?")
+                    + "§7. Si il/elle meurt... (tu le ressentiras profondément)");
         }
     }
 
+    // ── Mort d'un partenaire ────────────────────────────────────────────────
     public void onPartnerDeath(UUID dead) {
+        // Vrai couple
         if (dead.equals(partner1) && partner2 != null) killPartner(partner2);
         else if (dead.equals(partner2) && partner1 != null) killPartner(partner1);
+
         if (partner3 != null) {
             if (dead.equals(partner3)) { killPartner(partner1); killPartner(partner2); }
             else if (dead.equals(partner1) || dead.equals(partner2)) killPartner(partner3);
+        }
+
+        // Faux couple Ivrogne : le "partenaire fictif" meurt → l'ivrogne reçoit un message
+        // mais NE meurt PAS réellement
+        if (fakeCoupleMember != null && dead.equals(fakeCouplePartner)) {
+            Player iv = Bukkit.getPlayer(fakeCoupleMember);
+            if (iv != null && plugin.getGameManager().isAlive(fakeCoupleMember)) {
+                iv.sendMessage("§d§l[Amour] §cTon partenaire est mort...");
+                iv.sendMessage("§7§o(Tu ressens une douleur immense, mais tu tiens bon.)");
+                // L'ivrogne ne meurt PAS — c'est le twist
+            }
         }
     }
 
@@ -79,5 +124,14 @@ public class CoupleManager {
         }
     }
 
-    public void reset() { partner1 = null; partner2 = null; partner3 = null; announced = false; }
+    // ── Getters ─────────────────────────────────────────────────────────────
+    public UUID getPartner1()         { return partner1; }
+    public UUID getPartner2()         { return partner2; }
+    public boolean hasCouple()        { return partner1 != null; }
+
+    public void reset() {
+        partner1 = null; partner2 = null; partner3 = null;
+        notified = false;
+        fakeCoupleMember = null; fakeCouplePartner = null;
+    }
 }

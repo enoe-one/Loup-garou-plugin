@@ -4,6 +4,7 @@ import fr.enoe.loupgarou.LoupGarouPlugin;
 import fr.enoe.loupgarou.managers.CageManager;
 import fr.enoe.loupgarou.managers.MessageManager;
 import fr.enoe.loupgarou.roles.Role;
+import fr.enoe.loupgarou.roles.impl.loup.LoupEndormi;
 import fr.enoe.loupgarou.utils.MessageUtils;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
@@ -97,17 +98,8 @@ public class GameManager {
 
         plugin.getRoleManager().assignRoles(new ArrayList<>(alivePlayers));
 
-        for (UUID uuid : alivePlayers) {
-            Player p = Bukkit.getPlayer(uuid);
-            if (p == null) continue;
-            Role role = plugin.getRoleManager().getRole(uuid);
-            if (role != null) {
-                p.sendMessage("§6═══════════════════════════");
-                p.sendMessage("§eTon rôle : §b" + role.getDisplayName());
-                p.sendMessage(role.getDescription());
-                p.sendMessage("§6═══════════════════════════");
-            }
-        }
+        // Les rôles sont assignés mais PAS révélés maintenant.
+        // Ils seront révélés à 20 minutes via announceRoles().
 
         applyStartEffects();
 
@@ -144,14 +136,37 @@ public class GameManager {
             plugin.getMessageManager().announceRoleReveal();
         }
 
-        // 25 min : annonce couple
+        // 25 min : Cupidon informe le couple en privé (pas d'annonce publique)
         if (elapsedSeconds == 1500) {
-            plugin.getCoupleManager().announceCouple();
+            // Créer le faux couple pour l'Ivrogne (si présent) avant la notification
+            for (UUID uuid : alivePlayers) {
+                var role = plugin.getRoleManager().getRole(uuid);
+                if (role != null && role.getId().equals("ivrogne")) {
+                    plugin.getCoupleManager().createFakeCouple(uuid, new ArrayList<>(alivePlayers));
+                    break;
+                }
+            }
+            // Notifier le vrai couple ET le faux couple Ivrogne en PRIVÉ — pas d'annonce publique
+            plugin.getCoupleManager().notifyCouplePrivately();
         }
 
-        // Loup Endormi : révélation à 1h (3600s)
+        // Loup Endormi : à 1h, il devient "awake" automatiquement via isAwake()
+        // (LoupEndormi.isAwake() retourne true quand elapsedSeconds >= 3600)
+        // On envoie juste un message d'annonce discret au loup concerné
         if (elapsedSeconds == 3600) {
-            plugin.getRoleManager().triggerSleepingWolfAwake();
+            for (UUID uuid : alivePlayers) {
+                Player p = Bukkit.getPlayer(uuid);
+                if (p == null) continue;
+                if (plugin.getRoleManager().getRole(uuid) instanceof fr.enoe.loupgarou.roles.impl.loup.LoupEndormi) {
+                    p.sendMessage("§c§l[LG] Tu t'éveilles... Tu es un Loup-Garou !");
+                    p.sendMessage("§7Tes alliés loups :");
+                    for (UUID wolf : plugin.getRoleManager().getWolfList()) {
+                        Player wp = Bukkit.getPlayer(wolf);
+                        if (wp != null && !wolf.equals(uuid))
+                            p.sendMessage("§c  - " + wp.getName());
+                    }
+                }
+            }
         }
 
         // Astronome : toutes les 10 min
@@ -385,9 +400,7 @@ public class GameManager {
             return;
         }
 
-        // ── Conditions de victoire propres à certains solitaires ──────────
-        // Joueur de Flûte : 100% des vivants charmés
-        plugin.getRoleManager().checkFlutistWin(alive);
+        // Note : le JdF gagne via la condition solitaire standard (dernier survivant)
     }
 
     public void endGame(String message) {
@@ -433,9 +446,23 @@ public class GameManager {
     private void enablePvp() { /* géré par PvpListener via state */ }
 
     private void announceRoles() {
-        if (!plugin.getConfig().getBoolean("game.composition-visible", false)) return;
-        MessageUtils.broadcast("§e§lComposition de la partie :");
-        plugin.getRoleManager().getRoleCompositionSummary().forEach(MessageUtils::broadcast);
+        // Révéler le rôle à chaque joueur en message privé
+        for (UUID uuid : alivePlayers) {
+            Player p = Bukkit.getPlayer(uuid);
+            if (p == null) continue;
+            Role role = plugin.getRoleManager().getRole(uuid);
+            if (role == null) continue;
+            p.sendMessage("§6§l╔══════════════════════════╗");
+            p.sendMessage("§6§l║  §eTon rôle est révélé !  §6§l║");
+            p.sendMessage("§6§l╚══════════════════════════╝");
+            p.sendMessage("§eTon rôle : §b" + role.getDisplayName());
+            p.sendMessage(role.getDescription());
+        }
+        // Composition publique si configuré
+        if (plugin.getConfig().getBoolean("game.composition-visible", false)) {
+            MessageUtils.broadcast("§e§lComposition de la partie :");
+            plugin.getRoleManager().getRoleCompositionSummary().forEach(MessageUtils::broadcast);
+        }
     }
 
     private void grantOwnerPerms(Player player) {
