@@ -4,6 +4,38 @@
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Loup-Garou UHC — Paper 1.21</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .btn-download {
+      color:#000;background:#ffdd00;
+      border-top:3px solid #ffff88;border-left:3px solid #ffff88;
+      border-right:3px solid #886600;border-bottom:3px solid #886600;
+    }
+    .btn-download:hover{background:#ffe533;color:#000}
+
+    .new-badge {
+      font-family:var(--px);font-size:.28rem;
+      background:var(--blood2);color:var(--moon);
+      border:1px solid #ff4444;padding:2px 5px;
+      display:inline-block;letter-spacing:.05em;
+      vertical-align:middle;margin-left:6px;
+      animation:flicker 3s infinite;
+    }
+
+    .download-section {
+      background:linear-gradient(135deg,#0a0a00,#111100,#0a0a00);
+      border-top:2px solid #333300;border-bottom:2px solid #333300;
+    }
+    .download-card {
+      display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+      background:#111100;padding:14px 16px;
+      border-top:2px solid var(--border-hi);border-left:4px solid #ffdd00;
+      border-right:2px solid var(--border-lo);border-bottom:2px solid var(--border-lo);
+    }
+    .download-icon { font-size:2.2rem;flex-shrink:0; }
+    .download-info { flex:1;min-width:160px; }
+    .download-name { font-family:var(--px);font-size:.5rem;color:var(--yellow);text-shadow:1px 1px 0 #000;margin-bottom:3px;letter-spacing:.03em; }
+    .download-meta { font-family:var(--vt);font-size:.95rem;color:var(--text-dim); }
+  </style>
 </head>
 <body>
 <nav>
@@ -13,6 +45,7 @@
       <li><a href="index.html" class="active">Accueil</a></li>
       <li><a href="rules.html">Règles</a></li>
       <li><a href="roles.html">Rôles</a></li>
+      <li><a href="evenements.html">Événements</a></li>
     </ul>
   </div>
 </nav>
@@ -26,6 +59,7 @@
   <div class="hero-cta">
     <a href="roles.html" class="btn btn-blood">▶ Les Rôles</a>
     <a href="rules.html" class="btn btn-stone">📜 Règles</a>
+    <a href="LoupGarou-2.1.jar" download class="btn btn-download">⬇ Télécharger v2.1</a>
   </div>
 </div>
 
@@ -121,12 +155,52 @@
   </div>
 </div>
 
+<!-- TÉLÉCHARGEMENT -->
+<div class="download-section">
+  <div class="wrap">
+    <div class="section-title">⬇ Téléchargement</div>
+    <div class="download-card">
+      <div class="download-icon">📦</div>
+      <div class="download-info">
+        <div class="download-name">LoupGarou-2.1.jar <span class="new-badge">LATEST</span></div>
+        <div class="download-meta">Paper 1.21 · Java 21 · 83 fichiers Java · 40+ rôles · Événements spéciaux</div>
+      </div>
+      <a href="LoupGarou-2.1.jar" download class="btn btn-download" style="white-space:nowrap">⬇ Télécharger v2.1</a>
+    </div>
+    <div style="margin-top:6px;font-family:var(--vt);font-size:.9rem;color:#444;padding-left:4px">
+      Placez le .jar dans <code>plugins/</code> de votre serveur Paper 1.21. OldCombatMechanics requis pour le PVP 1.8.
+    </div>
+  </div>
+</div>
+
+<!-- NOUVEAUTÉ -->
+<div class="wrap">
+  <div class="section-title">✨ Dernière Nouveauté</div>
+  <a href="evenements.html" style="display:block;text-decoration:none;">
+    <div class="feat-card" style="border-left-color:#002395;background:linear-gradient(135deg,#000a1f,#00052a);padding:16px;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
+        <span style="font-size:1.8rem">🇫🇷</span>
+        <span style="font-family:var(--px);font-size:.48rem;color:var(--moon);text-shadow:2px 2px 0 #000;letter-spacing:.04em;">
+          Skysofrenie du 18e <span class="new-badge">NEW</span>
+        </span>
+      </div>
+      <div style="font-family:var(--vt);font-size:1.05rem;color:#8899bb;line-height:1.6;font-style:italic">
+        À 2h15 de jeu, la Révolution Française éclate. Citoyens, Maires, Loups — tout le monde se transforme. Un événement en <strong style="color:var(--moon)">hommage à la France éternelle</strong>, avec Napoléon Iᵉʳ comme rôle ultime.
+      </div>
+      <div style="margin-top:8px;font-family:var(--px);font-size:.35rem;color:#4477cc;letter-spacing:.04em">
+        Découvrir l'événement →
+      </div>
+    </div>
+  </a>
+</div>
+
 <footer>
   <div class="footer-logo">🐺 Loup-Garou UHC</div>
   <ul class="footer-links">
     <li><a href="index.html">Accueil</a></li>
     <li><a href="rules.html">Règles</a></li>
     <li><a href="roles.html">Rôles</a></li>
+    <li><a href="evenements.html">Événements</a></li>
   </ul>
   <div class="footer-copy">Paper 1.21 · Java 21 · Développé par Enoe_one</div>
 </footer>
