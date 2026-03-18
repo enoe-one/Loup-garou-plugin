@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Rebouteux — Loup-Garou UHC</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .mc-stat{background:#000;border:1px solid #222;padding:5px 7px}
+    .stat-label{font-family:var(--px);font-size:.32rem;color:#555;margin-bottom:2px;letter-spacing:.04em}
+    .stat-value{font-family:var(--vt);font-size:1rem;color:var(--yellow)}
+    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">🐺 Loup-Garou UHC</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="../rules.html">Règles</a></li>
+      <li><a href="../roles.html" class="active">Rôles</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div style="background:linear-gradient(135deg,#0a1a0a 0%,#0d0d0d 60%);border-bottom:2px solid #001a00;padding:14px 10px 12px">
+  <div style="max-width:1080px;margin:0 auto">
+    <div class="breadcrumb">
+      <a href="../roles.html">Rôles</a><span>›</span>
+      <a href="../roles.html#village">🏡 Villageois</a><span>›</span>
+      <span style="color:#888">Rebouteux</span>
+    </div>
+    <div class="role-page-icon">🌿</div>
+    <div class="role-page-title" style="color:var(--c-village);text-shadow:3px 3px 0 #000">Rebouteux</div>
+    <span class="rc-tag village" style="margin-bottom:6px;display:inline-block">🏡 Villageois</span>
+    <div class="role-tagline">« Il soigne dans l'ombre, sans jamais se trahir. »</div>
+  </div>
+</div>
+
+<div class="role-layout">
+  <div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">📜 Description</div>
+      <p style="font-family:var(--vt);font-size:1rem;color:var(--text-dim);line-height:1.45">Guérisseur discret, il pose une protection invisible sur ses alliés. Quand ils frôlent la mort, son sort s'active automatiquement.</p>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">⚡ Pouvoirs</div>
+      <p style="font-family:var(--vt);font-size:1rem;color:var(--text);line-height:1.5">
+        <strong style="color:var(--yellow)">/lg guerir &lt;pseudo&gt;</strong> (3× par partie) : pose une protection sur un joueur. Quand ce joueur passe sous 4♥ → soigné automatiquement de <strong>3♥</strong>. Le ciblé n'est pas averti.<br><br>
+        <strong style="color:var(--yellow)">Pomme en or :</strong> lui rapporte <strong>+3♥</strong> au lieu de +2♥.
+      </p>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">💬 Commandes</div>
+      <div class="cmd-block"><span class="cmd">/lg guerir &lt;pseudo&gt;</span><span class="cmd-desc">Pose une protection auto-soin 3♥ sous 4♥ (3×/partie)</span></div>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">🎯 Stratégie & Conseils</div>
+      <div class="tip">Protège les joueurs qui vont au combat en premier</div>
+      <div class="tip">Le ciblé ne sait pas qu'il est protégé — garde le secret</div>
+      <div class="tip">Garde une guérison pour toi-même si nécessaire</div>
+      <div class="tip">Les pommes en or valent plus pour toi — collecte-en</div>
+    </div>
+  </div>
+  <div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-village)">📊 Statistiques</div>
+      <div class="stats-grid">
+        <div class="mc-stat"><div class="stat-label">Difficulté</div><div class="stat-value">Normale</div></div>
+        <div class="mc-stat"><div class="stat-label">Guérisons max</div><div class="stat-value">3×/partie</div></div>
+        <div class="mc-stat"><div class="stat-label">Soin auto</div><div class="stat-value">3♥ sous 4♥</div></div>
+        <div class="mc-stat"><div class="stat-label">Pomme en or</div><div class="stat-value">+3♥ (au lieu de 2)</div></div>
+      </div>
+    </div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-village)">🏆 Victoire</div>
+      <p style="font-family:var(--vt);font-size:.98rem;color:var(--text-dim)">Gagner si <span style='color:var(--c-village)'>tous les Loups ET tous les Solitaires</span> sont éliminés.</p>
+    </div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-village)">🏷️ Famille</div>
+      <div style="font-size:1.6rem;margin-bottom:4px">🏡</div>
+      <span class="rc-tag village">Villageois</span>
+    </div>
+    <a href="../roles.html#village" class="btn btn-stone" style="width:100%;display:block;text-align:center;margin-top:2px;box-sizing:border-box">← Tous les Villageois</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">🐺 Loup-Garou UHC</div>
+  <ul class="footer-links">
+    <li><a href="../index.html">Accueil</a></li>
+    <li><a href="../rules.html">Règles</a></li>
+    <li><a href="../roles.html">Rôles</a></li>
+  </ul>
+  <div class="footer-copy">Paper 1.21 · Développé par Enoe_one</div>
+</footer>
+</body>
+</html>

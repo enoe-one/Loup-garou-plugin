@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Grand Méchant Loup — Loup-Garou UHC</title>
+  <title>Loup-Garou Hurleur — Loup-Garou UHC</title>
   <link rel="stylesheet" href="../style.css">
   <style>
     .mc-stat{background:#000;border:1px solid #222;padding:5px 7px}
@@ -28,12 +28,12 @@
     <div class="breadcrumb">
       <a href="../roles.html">Rôles</a><span>›</span>
       <a href="../roles.html#loup">🐺 Loup-Garou</a><span>›</span>
-      <span style="color:#888">Grand Méchant Loup</span>
+      <span style="color:#888">Loup-Garou Hurleur</span>
     </div>
-    <div class="role-page-icon">💀</div>
-    <div class="role-page-title" style="color:var(--c-loup);text-shadow:3px 3px 0 #000">Grand Méchant Loup</div>
+    <div class="role-page-icon">🌕</div>
+    <div class="role-page-title" style="color:var(--c-loup);text-shadow:3px 3px 0 #000">Loup-Garou Hurleur</div>
     <span class="rc-tag loup" style="margin-bottom:6px;display:inline-block">🐺 Loup-Garou</span>
-    <div class="role-tagline">« Le plus puissant — jusqu'à la première perte. »</div>
+    <div class="role-tagline">« Son hurlement soigne toute la meute. »</div>
   </div>
 </div>
 
@@ -41,27 +41,26 @@
   <div>
     <div class="block">
       <div class="block-title" style="color:var(--c-loup)">📜 Description</div>
-      <p style="font-family:var(--vt);font-size:1rem;color:var(--text-dim);line-height:1.45">Le chef de meute. Plus fort que tous en début de partie, mais la mort de ses alliés affaiblit son emprise en journée.</p>
+      <p style="font-family:var(--vt);font-size:1rem;color:var(--text-dim);line-height:1.45">Le soutien de la meute. Chaque hurlement soigne tous les loups, faisant de lui un atout précieux pour les combats prolongés.</p>
     </div>
     <div class="block">
       <div class="block-title" style="color:var(--c-loup)">⚡ Pouvoirs</div>
       <p style="font-family:var(--vt);font-size:1rem;color:var(--text);line-height:1.5">
-        <strong style="color:var(--yellow)">Force permanente :</strong> Strength I jour ET nuit.<br>
-        <span style="color:#888;font-size:.9rem">→ Si un loup meurt : perd la Force le jour, la garde uniquement la nuit.</span><br><br>
+        <strong style="color:var(--yellow)">Nuit :</strong> Strength I permanente.<br><br>
         <strong style="color:var(--yellow)">Kill :</strong> Speed I + 2♥ d'absorption pendant 1 minute.<br><br>
-        <strong style="color:var(--yellow)">/lg hurler</strong> (1× par partie) : signale sa position aux loups.
+        <strong style="color:var(--yellow)">/lg hurler</strong> (3× par partie) : signale sa position + accorde <strong>Regeneration II pendant 7 secondes</strong> à lui-même ET à tous les loups en ligne.
       </p>
     </div>
     <div class="block">
       <div class="block-title" style="color:var(--c-loup)">💬 Commandes</div>
-      <div class="cmd-block"><span class="cmd">/lg hurler</span><span class="cmd-desc">Hurle — position envoyée aux loups (1×/partie)</span></div>
+      <div class="cmd-block"><span class="cmd">/lg hurler</span><span class="cmd-desc">Hurle — Regen II 7s pour tous les loups (3×/partie)</span></div>
     </div>
     <div class="block">
       <div class="block-title" style="color:var(--c-loup)">🎯 Stratégie & Conseils</div>
-      <div class="tip">En début de partie : tu es le plus fort — prends l'initiative</div>
-      <div class="tip">Protège tes alliés loups pour garder ta force permanente</div>
-      <div class="tip">En fin de partie seul : tu n'as la force que la nuit — adapte ta tactique</div>
-      <div class="tip">Hurle au bon moment pour rallier la meute</div>
+      <div class="tip">Hurle juste avant ou pendant un combat pour soigner toute la meute</div>
+      <div class="tip">3 hurlements = 3 Regen II — ménage-les pour les moments critiques</div>
+      <div class="tip">Coordonne avec les loups pour maximiser la synergie</div>
+      <div class="tip">Regen II = ~1♥ toutes les 0.5s pendant 7s = potentiellement 7♥ soignés</div>
     </div>
   </div>
   <div>
@@ -69,9 +68,9 @@
       <div class="block-title" style="color:var(--c-loup)">📊 Statistiques</div>
       <div class="stats-grid">
         <div class="mc-stat"><div class="stat-label">Difficulté</div><div class="stat-value">Normale</div></div>
-        <div class="mc-stat"><div class="stat-label">Force</div><div class="stat-value">Permanente*</div></div>
-        <div class="mc-stat"><div class="stat-label">Si loup mort</div><div class="stat-value">Nuit seule</div></div>
-        <div class="mc-stat"><div class="stat-label">Hurlement</div><div class="stat-value">1×/partie</div></div>
+        <div class="mc-stat"><div class="stat-label">Force nuit</div><div class="stat-value">Strength I</div></div>
+        <div class="mc-stat"><div class="stat-label">Hurlements</div><div class="stat-value">3×/partie</div></div>
+        <div class="mc-stat"><div class="stat-label">Regen par hurlement</div><div class="stat-value">Regen II · 7s</div></div>
       </div>
     </div>
     <div class="block" style="margin-bottom:4px">
