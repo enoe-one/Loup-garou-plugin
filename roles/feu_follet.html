@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Feu Follet — Loup-Garou UHC</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .mc-stat{background:#000;border:1px solid #222;padding:5px 7px}
+    .stat-label{font-family:var(--px);font-size:.32rem;color:#555;margin-bottom:2px;letter-spacing:.04em}
+    .stat-value{font-family:var(--vt);font-size:1rem;color:var(--yellow)}
+    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">🐺 Loup-Garou UHC</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="../rules.html">Règles</a></li>
+      <li><a href="../roles.html" class="active">Rôles</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div style="background:linear-gradient(135deg,#1f1400 0%,#0d0d0d 60%);border-bottom:2px solid #1a0000;padding:14px 10px 12px">
+  <div style="max-width:1080px;margin:0 auto">
+    <div class="breadcrumb">
+      <a href="../roles.html">Rôles</a><span>›</span>
+      <a href="../roles.html#soli">🌙 Solitaire</a><span>›</span>
+      <span style="color:#888">Feu Follet</span>
+    </div>
+    <div class="role-page-icon">🔥</div>
+    <div class="role-page-title" style="color:var(--c-soli);text-shadow:3px 3px 0 #000">Feu Follet</div>
+    <span class="rc-tag soli" style="margin-bottom:6px;display:inline-block">🌙 Solitaire</span>
+    <div class="role-tagline">« Il danse dans les ombres que vous ne regardez pas. »</div>
+  </div>
+</div>
+
+<div class="role-layout">
+  <div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-soli)">📜 Histoire &amp; Contexte</div>
+      <p style="font-family:var(--vt);font-size:1rem;color:var(--text-dim);line-height:1.45">Esprit errant entre les vivants et les morts, le Feu Follet observe tout depuis l'obscurité. Lumineux mais insaisissable.</p>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-soli)">⚡ Pouvoir</div>
+      <p style="font-family:var(--vt);font-size:1rem;color:var(--text);line-height:1.5">Voit les rôles via particules la nuit. Invisible sans armure la nuit. INCENDIE : déclenche un feu contre un joueur proche. PLUME : téléportation de 25 blocs. Reçoit Tranchant IV.</p>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-soli)">💬 Commandes</div>
+      <code class="cmd-line">/lg incendie</code><div class="cmd-desc">Déclenche un feu contre un joueur proche</div><code class="cmd-line">/lg plume</code><div class="cmd-desc">Téléportation de 25 blocs dans la direction regardée</div>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-soli)">🎯 Stratégie &amp; Conseils</div>
+      <div class="tip">La téléporation vous permet de fuir n'importe quel combat défavorable</div><div class="tip">L'incendie est dévastateur en UHC — dégâts continus</div><div class="tip">Votre vision des rôles la nuit = carte complète</div><div class="tip">Combinez feu + téléportation pour frapper et fuir</div>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-soli)">🤝 Alliés &amp; Ennemis</div>
+      <div style="font-family:var(--px);font-size:.33rem;color:var(--c-village);margin-bottom:4px;letter-spacing:.04em">Alliés naturels</div>
+      <div style="margin-bottom:8px"><span class="ally ally-pos">Personne</span></div>
+      <div style="font-family:var(--px);font-size:.33rem;color:var(--c-loup);margin-bottom:4px;letter-spacing:.04em">Ennemis</div>
+      <div><span class="ally ally-neg">Tous</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-soli)">📊 Statistiques</div>
+      <div class="stats-grid"><div class="mc-stat"><div class="stat-label">Difficulté</div><div class="stat-value">Difficile</div></div><div class="mc-stat"><div class="stat-label">Tranchant</div><div class="stat-value">IV</div></div><div class="mc-stat"><div class="stat-label">Invisibilité</div><div class="stat-value">Nuit sans armure</div></div><div class="mc-stat"><div class="stat-label">Mobilité</div><div class="stat-value">Téléportation 25 blocs</div></div></div>
+    </div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-soli)">🏆 Victoire</div>
+      <p style="font-family:var(--vt);font-size:.98rem;color:var(--text-dim)">Gagner <span style='color:var(--c-soli)'>seul</span> — être le dernier survivant (ou remplir sa condition unique). Aucun autre Solitaire ne peut gagner en même temps.</p>
+    </div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-soli)">🏷️ Famille</div>
+      <div style="font-size:1.6rem;margin-bottom:4px">🌙</div>
+      <span class="rc-tag soli">Solitaire</span>
+      <p style="font-family:var(--vt);font-size:.9rem;color:#555;margin-top:6px">Condition de victoire propre.</p>
+    </div>
+    <a href="../roles.html#soli" class="btn btn-stone" style="width:100%;display:block;text-align:center;margin-top:2px;box-sizing:border-box">← Tous les Solitaires</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">🐺 Loup-Garou UHC</div>
+  <ul class="footer-links">
+    <li><a href="../index.html">Accueil</a></li>
+    <li><a href="../rules.html">Règles</a></li>
+    <li><a href="../roles.html">Rôles</a></li>
+  </ul>
+  <div class="footer-copy">Paper 1.21 · Développé par Enoe_one</div>
+</footer>
+</body>
+</html>

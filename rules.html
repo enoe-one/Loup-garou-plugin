@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Règles — Loup-Garou UHC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">🐺 Loup-Garou UHC</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="rules.html" class="active">Règles</a></li>
+      <li><a href="roles.html">Rôles</a></li>
+      <li><a href="evenements.html">Événements</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div style="background:linear-gradient(180deg,#1a0000 0%,#0d0d0d 100%);border-bottom:2px solid #1a0000;padding:16px 10px 14px">
+  <div style="max-width:1080px;margin:0 auto">
+    <div style="font-family:var(--px);font-size:.35rem;color:var(--blood2);letter-spacing:.25em;margin-bottom:7px">📜 Règles du jeu</div>
+    <div style="font-family:var(--px);font-size:clamp(.65rem,2vw,1.1rem);color:var(--moon);text-shadow:3px 3px 0 var(--blood),4px 4px 0 #000;margin-bottom:5px">Le Code de la Nuit</div>
+    <div style="font-family:var(--vt);font-size:1.1rem;color:#777">Toutes les règles, mécaniques et le déroulement du plugin Loup-Garou UHC.</div>
+  </div>
+</div>
+
+<div style="max-width:1080px;margin:0 auto;padding:12px 10px;display:grid;grid-template-columns:1fr 250px;gap:6px">
+
+<div>
+
+<!-- UHC -->
+<div class="block" style="margin-bottom:4px">
+  <div class="block-title" style="color:var(--c-loup)">🩸 Mode Ultra Hardcore</div>
+  <div style="font-family:var(--vt);font-size:1rem;color:var(--text-dim);line-height:1.4">
+    La régénération naturelle de vie est <span style="color:var(--c-loup)">totalement désactivée</span>. Vous ne récupérez de la vie qu'avec des pommes dorées, potions de soin, ou certains pouvoirs de rôles. Chaque demi-cœur perdu est <span style="color:var(--moon)">définitif</span>.
+  </div>
+</div>
+
+<!-- MORT -->
+<div class="block" style="margin-bottom:4px">
+  <div class="block-title" style="color:var(--moon)">☠️ Mécanique de Mort — La Cage de Résurrection</div>
+  <div style="font-family:var(--vt);font-size:1rem;color:var(--text-dim);line-height:1.4;margin-bottom:10px">
+    À la mort, le joueur est <span style="color:var(--moon)">immédiatement téléporté avec son inventaire</span> dans la cage en bedrock (0, 220, 0). Il dispose de <span style="color:var(--yellow)">10 secondes</span> pendant lesquelles la <strong style="color:var(--c-village)">Sorcière</strong> ou l'<strong style="color:var(--c-loup)">Infecté</strong> peuvent le ressusciter.
+  </div>
+  <div class="tip">Pendant les 10 sec : joueur en cage, stuff conservé, résurrection possible</div>
+  <div class="tip">Après 10 sec : le stuff <span style="color:var(--c-loup)">drop à l'endroit de la mort</span> sur la carte</div>
+  <div class="tip">Le joueur reste en mode spectateur définitif après les 10 sec</div>
+  <div class="tip">Avant 30 min : la Sorcière ET l'Infecté peuvent ressusciter</div>
+  <div class="tip">Après 30 min : plus aucune résurrection — mort définitive immédiate</div>
+</div>
+
+<!-- TIMELINE -->
+<div class="block" style="margin-bottom:4px">
+  <div class="block-title" style="color:var(--moon)">⏱️ Déroulement d'une Partie</div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-time">Avant le début</div>
+      <div class="tl-title">La Cage de Départ</div>
+      <div class="tl-desc">Tous les joueurs apparaissent dans la cage en bedrock (0, 220, 0). L'Owner configure via <code>/lgsetting</code> puis lance.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">Lancement</div>
+      <div class="tl-title">Rôle secret + Cécité 5 sec</div>
+      <div class="tl-desc">Chaque joueur reçoit son rôle en MP. Cécité, compte à rebours 5-4-3-2-1. TP dans une <span style="color:var(--c-village)">forêt sombre centrale</span>, plaines autour. Map : −500 à +500 (1000×1000).</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">0 → 20 min</div>
+      <div class="tl-title">Exploration — PVP désactivé</div>
+      <div class="tl-desc">PVP interdit. Nether &amp; End bloqués. Max <span style="color:var(--yellow)">1 diamant par bloc</span> cassé. Grottes drop ×1.8. Tout outil crafté reçoit auto <span style="color:var(--yellow)">Efficacité 3 + Solidité 2</span>.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">20 min</div>
+      <div class="tl-title">Révélation + PVP activé</div>
+      <div class="tl-desc">Rôles révélés en MP. <span style="color:var(--c-loup)">PVP actif</span>. Titre à l'écran. Chat désactivé.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">25 min</div>
+      <div class="tl-title">Annonce du Couple (si Cupidon)</div>
+      <div class="tl-desc">Le couple est annoncé publiquement s'il existe. Les amoureux gagnent et meurent ensemble.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">Chaque épisode (~20 min)</div>
+      <div class="tl-title">Vote du Village</div>
+      <div class="tl-desc">Vote via <code>/lg voter &lt;joueur&gt;</code>. Plus voté : −3 cœurs, rôle révélé, Faiblesse 5 min.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">1 heure</div>
+      <div class="tl-title">Le Loup Endormi s'éveille</div>
+      <div class="tl-desc">Le Loup Endormi reçoit enfin la liste de ses alliés.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">1h30</div>
+      <div class="tl-title">🌀 Réduction de la Map</div>
+      <div class="tl-desc">La zone de jeu commence à se réduire progressivement depuis les bords (−500/+500). Les joueurs hors de la zone subissent des dégâts croissants.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONDITIONS DE VICTOIRE -->
+<div class="block" style="margin-bottom:4px">
+  <div class="block-title" style="color:var(--moon)">🏆 Conditions de Victoire</div>
+
+  <div style="margin-bottom:8px;padding:8px;background:var(--bg-village);border-left:3px solid var(--c-village)">
+    <div style="font-family:var(--px);font-size:.44rem;color:var(--c-village);margin-bottom:5px;letter-spacing:.03em">🌿 Village</div>
+    <div style="font-family:var(--vt);font-size:1rem;color:var(--text-dim);line-height:1.4">
+      Gagne si <span style="color:var(--c-village)">tous les Loups et tous les Solitaires sont éliminés</span>. Aucune tolérance — tous les ennemis doivent être morts.
+    </div>
+  </div>
+
+  <div style="margin-bottom:8px;padding:8px;background:var(--bg-loup);border-left:3px solid var(--c-loup)">
+    <div style="font-family:var(--px);font-size:.44rem;color:var(--c-loup);margin-bottom:5px;letter-spacing:.03em">🐺 Loups-Garous</div>
+    <div style="font-family:var(--vt);font-size:1rem;color:var(--text-dim);line-height:1.4">
+      Gagnent si <span style="color:var(--c-loup)">tous les Villageois et tous les Solitaires sont éliminés</span>. Ils doivent éliminer TOUT le monde sauf eux-mêmes.
+    </div>
+  </div>
+
+  <div style="margin-bottom:4px;padding:8px;background:var(--bg-soli);border-left:3px solid var(--c-soli)">
+    <div style="font-family:var(--px);font-size:.44rem;color:var(--c-soli);margin-bottom:5px;letter-spacing:.03em">🌙 Solitaires</div>
+    <div style="font-family:var(--vt);font-size:1rem;color:var(--text-dim);line-height:1.4">
+      <span style="color:var(--c-soli)">Chaque Solitaire gagne seul</span> — il doit être le dernier survivant ou remplir sa condition unique. Même deux Solitaires ne peuvent pas gagner ensemble.
+    </div>
+  </div>
+
+  <div style="padding:8px;background:var(--bg-binaire);border-left:3px solid var(--c-binaire)">
+    <div style="font-family:var(--px);font-size:.44rem;color:var(--c-binaire);margin-bottom:5px;letter-spacing:.03em">⚖️ Binaires</div>
+    <div style="font-family:var(--vt);font-size:1rem;color:var(--text-dim);line-height:1.4">
+      Gagnent avec leur camp actuel selon les conditions de ce camp. Si leur camp change (ex: Enfant Sauvage devient Loup), leur condition de victoire change aussi.
+    </div>
+  </div>
+</div>
+
+<!-- VOTE -->
+<div class="block" style="margin-bottom:4px">
+  <div class="block-title" style="color:var(--moon)">⚖️ Le Vote</div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rôle</th><th>Poids</th><th>Particularité</th></tr></thead>
+      <tbody>
+        <tr><td>Joueur normal</td><td>×1</td><td>—</td></tr>
+        <tr><td>Maire</td><td style="color:var(--yellow)">×2</td><td>Décide en cas d'égalité</td></tr>
+        <tr><td>Citoyen</td><td style="color:var(--yellow)">×2</td><td>Sauf en cas d'égalité</td></tr>
+        <tr><td>Grand Méchant Loup</td><td style="color:var(--yellow)">×2</td><td>—</td></tr>
+        <tr><td>Inconnu</td><td style="color:var(--c-loup)">×0</td><td>Ne peut pas voter</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="sep"></div>
+  <div class="tip">Plus voté → −3 cœurs, rôle révélé, Faiblesse 5 min</div>
+  <div class="tip">Si vie = 0 : mort effective (sauf Idiot du Village)</div>
+</div>
+
+<!-- MAP -->
+<div class="block" style="margin-bottom:4px">
+  <div class="block-title" style="color:var(--moon)">🗺️ La Map</div>
+  <div class="tip">Spawn : <span style="color:var(--c-village)">forêt sombre</span> au centre (0, 0)</div>
+  <div class="tip">Biome central : forêt noire dense</div>
+  <div class="tip">Biome périphérique : plaines ouvertes</div>
+  <div class="tip">Taille : <span style="color:var(--yellow)">−500 à +500</span> (1000×1000 blocs)</div>
+  <div class="tip">Réduction à partir de <span style="color:var(--yellow)">1h30</span> de jeu</div>
+  <div class="tip">Hors zone → dégâts progressifs</div>
+</div>
+
+<!-- MINERAIS / CRAFT -->
+<div class="block" style="margin-bottom:4px">
+  <div class="block-title" style="color:var(--moon)">⛏️ Mines &amp; Crafting</div>
+  <div class="tip">Grottes : drop <span style="color:var(--yellow)">×1.8</span> sur tous les minerais</div>
+  <div class="tip">Diamant : <span style="color:var(--c-loup)">1 seul drop par bloc</span> — pas de Fortune</div>
+  <div class="tip">Outil crafté → reçoit auto <span style="color:var(--yellow)">Efficacité 3 + Solidité 2</span></div>
+  <div class="tip">Outils concernés : hache, pioche, pelle, cisaille, houe</div>
+  <div class="tip">PVP style 1.8 : pas de cooldown d'attaque</div>
+</div>
+
+<!-- ENCHANTEMENTS -->
+<div class="block">
+  <div class="block-title" style="color:var(--moon)">⚗️ Enchantements Limités</div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Enchantement</th><th>Limite</th><th>Exception</th></tr></thead>
+      <tbody>
+        <tr><td>Tranchant</td><td>III max</td><td>Solitaires → IV</td></tr>
+        <tr><td>Protection</td><td>III max</td><td>Solitaires → IV</td></tr>
+        <tr><td>Puissance</td><td>III max</td><td>Solitaires → IV</td></tr>
+        <tr><td>Efficacité</td><td style="color:var(--c-village)">Auto III</td><td>Sur craft d'outil</td></tr>
+        <tr><td>Solidité</td><td style="color:var(--c-village)">Auto II</td><td>Sur craft d'outil</td></tr>
+        <tr><td>Recul</td><td style="color:var(--c-loup)">Interdit</td><td>—</td></tr>
+        <tr><td>Frappe</td><td style="color:var(--c-loup)">Interdit</td><td>—</td></tr>
+        <tr><td>Raccommodage</td><td style="color:var(--c-loup)">Interdit</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</div><!-- fin colonne -->
+
+<!-- SIDEBAR -->
+<div style="position:sticky;top:50px;align-self:start">
+
+  <div class="block" style="margin-bottom:4px">
+    <div class="block-title" style="color:var(--blood2)">📋 Résumé</div>
+    <div class="tip">Vie : <span style="color:var(--c-loup)">pas de régénération</span></div>
+    <div class="tip">PVP après <span style="color:var(--yellow)">20 min</span></div>
+    <div class="tip">Diamant : <span style="color:var(--c-loup)">1 drop max</span></div>
+    <div class="tip">Nether &amp; End <span style="color:var(--c-loup)">bloqués</span></div>
+    <div class="tip">Mort → cage <span style="color:var(--yellow)">10 sec</span></div>
+    <div class="tip">Après 10 sec : stuff <span style="color:var(--c-loup)">drop à mort</span></div>
+    <div class="tip">Grottes drop <span style="color:var(--yellow)">×1.8</span></div>
+    <div class="tip">Outil crafté → <span style="color:var(--yellow)">Effi3 + Sol2</span></div>
+    <div class="tip">Map réduit à <span style="color:var(--yellow)">1h30</span></div>
+    <div class="tip">Serveur crack <span style="color:var(--c-village)">compatible</span></div>
+  </div>
+
+  <div class="block" style="margin-bottom:4px">
+    <div class="block-title" style="color:var(--blood2)">🏆 Victoires</div>
+    <div style="padding:5px 0;border-bottom:1px solid #1a1a1a">
+      <span class="rc-tag village">Village</span>
+      <div style="font-family:var(--vt);font-size:.93rem;color:var(--text-dim);margin-top:3px">Tous les Loups <b style="color:var(--moon)">ET</b> Solitaires éliminés.</div>
+    </div>
+    <div style="padding:5px 0;border-bottom:1px solid #1a1a1a">
+      <span class="rc-tag loup">Loups</span>
+      <div style="font-family:var(--vt);font-size:.93rem;color:var(--text-dim);margin-top:3px">Tous les Villageois <b style="color:var(--moon)">ET</b> Solitaires éliminés.</div>
+    </div>
+    <div style="padding:5px 0;border-bottom:1px solid #1a1a1a">
+      <span class="rc-tag soli">Solitaires</span>
+      <div style="font-family:var(--vt);font-size:.93rem;color:var(--text-dim);margin-top:3px">Dernier survivant <b style="color:var(--moon)">seul</b>.</div>
+    </div>
+    <div style="padding:5px 0">
+      <span class="rc-tag binaire">Binaires</span>
+      <div style="font-family:var(--vt);font-size:.93rem;color:var(--text-dim);margin-top:3px">Gagnent avec leur camp actuel.</div>
+    </div>
+  </div>
+
+  <div class="block" style="margin-bottom:4px">
+    <div class="block-title" style="color:var(--blood2)">⚡ Événements</div>
+    <div class="tip">Nuit Sanglante</div>
+    <div class="tip">Trublionage</div>
+    <div class="tip">Élection du Maire</div>
+    <div class="tip">Exposé</div>
+  </div>
+
+  <div class="block">
+    <div class="block-title" style="color:var(--blood2)">🔓 Compatibilité</div>
+    <div class="tip">Paper 1.21</div>
+    <div class="tip">Java 21+</div>
+    <div class="tip"><span style="color:var(--c-village)">✓</span> Serveur crack (offline)</div>
+    <div class="tip">OfflineMode: true</div>
+  </div>
+
+</div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">🐺 Loup-Garou UHC</div>
+  <ul class="footer-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="rules.html">Règles</a></li>
+    <li><a href="roles.html">Rôles</a></li>
+    <li><a href="evenements.html">Événements</a></li>
+  </ul>
+  <div class="footer-copy">Paper 1.21 · Développé par Enoe_one</div>
+</footer>
+</body>
+</html>

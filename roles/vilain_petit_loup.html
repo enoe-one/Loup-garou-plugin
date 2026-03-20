@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Vilain Petit Loup — Loup-Garou UHC</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .mc-stat{background:#000;border:1px solid #222;padding:5px 7px}
+    .stat-label{font-family:var(--px);font-size:.32rem;color:#555;margin-bottom:2px;letter-spacing:.04em}
+    .stat-value{font-family:var(--vt);font-size:1rem;color:var(--yellow)}
+    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">🐺 Loup-Garou UHC</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="../rules.html">Règles</a></li>
+      <li><a href="../roles.html" class="active">Rôles</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div style="background:linear-gradient(135deg,#1f0a0a 0%,#0d0d0d 60%);border-bottom:2px solid #1a0000;padding:14px 10px 12px">
+  <div style="max-width:1080px;margin:0 auto">
+    <div class="breadcrumb">
+      <a href="../roles.html">Rôles</a><span>›</span>
+      <a href="../roles.html#loup">🐺 Loup-Garou</a><span>›</span>
+      <span style="color:#888">Vilain Petit Loup</span>
+    </div>
+    <div class="role-page-icon">🐾</div>
+    <div class="role-page-title" style="color:var(--c-loup);text-shadow:3px 3px 0 #000">Vilain Petit Loup</div>
+    <span class="rc-tag loup" style="margin-bottom:6px;display:inline-block">🐺 Loup-Garou</span>
+    <div class="role-tagline">« Petit, mais dangereux. »</div>
+  </div>
+</div>
+
+<div class="role-layout">
+  <div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-loup)">📜 Description</div>
+      <p style="font-family:var(--vt);font-size:1rem;color:var(--text-dim);line-height:1.45">Plus faible que le Loup-Garou ordinaire, mais partage la même ambition. Sa force est réduite, compensée par une mobilité légère.</p>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-loup)">⚡ Pouvoirs</div>
+      <p style="font-family:var(--vt);font-size:1rem;color:var(--text);line-height:1.5">
+        <strong style="color:var(--yellow)">Nuit :</strong> Strength 0.5 + Speed 0.5 (effets intermédiaires, ~50% uptime).<br><br>
+        <strong style="color:var(--yellow)">Kill :</strong> Speed I + 2♥ d'absorption pendant 1 minute.<br><br>
+        <strong style="color:var(--yellow)">/lg hurler</strong> (1× par partie) : signale sa position aux loups.
+      </p>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-loup)">💬 Commandes</div>
+      <div class="cmd-block"><span class="cmd">/lg hurler</span><span class="cmd-desc">Hurle — position envoyée aux loups (1×/partie)</span></div>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-loup)">🎯 Stratégie & Conseils</div>
+      <div class="tip">Compense ta faiblesse en restant avec tes alliés loups</div>
+      <div class="tip">Garde le hurlement pour les moments critiques</div>
+      <div class="tip">Le bonus de kill te rend plus compétitif en fin de combat</div>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-loup)">⚠️ Différence avec le Loup-Garou</div>
+      <p style="font-family:var(--vt);color:var(--text-dim);font-size:.95rem">Force et Speed réduits (~50% uptime vs 100%). Même bonus de kill et même hurlement.</p>
+    </div>
+  </div>
+  <div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-loup)">📊 Statistiques</div>
+      <div class="stats-grid">
+        <div class="mc-stat"><div class="stat-label">Difficulté</div><div class="stat-value">Facile</div></div>
+        <div class="mc-stat"><div class="stat-label">Force nuit</div><div class="stat-value">Strength 0.5</div></div>
+        <div class="mc-stat"><div class="stat-label">Speed nuit</div><div class="stat-value">Speed 0.5</div></div>
+        <div class="mc-stat"><div class="stat-label">Hurlement</div><div class="stat-value">1×/partie</div></div>
+      </div>
+    </div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-loup)">🏆 Victoire</div>
+      <p style="font-family:var(--vt);font-size:.98rem;color:var(--text-dim)">Gagner si <span style='color:var(--c-loup)'>tous les Villageois ET tous les Solitaires</span> sont éliminés.</p>
+    </div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-loup)">🏷️ Famille</div>
+      <div style="font-size:1.6rem;margin-bottom:4px">🐺</div>
+      <span class="rc-tag loup">Loup-Garou</span>
+    </div>
+    <a href="../roles.html#loup" class="btn btn-stone" style="width:100%;display:block;text-align:center;margin-top:2px;box-sizing:border-box">← Tous les Loup-Garous</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">🐺 Loup-Garou UHC</div>
+  <ul class="footer-links">
+    <li><a href="../index.html">Accueil</a></li>
+    <li><a href="../rules.html">Règles</a></li>
+    <li><a href="../roles.html">Rôles</a></li>
+  </ul>
+  <div class="footer-copy">Paper 1.21 · Développé par Enoe_one</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Événements Spéciaux — Loup-Garou UHC</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Styles spécifiques événements ── */
+    .ev-hero {
+      background:
+        radial-gradient(ellipse 80% 100% at 50% 0%, rgba(0,50,150,.22) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 80% 15%, rgba(255,215,0,.06) 0%, transparent 50%),
+        #0d0d0d;
+      border-bottom:2px solid #001a4a;
+      padding:28px 12px 22px;
+      text-align:center;
+      position:relative;overflow:hidden;
+    }
+    .ev-hero::before {
+      content:'✦  ✦  ✦  ✦  ✦  ✦  ✦  ✦  ✦  ✦  ✦  ✦  ✦';
+      position:absolute;bottom:4px;left:0;right:0;
+      font-size:.5rem;color:#001a3a;letter-spacing:.8em;
+      text-align:center;pointer-events:none;
+    }
+    .ev-eyebrow {
+      font-family:var(--px);font-size:.38rem;color:#4477cc;
+      text-shadow:1px 1px 0 #000;letter-spacing:.25em;
+      margin-bottom:10px;text-transform:uppercase;
+    }
+    .ev-title {
+      font-family:var(--px);
+      font-size:clamp(.75rem,2.8vw,1.5rem);
+      color:var(--moon);
+      text-shadow:3px 3px 0 #000055,5px 5px 0 #000,0 0 30px rgba(0,80,200,.35);
+      margin-bottom:6px;letter-spacing:.04em;line-height:1.5;
+      animation:flicker 8s infinite;
+    }
+    .ev-sub {
+      font-family:var(--vt);font-size:1.15rem;color:#777;
+      max-width:540px;margin:0 auto;
+    }
+
+    /* ── Cards événements ── */
+    .ev-list { display:flex; flex-direction:column; gap:4px; }
+
+    .ev-card {
+      background:var(--stone2);
+      border-top:2px solid var(--border-hi);border-left:4px solid;
+      border-right:2px solid var(--border-lo);border-bottom:2px solid var(--border-lo);
+      padding:14px 14px 12px;
+      position:relative;overflow:hidden;
+    }
+    .ev-card::after {
+      content:'';position:absolute;inset:0;pointer-events:none;
+      background:radial-gradient(ellipse 60% 100% at 0% 50%,currentColor 0%,transparent 70%);
+      opacity:.03;
+    }
+    .ev-card.standard  { border-left-color:#b22222; }
+    .ev-card.special   { border-left-color:#0055cc; }
+    .ev-card.france    { border-left-color:#002395; }
+
+    .ev-header { display:flex; align-items:flex-start; gap:12px; margin-bottom:8px; }
+    .ev-icon   { font-size:2rem; flex-shrink:0; margin-top:2px; }
+    .ev-name   {
+      font-family:var(--px);font-size:.55rem;
+      color:var(--white);text-shadow:2px 2px 0 #000;
+      letter-spacing:.03em;line-height:1.5;margin-bottom:3px;
+    }
+    .ev-tag {
+      font-family:var(--px);font-size:.3rem;padding:2px 6px;
+      display:inline-block;letter-spacing:.05em;margin-right:4px;margin-bottom:4px;
+    }
+    .ev-tag.tag-std    { background:#1a0000;color:#b22222;border:1px solid #b22222; }
+    .ev-tag.tag-spe    { background:#00052a;color:#4477cc;border:1px solid #4477cc; }
+    .ev-tag.tag-fr     { background:#000a2a;color:#6699ff;border:1px solid #002395; }
+    .ev-tag.tag-time   { background:#111;color:#888;border:1px solid #333; }
+
+    .ev-desc { font-family:var(--vt);font-size:1.05rem;color:var(--text-dim);line-height:1.4;margin-bottom:8px; }
+
+    .ev-detail-title {
+      font-family:var(--px);font-size:.38rem;color:var(--moon);
+      text-shadow:1px 1px 0 #000;margin:8px 0 5px;letter-spacing:.04em;
+    }
+    .ev-timeline { padding-left:14px;position:relative; }
+    .ev-timeline::before {
+      content:'';position:absolute;left:2px;top:0;bottom:0;width:2px;
+      background:repeating-linear-gradient(180deg,#0055cc 0,#0055cc 4px,transparent 4px,transparent 8px);
+    }
+    .ev-tl-item { position:relative;padding:0 0 8px 10px; }
+    .ev-tl-item::before { content:'◆';position:absolute;left:-6px;top:1px;font-size:.4rem;color:#4477cc; }
+    .ev-tl-time { font-family:var(--px);font-size:.34rem;color:#4477cc;margin-bottom:1px;letter-spacing:.04em; }
+    .ev-tl-text { font-family:var(--vt);font-size:1rem;color:var(--text-dim);line-height:1.35; }
+
+    /* ── FRANCE — Section hommage ── */
+    .france-banner {
+      background: linear-gradient(135deg, #002395 0%, #002395 33%, #f5f5f5 33%, #f5f5f5 66%, #ED2939 66%, #ED2939 100%);
+      border-top:3px solid #001a6a;border-bottom:3px solid #001a6a;
+      padding:3px 0;margin:0 0 0;
+    }
+    .france-inner {
+      background:rgba(0,0,0,.82);
+      padding:18px 16px;
+    }
+    .france-title {
+      font-family:var(--px);font-size:clamp(.6rem,2vw,1rem);
+      color:var(--moon);text-shadow:3px 3px 0 #000,0 0 24px rgba(0,80,200,.5);
+      letter-spacing:.05em;line-height:1.5;text-align:center;
+      margin-bottom:8px;
+    }
+    .france-poem {
+      font-family:var(--vt);font-size:1.18rem;
+      color:#aabbdd;text-align:center;
+      line-height:1.75;font-style:italic;
+      max-width:600px;margin:0 auto 12px;
+    }
+    .france-poem em { color:var(--moon);font-style:normal; }
+    .france-tricolor {
+      display:flex;justify-content:center;gap:6px;margin:10px 0;
+    }
+    .tc { width:28px;height:28px;border-radius:2px; }
+    .tc-blue  { background:#002395; }
+    .tc-white { background:#f5f5f5; }
+    .tc-red   { background:#ED2939; }
+
+    /* Rôles de la révolution */
+    .rev-grid {
+      display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:3px;
+      margin-top:8px;
+    }
+    .rev-card {
+      padding:9px 10px;
+      border-top:2px solid var(--border-hi);border-left:3px solid;
+      border-right:2px solid var(--border-lo);border-bottom:2px solid var(--border-lo);
+      background:#0a0a14;
+    }
+    .rev-card.village  { border-left-color:var(--c-village); background:#0a1a0a; }
+    .rev-card.loup     { border-left-color:var(--c-loup);    background:#1a0a0a; }
+    .rev-card.soli     { border-left-color:#4499ff;          background:#00051a; }
+    .rev-card.neutral  { border-left-color:#888;             background:#0e0e0e; }
+
+    .rev-arrow {
+      font-family:var(--px);font-size:.32rem;color:#555;
+      display:flex;align-items:center;gap:4px;margin-bottom:4px;
+      letter-spacing:.02em;flex-wrap:wrap;
+    }
+    .rev-arrow .from { color:#666; }
+    .rev-arrow .arr  { color:#333; }
+    .rev-arrow .to   { color:var(--moon); }
+    .rev-name { font-family:var(--px);font-size:.42rem;color:var(--yellow);text-shadow:1px 1px 0 #000;margin-bottom:4px;letter-spacing:.03em; }
+    .rev-desc { font-family:var(--vt);font-size:.93rem;color:var(--text-dim);line-height:1.3; }
+
+    .napoleon-card {
+      background:linear-gradient(135deg,#00061a,#00052a,#000a1f);
+      border:2px solid #0044aa;
+      border-left:4px solid #4499ff;
+      padding:14px;margin-top:4px;
+      position:relative;overflow:hidden;
+    }
+    .napoleon-card::before {
+      content:'⚔';
+      position:absolute;right:12px;top:50%;transform:translateY(-50%);
+      font-size:4rem;opacity:.05;
+    }
+    .napoleon-name {
+      font-family:var(--px);font-size:.65rem;
+      color:#4499ff;text-shadow:2px 2px 0 #000,0 0 16px rgba(0,100,255,.4);
+      margin-bottom:6px;letter-spacing:.04em;
+    }
+    .napoleon-poem {
+      font-family:var(--vt);font-size:1.08rem;
+      color:#8899bb;line-height:1.7;font-style:italic;
+      border-left:2px solid #002266;padding-left:10px;margin:8px 0;
+    }
+    .napoleon-poem em { color:#aabbee;font-style:normal; }
+    .napoleon-stats {
+      display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:8px;
+    }
+    .nap-stat {
+      background:#000;border:1px solid #001a44;padding:5px 7px;
+    }
+    .nap-stat-label { font-family:var(--px);font-size:.29rem;color:#334;margin-bottom:2px;letter-spacing:.04em; }
+    .nap-stat-val   { font-family:var(--vt);font-size:1rem;color:#4499ff; }
+
+    /* ── Activation ── */
+    .activate-box {
+      background:#000;border:2px solid #002395;
+      padding:12px 14px;margin-top:12px;
+    }
+    .activate-title {
+      font-family:var(--px);font-size:.42rem;color:#4477cc;
+      margin-bottom:6px;letter-spacing:.04em;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">🐺 Loup-Garou UHC</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="rules.html">Règles</a></li>
+      <li><a href="roles.html">Rôles</a></li>
+      <li><a href="evenements.html" class="active">Événements</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="ev-hero">
+  <div class="ev-eyebrow">Événements Spéciaux · Activables par l'Owner</div>
+  <span class="ev-title"> Événements Spéciaux🐺 </span>
+  <div class="ev-sub">Des mécaniques optionnelles qui bouleversent la partie. Activez-les dans <code>/lgsetting</code>.</div>
+</div>
+
+<!-- ÉVÉNEMENTS STANDARDS -->
+<div class="wrap">
+  <div class="section-title">🔴 Événements Standards</div>
+  <div class="ev-list">
+
+    <div class="ev-card standard">
+      <div class="ev-header">
+        <div class="ev-icon">🌑</div>
+        <div>
+          <div class="ev-name">Nuit Sanglante</div>
+          <span class="ev-tag tag-std">Standard</span>
+          <span class="ev-tag tag-time">Toute la partie</span>
+        </div>
+      </div>
+      <div class="ev-desc">Les morts nocturnes ne sont pas révélées immédiatement. Leur identité n'est annoncée qu'en fin de nuit, créant une tension maximale dans le silence.</div>
+    </div>
+
+    <div class="ev-card standard">
+      <div class="ev-header">
+        <div class="ev-icon">🔀</div>
+        <div>
+          <div class="ev-name">Trublionage</div>
+          <span class="ev-tag tag-std">Standard</span>
+          <span class="ev-tag tag-time">Tour 2</span>
+        </div>
+      </div>
+      <div class="ev-desc">Au second tour, deux rôles sont échangés aléatoirement entre joueurs. Les alliances forgées la première nuit peuvent s'effondrer en un instant.</div>
+    </div>
+
+    <div class="ev-card standard">
+      <div class="ev-header">
+        <div class="ev-icon">🗳️</div>
+        <div>
+          <div class="ev-name">Élection</div>
+          <span class="ev-tag tag-std">Standard</span>
+          <span class="ev-tag tag-time">Vote</span>
+        </div>
+      </div>
+      <div class="ev-desc">Le Maire est révélé publiquement à tous les joueurs. La transparence peut être une arme ou une condamnation.</div>
+    </div>
+
+    <div class="ev-card standard">
+      <div class="ev-header">
+        <div class="ev-icon">🔍</div>
+        <div>
+          <div class="ev-name">Exposé / Exposé Inversé</div>
+          <span class="ev-tag tag-std">Standard</span>
+          <span class="ev-tag tag-time">Vote</span>
+        </div>
+      </div>
+      <div class="ev-desc">
+        <strong style="color:var(--white)">Exposé</strong> — un joueur est affiché avec 4 rôles possibles dont le sien, mélangés. À vous de déduire.<br>
+        <strong style="color:var(--white)">Exposé Inversé</strong> — 5 joueurs sont affichés, l'un d'eux possède le rôle annoncé. Lequel ?
+      </div>
+    </div>
+
+    <div class="ev-card standard">
+      <div class="ev-header">
+        <div class="ev-icon">🦟</div>
+        <div>
+          <div class="ev-name">Puces de Loups</div>
+          <span class="ev-tag tag-std">Standard</span>
+          <span class="ev-tag tag-time">50–150 min</span>
+        </div>
+      </div>
+      <div class="ev-desc">Entre 50 et 150 minutes de jeu, les Loups transmettent des puces aux Villageois proches. Un effet de proximité dangereux qui trahit les contacts suspects.</div>
+    </div>
+
+    <div class="ev-card standard">
+      <div class="ev-header">
+        <div class="ev-icon">💘</div>
+        <div>
+          <div class="ev-name">Coup de Foudre</div>
+          <span class="ev-tag tag-std">Standard</span>
+          <span class="ev-tag tag-time">25 min</span>
+        </div>
+      </div>
+      <div class="ev-desc">Les amoureux (formés par Cupidon) ne se découvrent pas immédiatement. Ils n'apprennent leur lien qu'en s'approchant à moins de 40 blocs l'un de l'autre.</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="sep" style="margin:0"></div>
+
+
+<div class="wrap" style="padding-bottom:24px">
+  <div class="section-title">☆ Événement Secret</div>
+  <div class="feat-card" style="border-left-color:#002395;background:linear-gradient(135deg,#000a1f,#00052a);padding:16px;cursor:default;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
+      <span style="font-size:1.8rem">🔒</span>
+      <span style="font-family:var(--px);font-size:.48rem;color:#334455;text-shadow:none;letter-spacing:.04em;">
+        ██████████ du ██e
+      </span>
+    </div>
+    <div style="font-family:var(--vt);font-size:1.05rem;color:#222233;line-height:1.6;font-style:italic;user-select:none;">
+      Certains événements ne se révèlent qu'à ceux qui savent où chercher.<br>
+      <span style="color:#111122">Ce que tu ne connais pas ne peut pas te blesser... ou peut-être que si.</span>
+    </div>
+    <div style="margin-top:8px;font-family:var(--px);font-size:.3rem;color:#111122;letter-spacing:.04em;">
+      ██ ██████ ██████ ██ ████████ ██████
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">🐺 Loup-Garou UHC</div>
+  <ul class="footer-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="rules.html">Règles</a></li>
+    <li><a href="roles.html">Rôles</a></li>
+    <li><a href="evenements.html">Événements</a></li>
+  </ul>
+  <div class="footer-copy">Paper 1.21 · Java 21 · Développé par Enoe_one</div>
+</footer>
+
+</body>
+</html>

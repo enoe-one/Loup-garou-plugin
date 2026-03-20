@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Trublion — Loup-Garou UHC</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .mc-stat{background:#000;border:1px solid #222;padding:5px 7px}
+    .stat-label{font-family:var(--px);font-size:.32rem;color:#555;margin-bottom:2px;letter-spacing:.04em}
+    .stat-value{font-family:var(--vt);font-size:1rem;color:var(--yellow)}
+    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">🐺 Loup-Garou UHC</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="../rules.html">Règles</a></li>
+      <li><a href="../roles.html" class="active">Rôles</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div style="background:linear-gradient(135deg,#1f001f 0%,#0d0d0d 60%);border-bottom:2px solid #1a0000;padding:14px 10px 12px">
+  <div style="max-width:1080px;margin:0 auto">
+    <div class="breadcrumb">
+      <a href="../roles.html">Rôles</a><span>›</span>
+      <a href="../roles.html#binaire">⚖️ Binaire</a><span>›</span>
+      <span style="color:#888">Trublion</span>
+    </div>
+    <div class="role-page-icon">🔀</div>
+    <div class="role-page-title" style="color:var(--c-binaire);text-shadow:3px 3px 0 #000">Trublion</div>
+    <span class="rc-tag binaire" style="margin-bottom:6px;display:inline-block">⚖️ Binaire</span>
+    <div class="role-tagline">« Le chaos est sa seule stratégie. »</div>
+  </div>
+</div>
+
+<div class="role-layout">
+  <div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-binaire)">📜 Histoire &amp; Contexte</div>
+      <p style="font-family:var(--vt);font-size:1rem;color:var(--text-dim);line-height:1.45">Farceur cosmique, le Trublion ne cherche pas à gagner dans le sens traditionnel — il cherche à tout bouleverser.</p>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-binaire)">⚡ Pouvoir</div>
+      <p style="font-family:var(--vt);font-size:1rem;color:var(--text);line-height:1.5">Entre 20 et 25 minutes exactement : peut échanger les rôles de deux joueurs. Les concernés reçoivent leur nouveau rôle en message privé. Le Trublion gagne avec le Village (sauf config).</p>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-binaire)">💬 Commandes</div>
+      <code class="cmd-line">/lg echanger <joueur1> <joueur2></code><div class="cmd-desc">Échange les rôles (fenêtre 20-25 min uniquement)</div>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-binaire)">🎯 Stratégie &amp; Conseils</div>
+      <div class="tip">Échangez un Loup avec un rôle Village puissant</div><div class="tip">Ciblez des joueurs dont vous connaissez le rôle</div><div class="tip">Agissez vite dans la fenêtre de 5 minutes</div><div class="tip">L'échange crée confusion — exploitez la méfiance qui suit</div>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-binaire)">🤝 Alliés &amp; Ennemis</div>
+      <div style="font-family:var(--px);font-size:.33rem;color:var(--c-village);margin-bottom:4px;letter-spacing:.04em">Alliés naturels</div>
+      <div style="margin-bottom:8px"><span class="ally ally-pos">Village (généralement)</span></div>
+      <div style="font-family:var(--px);font-size:.33rem;color:var(--c-loup);margin-bottom:4px;letter-spacing:.04em">Ennemis</div>
+      <div><span class="ally ally-neg">Stabilité de la partie</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-binaire)">📊 Statistiques</div>
+      <div class="stats-grid"><div class="mc-stat"><div class="stat-label">Difficulté</div><div class="stat-value">Très difficile</div></div><div class="mc-stat"><div class="stat-label">Fenêtre</div><div class="stat-value">20-25 min</div></div><div class="mc-stat"><div class="stat-label">Utilisations</div><div class="stat-value">1× par partie</div></div><div class="mc-stat"><div class="stat-label">Impact</div><div class="stat-value">Peut retourner la partie</div></div></div>
+    </div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-binaire)">🏆 Victoire</div>
+      <p style="font-family:var(--vt);font-size:.98rem;color:var(--text-dim)">Gagner avec son <span style='color:var(--c-binaire)'>camp actuel</span> selon ses conditions.</p>
+    </div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-binaire)">🏷️ Famille</div>
+      <div style="font-size:1.6rem;margin-bottom:4px">⚖️</div>
+      <span class="rc-tag binaire">Binaire</span>
+      <p style="font-family:var(--vt);font-size:.9rem;color:#555;margin-top:6px">Gagne avec son camp actuel.</p>
+    </div>
+    <a href="../roles.html#binaire" class="btn btn-stone" style="width:100%;display:block;text-align:center;margin-top:2px;box-sizing:border-box">← Tous les Binaires</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">🐺 Loup-Garou UHC</div>
+  <ul class="footer-links">
+    <li><a href="../index.html">Accueil</a></li>
+    <li><a href="../rules.html">Règles</a></li>
+    <li><a href="../roles.html">Rôles</a></li>
+  </ul>
+  <div class="footer-copy">Paper 1.21 · Développé par Enoe_one</div>
+</footer>
+</body>
+</html>

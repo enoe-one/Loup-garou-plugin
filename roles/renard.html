@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Renard — Loup-Garou UHC</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .mc-stat{background:#000;border:1px solid #222;padding:5px 7px}
+    .stat-label{font-family:var(--px);font-size:.32rem;color:#555;margin-bottom:2px;letter-spacing:.04em}
+    .stat-value{font-family:var(--vt);font-size:1rem;color:var(--yellow)}
+    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">🐺 Loup-Garou UHC</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="../rules.html">Règles</a></li>
+      <li><a href="../roles.html" class="active">Rôles</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div style="background:linear-gradient(135deg,#0a1f0a 0%,#0d0d0d 60%);border-bottom:2px solid #1a0000;padding:14px 10px 12px">
+  <div style="max-width:1080px;margin:0 auto">
+    <div class="breadcrumb">
+      <a href="../roles.html">Rôles</a><span>›</span>
+      <a href="../roles.html#village">🌿 Village</a><span>›</span>
+      <span style="color:#888">Renard</span>
+    </div>
+    <div class="role-page-icon">🦊</div>
+    <div class="role-page-title" style="color:var(--c-village);text-shadow:3px 3px 0 #000">Renard</div>
+    <span class="rc-tag village" style="margin-bottom:6px;display:inline-block">🌿 Village</span>
+    <div class="role-tagline">« Son flair détecte les Loups — mais peut se perdre. »</div>
+  </div>
+</div>
+
+<div class="role-layout">
+  <div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">📜 Histoire &amp; Contexte</div>
+      <p style="font-family:var(--vt);font-size:1rem;color:var(--text-dim);line-height:1.45">Fin limier, le Renard flaire la présence des créatures de la nuit dans un rayon proche. Mais chaque erreur émousse son instinct, peut-être définitivement.</p>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">⚡ Pouvoir</div>
+      <p style="font-family:var(--vt);font-size:1rem;color:var(--text);line-height:1.5">Sonde un joueur et ses 2 voisins les plus proches. Si ≥1 Loup dans ce groupe : confirmation. Si aucun Loup : le Renard devient 'enrhumé' — perd définitivement son flair (configurable).</p>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">💬 Commandes</div>
+      <code class="cmd-line">/lg renard <joueur></code><div class="cmd-desc">Sonde le joueur et ses 2 voisins (1× par épisode)</div>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">🎯 Stratégie &amp; Conseils</div>
+      <div class="tip">Ciblez les zones de rassemblement pour maximiser</div><div class="tip">Un résultat négatif est aussi de l'info</div><div class="tip">Après avoir perdu votre flair, jouez Simple Villagois</div><div class="tip">Ne sondez pas où vous connaissez déjà les rôles</div>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">🤝 Alliés &amp; Ennemis</div>
+      <div style="font-family:var(--px);font-size:.33rem;color:var(--c-village);margin-bottom:4px;letter-spacing:.04em">Alliés naturels</div>
+      <div style="margin-bottom:8px"><span class="ally ally-pos">Conteuse</span><span class="ally ally-pos">Voyant</span></div>
+      <div style="font-family:var(--px);font-size:.33rem;color:var(--c-loup);margin-bottom:4px;letter-spacing:.04em">Ennemis</div>
+      <div><span class="ally ally-neg">Loup Empoisonneur</span><span class="ally ally-neg">Imitateur</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-village)">📊 Statistiques</div>
+      <div class="stats-grid"><div class="mc-stat"><div class="stat-label">Difficulté</div><div class="stat-value">Normale</div></div><div class="mc-stat"><div class="stat-label">Portée</div><div class="stat-value">Zone de 3</div></div><div class="mc-stat"><div class="stat-label">Risque</div><div class="stat-value">Perte définitive</div></div><div class="mc-stat"><div class="stat-label">Info</div><div class="stat-value">Présence Loup</div></div></div>
+    </div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-village)">🏆 Victoire</div>
+      <p style="font-family:var(--vt);font-size:.98rem;color:var(--text-dim)">Gagner si <span style='color:var(--c-village)'>tous les Loups ET tous les Solitaires</span> sont éliminés.</p>
+    </div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-village)">🏷️ Famille</div>
+      <div style="font-size:1.6rem;margin-bottom:4px">🌿</div>
+      <span class="rc-tag village">Village</span>
+      <p style="font-family:var(--vt);font-size:.9rem;color:#555;margin-top:6px">Gagne avec le Village.</p>
+    </div>
+    <a href="../roles.html#village" class="btn btn-stone" style="width:100%;display:block;text-align:center;margin-top:2px;box-sizing:border-box">← Tous les Villages</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">🐺 Loup-Garou UHC</div>
+  <ul class="footer-links">
+    <li><a href="../index.html">Accueil</a></li>
+    <li><a href="../rules.html">Règles</a></li>
+    <li><a href="../roles.html">Rôles</a></li>
+  </ul>
+  <div class="footer-copy">Paper 1.21 · Développé par Enoe_one</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>☆ Skysofrenie du 18e — Loup-Garou UHC</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Styles spécifiques événements ── */
+    .ev-hero {
+      background:
+        radial-gradient(ellipse 80% 100% at 50% 0%, rgba(0,50,150,.22) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 80% 15%, rgba(255,215,0,.06) 0%, transparent 50%),
+        #0d0d0d;
+      border-bottom:2px solid #001a4a;
+      padding:28px 12px 22px;
+      text-align:center;
+      position:relative;overflow:hidden;
+    }
+    .ev-hero::before {
+      content:'✦  ✦  ✦  ✦  ✦  ✦  ✦  ✦  ✦  ✦  ✦  ✦  ✦';
+      position:absolute;bottom:4px;left:0;right:0;
+      font-size:.5rem;color:#001a3a;letter-spacing:.8em;
+      text-align:center;pointer-events:none;
+    }
+    .ev-eyebrow {
+      font-family:var(--px);font-size:.38rem;color:#4477cc;
+      text-shadow:1px 1px 0 #000;letter-spacing:.25em;
+      margin-bottom:10px;text-transform:uppercase;
+    }
+    .ev-title {
+      font-family:var(--px);
+      font-size:clamp(.75rem,2.8vw,1.5rem);
+      color:var(--moon);
+      text-shadow:3px 3px 0 #000055,5px 5px 0 #000,0 0 30px rgba(0,80,200,.35);
+      margin-bottom:6px;letter-spacing:.04em;line-height:1.5;
+      animation:flicker 8s infinite;
+    }
+    .ev-sub {
+      font-family:var(--vt);font-size:1.15rem;color:#777;
+      max-width:540px;margin:0 auto;
+    }
+
+    /* ── Cards événements ── */
+    .ev-list { display:flex; flex-direction:column; gap:4px; }
+
+    .ev-card {
+      background:var(--stone2);
+      border-top:2px solid var(--border-hi);border-left:4px solid;
+      border-right:2px solid var(--border-lo);border-bottom:2px solid var(--border-lo);
+      padding:14px 14px 12px;
+      position:relative;overflow:hidden;
+    }
+    .ev-card::after {
+      content:'';position:absolute;inset:0;pointer-events:none;
+      background:radial-gradient(ellipse 60% 100% at 0% 50%,currentColor 0%,transparent 70%);
+      opacity:.03;
+    }
+    .ev-card.standard  { border-left-color:#b22222; }
+    .ev-card.special   { border-left-color:#0055cc; }
+    .ev-card.france    { border-left-color:#002395; }
+
+    .ev-header { display:flex; align-items:flex-start; gap:12px; margin-bottom:8px; }
+    .ev-icon   { font-size:2rem; flex-shrink:0; margin-top:2px; }
+    .ev-name   {
+      font-family:var(--px);font-size:.55rem;
+      color:var(--white);text-shadow:2px 2px 0 #000;
+      letter-spacing:.03em;line-height:1.5;margin-bottom:3px;
+    }
+    .ev-tag {
+      font-family:var(--px);font-size:.3rem;padding:2px 6px;
+      display:inline-block;letter-spacing:.05em;margin-right:4px;margin-bottom:4px;
+    }
+    .ev-tag.tag-std    { background:#1a0000;color:#b22222;border:1px solid #b22222; }
+    .ev-tag.tag-spe    { background:#00052a;color:#4477cc;border:1px solid #4477cc; }
+    .ev-tag.tag-fr     { background:#000a2a;color:#6699ff;border:1px solid #002395; }
+    .ev-tag.tag-time   { background:#111;color:#888;border:1px solid #333; }
+
+    .ev-desc { font-family:var(--vt);font-size:1.05rem;color:var(--text-dim);line-height:1.4;margin-bottom:8px; }
+
+    .ev-detail-title {
+      font-family:var(--px);font-size:.38rem;color:var(--moon);
+      text-shadow:1px 1px 0 #000;margin:8px 0 5px;letter-spacing:.04em;
+    }
+    .ev-timeline { padding-left:14px;position:relative; }
+    .ev-timeline::before {
+      content:'';position:absolute;left:2px;top:0;bottom:0;width:2px;
+      background:repeating-linear-gradient(180deg,#0055cc 0,#0055cc 4px,transparent 4px,transparent 8px);
+    }
+    .ev-tl-item { position:relative;padding:0 0 8px 10px; }
+    .ev-tl-item::before { content:'◆';position:absolute;left:-6px;top:1px;font-size:.4rem;color:#4477cc; }
+    .ev-tl-time { font-family:var(--px);font-size:.34rem;color:#4477cc;margin-bottom:1px;letter-spacing:.04em; }
+    .ev-tl-text { font-family:var(--vt);font-size:1rem;color:var(--text-dim);line-height:1.35; }
+
+    /* ── FRANCE — Section hommage ── */
+    .france-banner {
+      background: linear-gradient(135deg, #002395 0%, #002395 33%, #f5f5f5 33%, #f5f5f5 66%, #ED2939 66%, #ED2939 100%);
+      border-top:3px solid #001a6a;border-bottom:3px solid #001a6a;
+      padding:3px 0;margin:0 0 0;
+    }
+    .france-inner {
+      background:rgba(0,0,0,.82);
+      padding:18px 16px;
+    }
+    .france-title {
+      font-family:var(--px);font-size:clamp(.6rem,2vw,1rem);
+      color:var(--moon);text-shadow:3px 3px 0 #000,0 0 24px rgba(0,80,200,.5);
+      letter-spacing:.05em;line-height:1.5;text-align:center;
+      margin-bottom:8px;
+    }
+    .france-poem {
+      font-family:var(--vt);font-size:1.18rem;
+      color:#aabbdd;text-align:center;
+      line-height:1.75;font-style:italic;
+      max-width:600px;margin:0 auto 12px;
+    }
+    .france-poem em { color:var(--moon);font-style:normal; }
+    .france-tricolor {
+      display:flex;justify-content:center;gap:6px;margin:10px 0;
+    }
+    .tc { width:28px;height:28px;border-radius:2px; }
+    .tc-blue  { background:#002395; }
+    .tc-white { background:#f5f5f5; }
+    .tc-red   { background:#ED2939; }
+
+    /* Rôles de la révolution */
+    .rev-grid {
+      display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:3px;
+      margin-top:8px;
+    }
+    .rev-card {
+      padding:9px 10px;
+      border-top:2px solid var(--border-hi);border-left:3px solid;
+      border-right:2px solid var(--border-lo);border-bottom:2px solid var(--border-lo);
+      background:#0a0a14;
+    }
+    .rev-card.village  { border-left-color:var(--c-village); background:#0a1a0a; }
+    .rev-card.loup     { border-left-color:var(--c-loup);    background:#1a0a0a; }
+    .rev-card.soli     { border-left-color:#4499ff;          background:#00051a; }
+    .rev-card.neutral  { border-left-color:#888;             background:#0e0e0e; }
+
+    .rev-arrow {
+      font-family:var(--px);font-size:.32rem;color:#555;
+      display:flex;align-items:center;gap:4px;margin-bottom:4px;
+      letter-spacing:.02em;flex-wrap:wrap;
+    }
+    .rev-arrow .from { color:#666; }
+    .rev-arrow .arr  { color:#333; }
+    .rev-arrow .to   { color:var(--moon); }
+    .rev-name { font-family:var(--px);font-size:.42rem;color:var(--yellow);text-shadow:1px 1px 0 #000;margin-bottom:4px;letter-spacing:.03em; }
+    .rev-desc { font-family:var(--vt);font-size:.93rem;color:var(--text-dim);line-height:1.3; }
+
+    .napoleon-card {
+      background:linear-gradient(135deg,#00061a,#00052a,#000a1f);
+      border:2px solid #0044aa;
+      border-left:4px solid #4499ff;
+      padding:14px;margin-top:4px;
+      position:relative;overflow:hidden;
+    }
+    .napoleon-card::before {
+      content:'⚔';
+      position:absolute;right:12px;top:50%;transform:translateY(-50%);
+      font-size:4rem;opacity:.05;
+    }
+    .napoleon-name {
+      font-family:var(--px);font-size:.65rem;
+      color:#4499ff;text-shadow:2px 2px 0 #000,0 0 16px rgba(0,100,255,.4);
+      margin-bottom:6px;letter-spacing:.04em;
+    }
+    .napoleon-poem {
+      font-family:var(--vt);font-size:1.08rem;
+      color:#8899bb;line-height:1.7;font-style:italic;
+      border-left:2px solid #002266;padding-left:10px;margin:8px 0;
+    }
+    .napoleon-poem em { color:#aabbee;font-style:normal; }
+    .napoleon-stats {
+      display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:8px;
+    }
+    .nap-stat {
+      background:#000;border:1px solid #001a44;padding:5px 7px;
+    }
+    .nap-stat-label { font-family:var(--px);font-size:.29rem;color:#334;margin-bottom:2px;letter-spacing:.04em; }
+    .nap-stat-val   { font-family:var(--vt);font-size:1rem;color:#4499ff; }
+
+    /* ── Activation ── */
+    .activate-box {
+      background:#000;border:2px solid #002395;
+      padding:12px 14px;margin-top:12px;
+    }
+    .activate-title {
+      font-family:var(--px);font-size:.42rem;color:#4477cc;
+      margin-bottom:6px;letter-spacing:.04em;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Musique de fond : Amour Plastique Slowed via audio.com -->
+<iframe
+  id="bgmusic"
+  src="https://audio.com/bastian-6/audio/videoclub-amour-plastique-s-l-o-w-e-d-2"
+  style="position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;border:none;top:-9999px;left:-9999px;"
+  allow="autoplay"
+  tabindex="-1"
+  aria-hidden="true">
+</iframe>
+<!-- Fallback : fichier local hey.mp3 si disponible -->
+<audio id="bgfallback" autoplay loop style="display:none">
+  <source src="hey.mp3" type="audio/mpeg">
+</audio>
+<script>
+  document.getElementById('bgfallback').volume = 0.35;
+</script>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">🐺 Loup-Garou UHC</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="rules.html">Règles</a></li>
+      <li><a href="roles.html">Rôles</a></li>
+      <li><a href="evenements.html">Événements</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="ev-hero" style="background:radial-gradient(ellipse 80% 100% at 50% 0%, rgba(0,35,149,.28) 0%, transparent 60%), radial-gradient(ellipse 40% 40% at 80% 15%, rgba(237,41,57,.08) 0%, transparent 50%), #0d0d0d;">
+  <div class="ev-eyebrow" style="color:#6688bb;letter-spacing:.3em">⚠ Page Confidentielle · Lien Direct Uniquement ⚠</div>
+  <span class="ev-title" style="text-shadow:3px 3px 0 #001a6a,5px 5px 0 #000,0 0 30px rgba(0,60,200,.5)">🇫🇷 Skysofrenie du 18e 🇫🇷</span>
+  <div class="ev-sub" style="color:#445566;font-style:italic">Cette page n'existe pas officiellement. Tu sais ce que tu fais ici.</div>
+</div>
+
+
+<div class="wrap" style="padding-top:4px">
+  <div class="section-title" style="color:#4477cc;text-shadow:2px 2px 0 #000,0 0 16px rgba(0,80,200,.4)">🇫🇷 Événement Spécial — Skysofrenie du 18e</div>
+</div>
+<!-- SKYSOFRENIE — SECTION HOMMAGE -->
+<div class="france-banner">
+  <div class="france-inner">
+    <div class="france-tricolor">
+      <div class="tc tc-blue"></div>
+      <div class="tc tc-white"></div>
+      <div class="tc tc-red"></div>
+    </div>
+    <div class="france-title">☆ Skysofrenie du 18e ☆<br><span style="font-size:.5em;color:#6688bb;letter-spacing:.15em">— EN HOMMAGE À LA FRANCE ÉTERNELLE —</span></div>
+    <div class="france-poem">
+    <em>Liberté, Égalité, Fraternité.</em><br>
+    Ces trois mots portent un monde entier —<br>
+    la promesse d'un peuple qui, un jour,<br>
+    décida que plus rien ne serait comme avant.<br><br>
+
+    malgré les erreurs, elle a su se relever,<br>
+    même si le sang a coulé, la France a brillé.<br><br>
+
+    <em>Cet événement est dédié à la France,</em><br>
+    à son Histoire tumultueuse et glorieuse,<br>
+    à ses révolutions, à ses empereurs,<br>
+    et à tous ceux qui ont fait battre son cœur.
+    </div>
+    <div class="france-tricolor">
+      <div class="tc tc-blue"></div>
+      <div class="tc tc-white"></div>
+      <div class="tc tc-red"></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="ev-list">
+    <div class="ev-card france">
+      <div class="ev-header">
+        <div class="ev-icon">🇫🇷</div>
+        <div>
+          <div class="ev-name">Skysofrenie du 18e</div>
+          <span class="ev-tag tag-fr">Hommage à la France</span>
+          <span class="ev-tag tag-spe">Événement Spécial</span>
+          <span class="ev-tag tag-time">Déclenché à 2h15</span>
+        </div>
+      </div>
+      <div class="ev-desc">
+        À 2 heures et 15 minutes de jeu, la Révolution Française éclate. Les rôles se transforment, les camps se reconfigurent, et la poudre des mousquets embaume l'air. Jamais une partie ne sera la même.
+      </div>
+
+      <div class="sep"></div>
+
+      <!-- Timeline -->
+      <div class="ev-detail-title">⏰ Déroulement</div>
+      <div class="ev-timeline">
+        <div class="ev-tl-item">
+          <div class="ev-tl-time">2h00</div>
+          <div class="ev-tl-text">Des murmures. Des noms oubliés dans le vent. Quelque chose approche.</div>
+        </div>
+        <div class="ev-tl-item">
+          <div class="ev-tl-time">2h10</div>
+          <div class="ev-tl-text">Un tambour de guerre résonne. L'<strong style="color:var(--moon)">Inconnu</strong> commence à se souvenir de qui il est — mais Weakness I et Lenteur I le ralentissent. La mémoire fait mal.</div>
+        </div>
+        <div class="ev-tl-item">
+          <div class="ev-tl-time">2h12 – 2h14</div>
+          <div class="ev-tl-text">Les canons grondent. La citation de l'Égypte résonne sur le champ de bataille. Plus qu'une minute.</div>
+        </div>
+        <div class="ev-tl-item">
+          <div class="ev-tl-time">2h15 — LA RÉVOLUTION</div>
+          <div class="ev-tl-text"><em style="color:var(--moon)">"Le peuple prend les Armes — l'Empereur arrive. Les peuples combattront, jamais ne s'étendront."</em><br>Tous les rôles concernés se transforment instantanément. Un parchemin est remis à chaque joueur.</div>
+        </div>
+      </div>
+
+      <div class="sep"></div>
+
+      <!-- Transformations -->
+      <div class="ev-detail-title">🔄 Transformations</div>
+      <div class="rev-grid">
+
+        <div class="rev-card village">
+          <div class="rev-arrow">
+            <span class="from">Citoyen</span>
+            <span class="arr">→</span>
+            <span class="to">Garde Républicain</span>
+          </div>
+          <div class="rev-name">Garde Républicain</div>
+          <div class="rev-desc">Speed I permanent. Sabre Tranchant IV ajouté à l'inventaire. La République appelle — il répond présent.</div>
+        </div>
+
+        <div class="rev-card village">
+          <div class="rev-arrow">
+            <span class="from">Maire</span>
+            <span class="arr">→</span>
+            <span class="to">Petit Bourgeois</span>
+          </div>
+          <div class="rev-name">Petit Bourgeois</div>
+          <div class="rev-desc">Garde sa Résistance I existante. Gagne Force I. La foule gronde à sa porte.</div>
+        </div>
+
+        <div class="rev-card village">
+          <div class="rev-arrow">
+            <span class="from">Simple Villageois</span>
+            <span class="arr">→</span>
+            <span class="to">Révolutionnaire</span>
+          </div>
+          <div class="rev-name">Révolutionnaire</div>
+          <div class="rev-desc">Perd sa Résistance. Gagne Force I. La peur est morte. Il n'a plus rien à perdre.</div>
+        </div>
+
+        <div class="rev-card loup">
+          <div class="rev-arrow">
+            <span class="from">Grand Méchant Loup</span>
+            <span class="arr">→</span>
+            <span class="to">George III</span>
+          </div>
+          <div class="rev-name">George III</div>
+          <div class="rev-desc">Couronne dorée octroyée. <code>/lg hurler</code> — révèle Napoléon aux loups. <code>/lg charge</code> — Speed I aux loups proches (30s).</div>
+        </div>
+
+        <div class="rev-card neutral">
+          <div class="rev-arrow">
+            <span class="from">Loup Endormi</span>
+            <span class="arr">→</span>
+            <span class="to">Se rendort</span>
+          </div>
+          <div class="rev-name">Endormi renforcé</div>
+          <div class="rev-desc">Se rendort définitivement. Gagne Résistance I permanente. Le silence l'arme mieux que n'importe quelle lame.</div>
+        </div>
+
+        <div class="rev-card loup">
+          <div class="rev-arrow">
+            <span class="from">Loup Simple</span>
+            <span class="arr">→</span>
+            <span class="to">Garde Anglais</span>
+          </div>
+          <div class="rev-name">Garde Anglais</div>
+          <div class="rev-desc">Connaît immédiatement la position ET l'identité de George III et de Napoléon. L'ombre lui révèle tout.</div>
+        </div>
+
+      </div>
+
+      <!-- Napoléon — carte spéciale -->
+      <div class="napoleon-card">
+        <div class="rev-arrow" style="margin-bottom:6px">
+          <span class="from">Inconnu</span>
+          <span class="arr">→</span>
+          <span class="to" style="color:#4499ff">Napoléon Iᵉʳ</span>
+          <span style="font-family:var(--px);font-size:.28rem;background:var(--bg-village);color:var(--c-village);border:1px solid var(--c-village);padding:1px 5px;margin-left:6px;">VILLAGE</span>
+        </div>
+        <div class="napoleon-name">⚔ Napoléon Iᵉʳ — L'Empereur de France</div>
+
+        <div class="napoleon-poem">
+          <em>Du fond de l'exil, à travers la tempête,</em><br>
+          Le soleil d'Austerlitz rallume sa conquête.<br>
+          L'aigle a repris son vol, les canons ont tonné —<br>
+          <em>Napoléon est vivant, et rien n'est terminé.</em>
+        </div>
+
+        <div class="napoleon-stats">
+          <div class="nap-stat">
+            <div class="nap-stat-label">VITESSE</div>
+            <div class="nap-stat-val">Speed I permanent</div>
+          </div>
+          <div class="nap-stat">
+            <div class="nap-stat-label">FORCE</div>
+            <div class="nap-stat-val">Force II permanent</div>
+          </div>
+          <div class="nap-stat">
+            <div class="nap-stat-label">RÉSISTANCE</div>
+            <div class="nap-stat-val">Résistance I permanent</div>
+          </div>
+          <div class="nap-stat">
+            <div class="nap-stat-label">CHANCE</div>
+            <div class="nap-stat-val">Chance 255 permanent</div>
+          </div>
+          <div class="nap-stat">
+            <div class="nap-stat-label">ARME</div>
+            <div class="nap-stat-val">Épée d'Austerlitz (Tranchant IV)</div>
+          </div>
+          <div class="nap-stat">
+            <div class="nap-stat-label">POMMES DORÉES</div>
+            <div class="nap-stat-val">+3♥ vie &amp; +3♥ absorption</div>
+          </div>
+        </div>
+
+        <div style="margin-top:10px">
+          <div class="ev-detail-title" style="color:#4499ff">🐴 Marengo — <span style="color:#888;font-size:.8em">Le Destrier Légendaire</span></div>
+          <p style="font-family:var(--vt);color:var(--text-dim);line-height:1.5;margin-top:4px">
+            La commande <code>/lg marengo</code> invoque <strong style="color:var(--white)">Marengo</strong>, le célèbre cheval gris de l'Empereur. Taille ×1.5, vitesse de guerre (Speed II), 20 cœurs. Si Marengo est déjà invoqué, l'ancien disparaît et un nouveau apparaît. <strong style="color:#4499ff">Seul Napoléon peut le monter.</strong> Nul autre ne peut l'approcher.
+          </p>
+          <div style="font-family:var(--vt);font-size:.95rem;color:#445566;font-style:italic;padding-left:10px;border-left:2px solid #002266;margin-top:6px">
+            "Il piaffe et hennit, fidèle à son maître —<br>Le destrier gris que nulle mort ne peut abattre."
+          </div>
+        </div>
+
+        <div style="margin-top:10px;font-family:var(--px);font-size:.32rem;color:#334455;letter-spacing:.05em;text-align:right">
+          § « La mort n'est rien, mais vivre vaincu et sans gloire, c'est mourir tous les jours. » §
+        </div>
+      </div>
+
+      <!-- Activation -->
+      <div class="activate-box">
+        <div class="activate-title">⚙ Activation</div>
+        <p style="font-family:var(--vt);color:var(--text-dim);line-height:1.5">
+          L'Owner active la Skysofrenie via <code>/lgsetting</code> → <strong style="color:var(--white)">Événements spéciaux</strong> → <strong style="color:#6699ff">☆ Skysofrenie (18e)</strong>. L'événement est désactivé par défaut et doit être activé avant le lancement de la partie.
+        </p>
+        <div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap">
+          <span style="font-family:var(--px);font-size:.32rem;padding:3px 8px;background:#000a2a;border:1px solid #002395;color:#6699ff;">Nécessite : Citoyen, Maire ou SimpleVillagois</span>
+          <span style="font-family:var(--px);font-size:.32rem;padding:3px 8px;background:#1a0000;border:1px solid #440000;color:#aa4444;">Nécessite : Grand Méchant Loup, Loup Simple ou Loup Endormi</span>
+          <span style="font-family:var(--px);font-size:.32rem;padding:3px 8px;background:#00051a;border:1px solid #001a44;color:#4477bb;">Nécessite : Inconnu</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">🐺 Loup-Garou UHC</div>
+  <ul class="footer-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="rules.html">Règles</a></li>
+    <li><a href="roles.html">Rôles</a></li>
+    <li><a href="evenements.html">Événements</a></li>
+  </ul>
+  <div class="footer-copy">Paper 1.21 · Java 21 · Développé par Enoe_one</div>
+</footer>
+
+</body>
+</html>

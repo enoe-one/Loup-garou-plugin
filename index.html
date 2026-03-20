@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Loup-Garou UHC — Paper 1.21</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .btn-download {
+      color:#000;background:#ffdd00;
+      border-top:3px solid #ffff88;border-left:3px solid #ffff88;
+      border-right:3px solid #886600;border-bottom:3px solid #886600;
+    }
+    .btn-download:hover{background:#ffe533;color:#000}
+
+    .new-badge {
+      font-family:var(--px);font-size:.28rem;
+      background:var(--blood2);color:var(--moon);
+      border:1px solid #ff4444;padding:2px 5px;
+      display:inline-block;letter-spacing:.05em;
+      vertical-align:middle;margin-left:6px;
+      animation:flicker 3s infinite;
+    }
+
+    .download-section {
+      background:linear-gradient(135deg,#0a0a00,#111100,#0a0a00);
+      border-top:2px solid #333300;border-bottom:2px solid #333300;
+    }
+    .download-card {
+      display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+      background:#111100;padding:14px 16px;
+      border-top:2px solid var(--border-hi);border-left:4px solid #ffdd00;
+      border-right:2px solid var(--border-lo);border-bottom:2px solid var(--border-lo);
+    }
+    .download-icon { font-size:2.2rem;flex-shrink:0; }
+    .download-info { flex:1;min-width:160px; }
+    .download-name { font-family:var(--px);font-size:.5rem;color:var(--yellow);text-shadow:1px 1px 0 #000;margin-bottom:3px;letter-spacing:.03em; }
+    .download-meta { font-family:var(--vt);font-size:.95rem;color:var(--text-dim); }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">🐺 Loup-Garou UHC</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Accueil</a></li>
+      <li><a href="rules.html">Règles</a></li>
+      <li><a href="roles.html">Rôles</a></li>
+      <li><a href="evenements.html">Événements</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-moon"></div>
+  <div class="hero-eyebrow">Plugin Minecraft · Paper 1.21</div>
+  <span class="hero-title">🐺 Loup-Garou UHC 🐺</span>
+  <div class="hero-sub">La nuit, les masques tombent.</div>
+  <div class="hero-desc">37 rôles. Ultra Hardcore. Déduction sociale sur Minecraft. Qui est le Loup parmi vous ?</div>
+  <div class="hero-cta">
+    <a href="roles.html" class="btn btn-blood">▶ Les Rôles</a>
+    <a href="rules.html" class="btn btn-stone">📜 Règles</a>
+    <a href="LoupGarou-2.1.jar" download class="btn btn-download">⬇ Télécharger v2.1</a>
+  </div>
+</div>
+
+<div style="background:#0d0d0d;border-bottom:1px solid #1a0000">
+  <div class="wrap">
+    <div class="section-title">⚡ Fonctionnalités</div>
+    <div class="feat-grid">
+      <div class="feat-card" style="border-left-color:var(--blood2)">
+        <div class="feat-icon">⚔️</div>
+        <div class="feat-title">PVP Style 1.8</div>
+        <div class="feat-desc">Aucun cooldown. Les duels sont immédiats et brutaux.</div>
+      </div>
+      <div class="feat-card" style="border-left-color:#55ffff">
+        <div class="feat-icon">💎</div>
+        <div class="feat-title">Grottes ×1.8</div>
+        <div class="feat-desc">80% de drop bonus sur chaque minerai. Progression rapide.</div>
+      </div>
+      <div class="feat-card" style="border-left-color:var(--blood)">
+        <div class="feat-icon">❤️</div>
+        <div class="feat-title">Ultra Hardcore</div>
+        <div class="feat-desc">Régénération désactivée. Chaque demi-cœur est précieux.</div>
+      </div>
+      <div class="feat-card" style="border-left-color:var(--c-soli)">
+        <div class="feat-icon">🎭</div>
+        <div class="feat-title">37 Rôles Uniques</div>
+        <div class="feat-desc">Village, Loups, Solitaires, Binaires. Chacun son pouvoir.</div>
+      </div>
+      <div class="feat-card" style="border-left-color:var(--c-binaire)">
+        <div class="feat-icon">⚙️</div>
+        <div class="feat-title">/lgsetting GUI</div>
+        <div class="feat-desc">Interface inventaire Minecraft pour configurer en jeu.</div>
+      </div>
+      <div class="feat-card" style="border-left-color:var(--c-village)">
+        <div class="feat-icon">📢</div>
+        <div class="feat-title">Messages Immersifs</div>
+        <div class="feat-desc">Countdown avec cécité, annonces de morts, titres à l'écran.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="section-title">🏰 Les Familles</div>
+  <div class="fam-grid">
+    <a href="roles.html#village" class="fam-card" style="background:var(--bg-village);border-top-color:var(--c-village);border-left-color:var(--c-village)">
+      <div class="feat-icon">🌿</div>
+      <div class="feat-title" style="color:var(--c-village)">Village</div>
+      <div class="feat-desc">Identifiez et éliminez tous les Loups. Votre seule arme : la déduction.</div>
+      <div class="fam-count" style="color:var(--c-village)">16 rôles →</div>
+    </a>
+    <a href="roles.html#loup" class="fam-card" style="background:var(--bg-loup);border-top-color:var(--c-loup);border-left-color:var(--c-loup)">
+      <div class="feat-icon">🐺</div>
+      <div class="feat-title" style="color:var(--c-loup)">Loups-Garous</div>
+      <div class="feat-desc">Égalez ou dépassez les Villageois. Mentez, chassez, survivez.</div>
+      <div class="fam-count" style="color:var(--c-loup)">8 rôles →</div>
+    </a>
+    <a href="roles.html#soli" class="fam-card" style="background:var(--bg-soli);border-top-color:var(--c-soli);border-left-color:var(--c-soli)">
+      <div class="feat-icon">🌙</div>
+      <div class="feat-title" style="color:var(--c-soli)">Solitaires</div>
+      <div class="feat-desc">Chacun sa condition de victoire. Imprévisibles. Dangereux.</div>
+      <div class="fam-count" style="color:var(--c-soli)">7 rôles →</div>
+    </a>
+    <a href="roles.html#binaire" class="fam-card" style="background:var(--bg-binaire);border-top-color:var(--c-binaire);border-left-color:var(--c-binaire)">
+      <div class="feat-icon">⚖️</div>
+      <div class="feat-title" style="color:var(--c-binaire)">Binaires</div>
+      <div class="feat-desc">Camp changeant. Ils bouleversent les alliances et le destin.</div>
+      <div class="fam-count" style="color:var(--c-binaire)">6 rôles →</div>
+    </a>
+  </div>
+</div>
+
+<div style="background:#0d0d0d;border-top:1px solid #1a0000;border-bottom:1px solid #1a0000">
+  <div class="wrap">
+    <div class="section-title">🚀 Démarrage Rapide</div>
+    <div class="feat-grid" style="grid-template-columns:repeat(auto-fill,minmax(230px,1fr))">
+      <div class="feat-card" style="border-left-color:var(--yellow)">
+        <div class="feat-title" style="color:var(--yellow)">① Installer</div>
+        <div class="feat-desc">Déposez <code>LoupGarou.jar</code> dans <code>plugins/</code>. Serveur Paper 1.21 requis.</div>
+      </div>
+      <div class="feat-card" style="border-left-color:var(--yellow)">
+        <div class="feat-title" style="color:var(--yellow)">② Créer la room</div>
+        <div class="feat-desc"><code>/lg create "Nom"</code> — vous devenez Owner. Les joueurs rejoignent la cage.</div>
+      </div>
+      <div class="feat-card" style="border-left-color:var(--yellow)">
+        <div class="feat-title" style="color:var(--yellow)">③ Configurer</div>
+        <div class="feat-desc"><code>/lgsetting</code> ouvre l'interface graphique. Activez les rôles d'un clic.</div>
+      </div>
+      <div class="feat-card" style="border-left-color:var(--yellow)">
+        <div class="feat-title" style="color:var(--yellow)">④ Lancer</div>
+        <div class="feat-desc"><code>/lg start</code> — cécité, compte à rebours 5-4-3-2-1, la partie commence.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TÉLÉCHARGEMENT -->
+<div class="download-section">
+  <div class="wrap">
+    <div class="section-title">⬇ Téléchargement</div>
+    <div class="download-card">
+      <div class="download-icon">📦</div>
+      <div class="download-info">
+        <div class="download-name">LoupGarou-2.1.jar <span class="new-badge">LATEST</span></div>
+        <div class="download-meta">Paper 1.21 · Java 21 · 83 fichiers Java · 40+ rôles · Événements spéciaux</div>
+      </div>
+      <a href="LoupGarou-2.1.jar" download class="btn btn-download" style="white-space:nowrap">⬇ Télécharger v2.1</a>
+    </div>
+    <div style="margin-top:6px;font-family:var(--vt);font-size:.9rem;color:#444;padding-left:4px">
+      Placez le .jar dans <code>plugins/</code> de votre serveur Paper 1.21. OldCombatMechanics requis pour le PVP 1.8.
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">🐺 Loup-Garou UHC</div>
+  <ul class="footer-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="rules.html">Règles</a></li>
+    <li><a href="roles.html">Rôles</a></li>
+    <li><a href="evenements.html">Événements</a></li>
+  </ul>
+  <div class="footer-copy">Paper 1.21 · Java 21 · Développé par Enoe_one</div>
+</footer>
+</body>
+</html>

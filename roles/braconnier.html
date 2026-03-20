@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Braconnier — Loup-Garou UHC</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .mc-stat{background:#000;border:1px solid #222;padding:5px 7px}
+    .stat-label{font-family:var(--px);font-size:.32rem;color:#555;margin-bottom:2px;letter-spacing:.04em}
+    .stat-value{font-family:var(--vt);font-size:1rem;color:var(--yellow)}
+    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">🐺 Loup-Garou UHC</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="../rules.html">Règles</a></li>
+      <li><a href="../roles.html" class="active">Rôles</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div style="background:linear-gradient(135deg,#0a1a0a 0%,#0d0d0d 60%);border-bottom:2px solid #001a00;padding:14px 10px 12px">
+  <div style="max-width:1080px;margin:0 auto">
+    <div class="breadcrumb">
+      <a href="../roles.html">Rôles</a><span>›</span>
+      <a href="../roles.html#village">🏡 Villageois</a><span>›</span>
+      <span style="color:#888">Braconnier</span>
+    </div>
+    <div class="role-page-icon">🏹</div>
+    <div class="role-page-title" style="color:var(--c-village);text-shadow:3px 3px 0 #000">Braconnier</div>
+    <span class="rc-tag village" style="margin-bottom:6px;display:inline-block">🏡 Villageois</span>
+    <div class="role-tagline">« Il chasse les loups même après leur mort. »</div>
+  </div>
+</div>
+
+<div class="role-layout">
+  <div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">📜 Description</div>
+      <p style="font-family:var(--vt);font-size:1rem;color:var(--text-dim);line-height:1.45">Spécialiste de la traque, il récupère les fourrures des loups morts pour renforcer sa propre résistance. Plus il chasse, plus il devient redoutable.</p>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">⚡ Pouvoirs</div>
+      <p style="font-family:var(--vt);font-size:1rem;color:var(--text);line-height:1.5">
+        <strong style="color:var(--yellow)">Fourrure :</strong> Reste à moins de 10 blocs d'un cadavre de loup pendant 10 secondes → récupère sa fourrure.<br>
+        <span style="color:#888;font-size:.9rem">L'écran se teinte en rouge à proximité d'un cadavre.</span><br><br>
+        <strong style="color:var(--yellow)">1ère fourrure :</strong> Résistance 0.5 (~10%). Chaque fourrure suivante : +0.1 de résistance.<br><br>
+        <strong style="color:var(--yellow)">Après 1ère fourrure :</strong> apparaît comme Loup-Garou aux rôles d'information.<br><br>
+        <strong style="color:var(--yellow)">Particules rouges</strong> sur les cadavres de loups pendant 15 minutes.
+      </p>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">💬 Commandes</div>
+      <div class="no-cmd">Aucune commande — pouvoir automatique (proximité).</div>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">⚠️ Attention</div>
+      <p style="font-family:var(--vt);color:#c87000;font-size:.95rem">Après ta 1ère fourrure, la Voyante et les rôles d'info te verront comme un Loup — méfie-toi du vote !</p>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">🎯 Stratégie & Conseils</div>
+      <div class="tip">Suis les combats pour être proche des cadavres de loups</div>
+      <div class="tip">Annonce que tu es Braconnier avant la révélation des rôles</div>
+      <div class="tip">Plus tu cumules de fourrures, plus tu es résistant en fin de partie</div>
+    </div>
+  </div>
+  <div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-village)">📊 Statistiques</div>
+      <div class="stats-grid">
+        <div class="mc-stat"><div class="stat-label">Difficulté</div><div class="stat-value">Difficile</div></div>
+        <div class="mc-stat"><div class="stat-label">Résistance 1ère</div><div class="stat-value">~10%</div></div>
+        <div class="mc-stat"><div class="stat-label">Par fourrure supp.</div><div class="stat-value">+~2%</div></div>
+        <div class="mc-stat"><div class="stat-label">Temps collecte</div><div class="stat-value">10 secondes</div></div>
+      </div>
+    </div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-village)">🏆 Victoire</div>
+      <p style="font-family:var(--vt);font-size:.98rem;color:var(--text-dim)">Gagner si <span style='color:var(--c-village)'>tous les Loups ET tous les Solitaires</span> sont éliminés.</p>
+    </div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-village)">🏷️ Famille</div>
+      <div style="font-size:1.6rem;margin-bottom:4px">🏡</div>
+      <span class="rc-tag village">Villageois</span>
+    </div>
+    <a href="../roles.html#village" class="btn btn-stone" style="width:100%;display:block;text-align:center;margin-top:2px;box-sizing:border-box">← Tous les Villageois</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">🐺 Loup-Garou UHC</div>
+  <ul class="footer-links">
+    <li><a href="../index.html">Accueil</a></li>
+    <li><a href="../rules.html">Règles</a></li>
+    <li><a href="../roles.html">Rôles</a></li>
+  </ul>
+  <div class="footer-copy">Paper 1.21 · Développé par Enoe_one</div>
+</footer>
+</body>
+</html>

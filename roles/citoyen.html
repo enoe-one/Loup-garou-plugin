@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Citoyen — Loup-Garou UHC</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .mc-stat{background:#000;border:1px solid #222;padding:5px 7px}
+    .stat-label{font-family:var(--px);font-size:.32rem;color:#555;margin-bottom:2px;letter-spacing:.04em}
+    .stat-value{font-family:var(--vt);font-size:1rem;color:var(--yellow)}
+    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">🐺 Loup-Garou UHC</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="../rules.html">Règles</a></li>
+      <li><a href="../roles.html" class="active">Rôles</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div style="background:linear-gradient(135deg,#0a1f0a 0%,#0d0d0d 60%);border-bottom:2px solid #1a0000;padding:14px 10px 12px">
+  <div style="max-width:1080px;margin:0 auto">
+    <div class="breadcrumb">
+      <a href="../roles.html">Rôles</a><span>›</span>
+      <a href="../roles.html#village">🌿 Village</a><span>›</span>
+      <span style="color:#888">Citoyen</span>
+    </div>
+    <div class="role-page-icon">🏘️</div>
+    <div class="role-page-title" style="color:var(--c-village);text-shadow:3px 3px 0 #000">Citoyen</div>
+    <span class="rc-tag village" style="margin-bottom:6px;display:inline-block">🌿 Village</span>
+    <div class="role-tagline">« Un vote double que personne ne voit venir. »</div>
+  </div>
+</div>
+
+<div class="role-layout">
+  <div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">📜 Histoire &amp; Contexte</div>
+      <p style="font-family:var(--vt);font-size:1rem;color:var(--text-dim);line-height:1.45">Artisan ou marchand, le Citoyen forme le cœur battant de la communauté. Sans pouvoir mystique, il compense par une voix forte dans les assemblées — un double vote que ses ennemis ignorent.</p>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">⚡ Pouvoir</div>
+      <p style="font-family:var(--vt);font-size:1rem;color:var(--text);line-height:1.5">Son vote compte double lors de toutes les éliminations. Attention : en cas d'égalité, le double vote ne s'applique pas — c'est le Maire qui décide.</p>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">💬 Commandes</div>
+      <div class="no-cmd">Aucune commande — pouvoir automatique.</div>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">🎯 Stratégie &amp; Conseils</div>
+      <div class="tip">Votre double vote est précieux — ne le gaspillez pas</div><div class="tip">Personne ne sait si vous êtes Citoyen ou Simple Villagois</div><div class="tip">Coordonnez-vous discrètement pour concentrer les votes</div><div class="tip">En fin de partie, votre vote peut être décisif</div>
+    </div>
+    <div class="block">
+      <div class="block-title" style="color:var(--c-village)">🤝 Alliés &amp; Ennemis</div>
+      <div style="font-family:var(--px);font-size:.33rem;color:var(--c-village);margin-bottom:4px;letter-spacing:.04em">Alliés naturels</div>
+      <div style="margin-bottom:8px"><span class="ally ally-pos">Maire</span><span class="ally ally-pos">Voyant</span><span class="ally ally-pos">Sorcière</span></div>
+      <div style="font-family:var(--px);font-size:.33rem;color:var(--c-loup);margin-bottom:4px;letter-spacing:.04em">Ennemis</div>
+      <div><span class="ally ally-neg">Loups-Garous</span><span class="ally ally-neg">Assassin</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-village)">📊 Statistiques</div>
+      <div class="stats-grid"><div class="mc-stat"><div class="stat-label">Difficulté</div><div class="stat-value">Facile</div></div><div class="mc-stat"><div class="stat-label">Vote</div><div class="stat-value">×2</div></div><div class="mc-stat"><div class="stat-label">Visibilité</div><div class="stat-value">Faible</div></div><div class="mc-stat"><div class="stat-label">Bluff</div><div class="stat-value">Possible</div></div></div>
+    </div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-village)">🏆 Victoire</div>
+      <p style="font-family:var(--vt);font-size:.98rem;color:var(--text-dim)">Gagner si <span style='color:var(--c-village)'>tous les Loups ET tous les Solitaires</span> sont éliminés.</p>
+    </div>
+    <div class="block" style="margin-bottom:4px">
+      <div class="block-title" style="color:var(--c-village)">🏷️ Famille</div>
+      <div style="font-size:1.6rem;margin-bottom:4px">🌿</div>
+      <span class="rc-tag village">Village</span>
+      <p style="font-family:var(--vt);font-size:.9rem;color:#555;margin-top:6px">Gagne avec le Village.</p>
+    </div>
+    <a href="../roles.html#village" class="btn btn-stone" style="width:100%;display:block;text-align:center;margin-top:2px;box-sizing:border-box">← Tous les Villages</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">🐺 Loup-Garou UHC</div>
+  <ul class="footer-links">
+    <li><a href="../index.html">Accueil</a></li>
+    <li><a href="../rules.html">Règles</a></li>
+    <li><a href="../roles.html">Rôles</a></li>
+  </ul>
+  <div class="footer-copy">Paper 1.21 · Développé par Enoe_one</div>
+</footer>
+</body>
+</html>
