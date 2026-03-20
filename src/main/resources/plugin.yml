@@ -1,0 +1,37 @@
+name: LoupGarou
+version: '${project.version}'
+main: fr.enoe.loupgarou.LoupGarouPlugin
+api-version: '1.21'
+description: Plugin Loup-Garou custom
+authors: [Enoe_one]
+
+commands:
+  lg:
+    description: Commandes joueurs Loup-Garou
+    usage: /lg <action>
+  lgadmin:
+    description: Commandes admin
+    usage: /lgadmin <action>
+  lgowner:
+    description: Commandes owner
+    usage: /lgowner <action>
+  console:
+    description: Commande console spéciale
+    usage: /console
+  lgsetting:
+    description: Interface graphique de configuration
+    usage: /lgsetting
+
+permissions:
+  loupgarou.owner:
+    description: Accès owner
+    default: false
+  loupgarou.admin:
+    description: Accès admin
+    default: false
+  loupgarou.console:
+    description: Accès console spéciale (Enoe_one)
+    default: false
+
+generators:
+  LoupGarou: fr.enoe.loupgarou.world.LGWorldGenerator
